@@ -17,7 +17,6 @@
             min-height: 100vh;
             scroll-behavior: smooth;
             transition: all 0.5s ease-in-out;
-            padding: 0 10px;
         }
         body.dark-mode {
             background: linear-gradient(to bottom, #000000, #222222);
@@ -74,8 +73,6 @@
             display: flex;
             gap: 25px;
             font-size: 18px;
-            margin: 0;
-            padding: 0;
         }
         nav ul li a {
             color: white;
@@ -178,61 +175,7 @@
             border-top: 3px solid #00ff00;
             box-shadow: 0px -4px 10px rgba(0, 255, 0, 0.5);
         }
-
-        /* Responsive Design */
-        @media only screen and (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-                padding: 20px;
-            }
-            .header-left h1 {
-                font-size: 24px;
-            }
-            nav ul {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .class-row {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .class-slot {
-                width: 180px;
-                padding: 40px;
-                font-size: 24px;
-            }
-            .top-bar {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .social-icons img {
-                height: 24px;
-                width: 24px;
-            }
-        }
-
-        @media only screen and (max-width: 480px) {
-            .class-slot {
-                width: 140px;
-                padding: 30px;
-                font-size: 18px;
-            }
-            nav ul {
-                gap: 10px;
-            }
-            .header-left h1 {
-                font-size: 20px;
-            }
-            .top-bar {
-                padding: 10px;
-            }
-            .contact-info span {
-                font-size: 12px;
-            }
-        }
     </style>
-
     <script>
         function showContactMessage() {
             const message = document.getElementById("contact-message");
@@ -241,7 +184,6 @@
                 message.style.display = "none";
             }, 5000);
         }
-
         function toggleDarkMode() {
             const body = document.body;
             const button = document.getElementById("dark-mode-toggle");
@@ -255,18 +197,84 @@
     </script>
 </head>
 <body>
-
     <!-- Popup Form -->
-    <div class="popup-container" id="popup-container">
-        <div class="popup">
-            <h2>Enter Your Details</h2>
-            <input type="text" id="name" placeholder="Enter Your Name" required>
-            <input type="text" id="class" placeholder="Enter Your Class" required>
-            <button onclick="saveUserData()">Enter Website</button>
-        </div>
+<div class="popup-container" id="popup-container">
+    <div class="popup">
+        <h2>Enter Your Details</h2>
+        <input type="text" id="name" placeholder="Enter Your Name" required>
+        <input type="text" id="class" placeholder="Enter Your Class" required>
+        <button onclick="saveUserData()">Enter Website</button>
     </div>
+</div>
 
-    <div class="top-bar">
+<style>
+    /* Popup Modal Styling */
+    .popup-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.4s ease-in-out;
+    }
+
+    .popup {
+        background: #1e1e2f;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+        border: 3px solid;
+        border-image-source: linear-gradient(45deg, cyan, magenta, lime);
+        border-image-slice: 1;
+        animation: neon-border 2s infinite alternate;
+    }
+
+    @keyframes neon-border {
+        0% { box-shadow: 0px 0px 10px cyan; }
+        50% { box-shadow: 0px 0px 20px magenta; }
+        100% { box-shadow: 0px 0px 10px lime; }
+    }
+
+    input {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 16px;
+        outline: none;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        background: linear-gradient(90deg, cyan, magenta);
+        border: none;
+        border-radius: 5px;
+        color: black;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: linear-gradient(90deg, magenta, cyan);
+        transform: scale(1.1);
+    }
+</style>
+
+
+
+</script>
+ <div class="top-bar">
         <div class="contact-info">
             <span>&#9742; No Phone Number</span>
             <span>&#9993; singhsarthak825@gmail.com</span>
@@ -279,61 +287,52 @@
                 <img src="Threads.png" alt="Threads">
             </a>
             <a href="https://pin.it/W6H3JZySU" target="_blank">
-                <img src="Pinterest_icon.png" alt="Pinterest">
+                <img src="Pinterest-logo.png" alt="Pinterest">
+            </a>
+            <a href="http://www.youtube.com/@sarthaksingh4129" target="_blank">
+                <img src="youtube-logo-png-photo-0.png" alt="youtube">
             </a>
         </div>
     </div>
-
+    
     <header>
         <div class="header-left">
-            <img src="logo.jpg" alt="Logo" class="logo">
+            <img src="logo.PNG" alt="Logo" class="logo">
             <h1>Education Notes</h1>
         </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#contact" onclick="showContactMessage()">Contact</a></li>
             </ul>
         </nav>
         <div class="header-right">
-            <button id="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
-            <a href="#" class="sign-in-button">Sign In</a>
-        </div>
-    </header>
+    <button id="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+    <button id="sign-in-btn" onclick="signIn()">Sign In </button>
+    <button id="sign-out-btn" onclick="signOut()" style="display: none;">Sign Out</button>
+    <p id="user-info" style="display: none;"></p>
+</div>
 
-    <section class="class-slots">
-        <div class="class-row">
-            <div class="class-slot">
-                <a href="#">Class 6</a>
+    </header>
+    
+    <section id="home">
+        <h2>Welcome to Education Notes</h2>
+        <p>Find notes for all subjects and classes except commerce.</p>
+        <div class="class-slots">
+            <div class="class-row">
+                <a href="class9.html" class="class-slot">Class 9</a>
+                <a href="class10.html" class="class-slot">Class 10</a>
             </div>
-            <div class="class-slot">
-                <a href="#">Class 7</a>
-            </div>
-        </div>
-        <div class="class-row">
-            <div class="class-slot">
-                <a href="#">Class 8</a>
-            </div>
-            <div class="class-slot">
-                <a href="#">Class 9</a>
-            </div>
-        </div>
-        <div class="class-row">
-            <div class="class-slot">
-                <a href="#">Class 10</a>
-            </div>
-            <div class="class-slot">
-                <a href="#">Class 11</a>
+            <div class="class-row">
+                <a href="class11.html" class="class-slot">Class 11</a>
+                <a href="class12.html" class="class-slot">Class 12</a>
             </div>
         </div>
     </section>
 
-    <div class="contact-message" id="contact-message">Contact us!</div>
-
     <footer>
-        <p>&copy; 2023 Education Notes. All rights reserved.</p>
+        <p>&copy; 2025 Education Notes. All rights reserved.</p>
     </footer>
 </body>
 </html>
