@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚖️ Civics Notes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #004d40);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: linear-gradient(145deg, #0d0d0d, #111111, #002a27);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+            position: relative;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+            background: red;
+            padding: 5px 10px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: 0.3s;
+            border: none;
+        }
+        .close-btn:hover {
+            background: #ff3333;
+        }
+        .close-btn:focus {
+            outline: none;
+        }
+        .close-btn:active {
+            background: #cc0000;
+        }
+        h1 {
+            font-size: 36px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+            color: #00e676;
+        }
+        .chapter {
+            padding: 14px;
+            margin: 12px 0;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+            color: white;
+            cursor: pointer;
+        }
+        .chapter:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+        }
+        .chapter a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Unique Colors for Each Chapter */
+        .chapter:nth-child(2) { background: linear-gradient(90deg, #003366, #0055aa); } /* Electric Blue */
+        .chapter:nth-child(3) { background: linear-gradient(90deg, #006400, #00a550); } /* Dark Green */
+        .chapter:nth-child(4) { background: linear-gradient(90deg, #008000, #32cd32); } /* Light Green */
+        .chapter:nth-child(5) { background: linear-gradient(90deg, #111111, #333333); } /* Metallic Black */
+        .chapter:nth-child(6) { background: linear-gradient(90deg, #004d40, #00796b); } /* Deep Teal */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="close-btn" onclick="window.history.back()">✖</button>
+        <h1>⚖️ Civics Notes</h1>
+        <div class="chapter">🏦 <a href="https://drive.google.com/file/d/1_cDeqFzfvHK4JrqiiTOVLqay_VFTofBI/view?usp=sharing" target="_blank">1. FEDERALISM</a></div>
+        <div class="chapter">🏢 <a href="https://drive.google.com/file/d/1Z-uvoTZtp0aNxAvK2m4gKhxe5GUk91pI/view?usp=sharing" target="_blank">2. POWER SHARING</a></div>
+        <div class="chapter">👪 <a href="https://drive.google.com/file/d/1XZOt5_y6s1aHPkHeNtNU01_sDj3ht-N6/view?usp=sharing" target="_blank">3. GENDER,RELIGION AND CASTE</a></div>
+        <div class="chapter">📜 <a href="https://drive.google.com/file/d/1VqLwly1gRqGllWJCwds7Uk5l7kMchMzZ/view?usp=sharing" target="_blank">4. POLITICAL PARTIES</a></div>
+        <div class="chapter">⚖️ <a href="https://drive.google.com/file/d/12tRbqSu6lPdq_854KC8zHJFQjtqyLad0/view?usp=sharing" target="_blank">5. OUTCOMES OF DEMOCRACY</a></div>
+    </div>
+</body>
+</html>

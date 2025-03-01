@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Topics</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #0a0a2a, #1a1a40); /* Sapphire Blue Gradient */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        header {
+            background: linear-gradient(to right, #ff0000, #cc0000); /* Ruby Red */
+            color: white;
+            padding: 30px;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 3px 3px 15px rgba(255, 0, 0, 0.8);
+            letter-spacing: 2px;
+            border-bottom: 5px solid #ff4444;
+            box-shadow: 0px 8px 25px rgba(255, 0, 0, 0.5);
+        }
+        .topic-list {
+            padding: 30px;
+            width: 50%;
+            min-width: 350px;
+            border-radius: 15px;
+            background: rgba(20, 20, 60, 0.95); /* Dark Sapphire */
+            margin: 40px auto;
+            box-shadow: 0px 8px 30px rgba(0, 255, 127, 0.7); /* Emerald Glow */
+            transition: transform 0.3s ease;
+        }
+        .topic-list:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 12px 35px rgba(0, 255, 127, 0.9); /* Emerald Intense */
+        }
+        .topic-item {
+            font-size: 24px;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-left: 6px solid rgba(255, 0, 255, 0.9); /* Amethyst Glow */
+            box-shadow: 4px 4px 15px rgba(255, 0, 255, 0.5);
+        }
+        .topic-item:nth-child(1) { background: #008f39; } /* Emerald Green */
+        .topic-item:nth-child(2) { background: #800080; } /* Amethyst Purple */
+        .topic-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: #ffcc00; /* Rich Gold */
+            color: black;
+            box-shadow: 0px 0px 30px rgba(255, 204, 0, 1);
+        }
+        .topic-item a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: color 0.2s ease;
+        }
+        .topic-item:hover a { color: black; }
+    </style>
+</head>
+<body>
+    <header>
+        🧬 Premium Biology notes 🌿
+    </header>
+
+    <div class="topic-list">
+        <div class="topic-item">
+            <a href="https://drive.google.com/file/d/1Ai-AhY0UpacS40fcZLlcktlH07Ecxlsj/view?usp=sharing" target="_blank">
+                1. Fundamental Unit of Life
+            </a>
+        </div>
+        <div class="topic-item">
+            <a href="https://drive.google.com/file/d/13X49ab0IEA-DqOIlxt0-V_LNhu3npS3M/view?usp=sharing" target="_blank">
+                2. Tissue
+            </a>
+        </div>
+    </div>
+</body>
+</html>

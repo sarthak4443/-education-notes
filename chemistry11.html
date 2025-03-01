@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Notes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 42px;
+            font-family: 'Orbitron', sans-serif;
+            color: #ff5733;
+            text-shadow: 0 0 10px rgba(255, 87, 51, 0.7);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        .topic {
+            padding: 45px;
+            border-radius: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+            color: white;
+            letter-spacing: 1.2px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .topic:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Different gradient colors */
+        .topic:nth-child(1) { background: linear-gradient(45deg, #ff3c3c, #ff7b7b); }
+        .topic:nth-child(2) { background: linear-gradient(45deg, #1abc9c, #16a085); }
+        .topic:nth-child(3) { background: linear-gradient(45deg, #3498db, #2980b9); }
+        .topic:nth-child(4) { background: linear-gradient(45deg, #f39c12, #e67e22); }
+        .topic:nth-child(5) { background: linear-gradient(45deg, #9b59b6, #8e44ad); }
+        .topic:nth-child(6) { background: linear-gradient(45deg, #ff0099, #ff66cc); }
+        .topic:nth-child(7) { background: linear-gradient(45deg, #2ecc71, #27ae60); }
+        .topic:nth-child(8) { background: linear-gradient(45deg, #34495e, #2c3e50); }
+        .topic:nth-child(9) { background: linear-gradient(45deg, #e74c3c, #c0392b); }
+        .topic:nth-child(10) { background: linear-gradient(45deg, #8e44ad, #5e3370); }
+    </style>
+</head>
+<body>
+    <h1>Chemistry Notes</h1>
+    <div class="container">
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1H9Y4CsPyk0b2gP6znML8naUd7A-ecFq8/view?usp=sharing', '_blank')">
+            ⚗️ Some Basic Concept of Chemistry
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1H9Y4CsPyk0b2gP6znML8naUd7A-ecFq8/view?usp=sharing', '_blank')">
+            🔬 Structure of Atom
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1sIQMKQOS8VG5uUtkIhx19y4bLJRE4W78/view?usp=sharing', '_blank')">
+            🛢 Hydrocarbon
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1SyA0Xc9Rp-g92CRulA1hHgWzJf3dR56h/view?usp=sharing', '_blank')">
+            🔥 Thermodynamics
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1lcaEJaRXFeO-LF2OFhX4-XPkqHhWd__0/view?usp=sharing', '_blank')">
+            ⚖️ Equilibrium
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1JA_4ta46MOGlpwu5HBglbxBc2hcKxau5/view?usp=sharing', '_blank')">
+            🧪 General Organic Chemistry
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1XHG9m5QmmB-n1CYuOT-ZAOAhi2pVazrb/view?usp=sharing', '_blank')">
+            🏗 Chemical Bonding
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1BjKAz5ubBV0o-3_ZWSEjLE_fZ9ngYe1k/view?usp=sharing', '_blank')">
+            ⚡ Redox Reaction
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1eI7jLFPcI4AL61Tiyqp2KM-6eculi8bF/view?usp=sharing', '_blank')">
+            📜 Periodic Table
+        </div>
+    </div>
+</body>
+</html>

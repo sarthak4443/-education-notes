@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Geography</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+            background-image: url('country_geography_world_map-22-2-512.webp'); /* India map added */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-attachment: fixed;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: white;
+            overflow-y: auto; /* Enables vertical scrolling */
+            height: 100vh; /* Full height */
+        }
+
+        h1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 0;
+            margin: 0;
+            font-size: 42px;
+            font-family: 'Orbitron', sans-serif;
+            color: #ffdd57;
+            text-shadow: 0 0 15px rgba(255, 221, 87, 0.8);
+            z-index: 1000;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 80px; /* Adjusted for fixed heading */
+            padding-bottom: 40px;
+        }
+
+        .topic {
+            padding: 18px 35px;
+            width: 350px;
+            border-radius: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+            color: white;
+            letter-spacing: 1.5px;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .topic:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 18px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Neon Gradient Colors */
+        .topic:nth-child(1) { background: linear-gradient(45deg, #ff3c3c, #ff7b7b); box-shadow: 0 0 10px #ff3c3c; }
+        .topic:nth-child(2) { background: linear-gradient(45deg, #1abc9c, #16a085); box-shadow: 0 0 10px #1abc9c; }
+        .topic:nth-child(3) { background: linear-gradient(45deg, #3498db, #2980b9); box-shadow: 0 0 10px #3498db; }
+        .topic:nth-child(4) { background: linear-gradient(45deg, #f39c12, #e67e22); box-shadow: 0 0 10px #f39c12; }
+        .topic:nth-child(5) { background: linear-gradient(45deg, #9b59b6, #8e44ad); box-shadow: 0 0 10px #9b59b6; }
+        .topic:nth-child(6) { background: linear-gradient(45deg, #ff0099, #ff66cc); box-shadow: 0 0 10px #ff0099; }
+
+    </style>
+</head>
+<body>
+    <h1>Geography</h1>
+    <div class="container">
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1jkgnK5po6bbO6yDjW12_q5QFVGavp6gv/view?usp=sharing', '_blank')">
+            🌍 Resources and Development  
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1ZkehsZWosEgQStMFzEESBkWUOp-xClkA/view?usp=sharing', '_blank')">
+            👥 Manufacturing Industries
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1QeJVumm84Fz0-_0f8GqpxYAJ-VL539jb/view?usp=sharing', '_blank')">
+            🌦 Water Resources 
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1s0wseHcpOy5WBq-7yNJD6JGgwG_-uMzB/view?usp=sharing', '_blank')">
+            ⚡Minerals and Energy Resources
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1pm0dQzHlBewyrIuoiCGML4Qfxscx55lM/view?usp=sharing', '_blank')">
+            🌲 Forest and Wildlife Resources
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1hYgfF0fMbbo1rOnWQmyGNbQ1XxhD92m2/view?usp=sharing', '_blank')">
+            🌾 Agriculture
+        </div>
+    </div>
+</body>
+</html>

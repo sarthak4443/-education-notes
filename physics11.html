@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Notes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 42px;
+            font-family: 'Orbitron', sans-serif;
+            color: #ff5733;
+            text-shadow: 0 0 10px rgba(255, 87, 51, 0.7);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        .topic {
+            padding: 30px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+            color: white;
+            letter-spacing: 1.2px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .topic:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+        }
+
+        .topic:nth-child(1) { background: linear-gradient(45deg, #004d00, #00cc00); }
+        .topic:nth-child(2) { background: linear-gradient(45deg, #ff5733, #ff9966); }
+        .topic:nth-child(3) { background: linear-gradient(45deg, #00509e, #00aaff); }
+        .topic:nth-child(4) { background: linear-gradient(45deg, #8a2be2, #d8bfd8); }
+        .topic:nth-child(5) { background: linear-gradient(45deg, #ffcc00, #ff9900); }
+        .topic:nth-child(6) { background: linear-gradient(45deg, #2e8b57, #98fb98); }
+        .topic:nth-child(7) { background: linear-gradient(45deg, #ff4500, #ff6347); }
+        .topic:nth-child(8) { background: linear-gradient(45deg, #4682b4, #5f9ea0); }
+        .topic:nth-child(9) { background: linear-gradient(45deg, #9932cc, #ba55d3); }
+        .topic:nth-child(10) { background: linear-gradient(45deg, #556b2f, #6b8e23); }
+        .topic:nth-child(11) { background: linear-gradient(45deg, #dc143c, #ff69b4); }
+        .topic:nth-child(12) { background: linear-gradient(45deg, #ff8c00, #ffd700); }
+        .topic:nth-child(13) { background: linear-gradient(45deg, #008b8b, #20b2aa); }
+        .topic:nth-child(14) { background: linear-gradient(45deg, #191970, #4169e1); }
+    </style>
+</head>
+<body>
+    <h1>Physics Notes</h1>
+    <div class="container">
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1k2TvoJ4PXpfAhhCWbSgrD6v-DacCXRwA/view?usp=sharing', '_blank')">
+            📏 Unit and Measurement
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1LIKdrgprE9RbfClBR0PKGHzTTBapuCs4/view?usp=sharing', '_blank')">
+            🚗 Motion in Straight Line
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1sXhPLpWv-n0Sy72aI28v7JdSvbX6kSiI/view?usp=sharing', '_blank')">
+            ✈️ Motion in Plane
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1fj1xRRDhfnp38BJa31v-spowT38kWxLE/view?usp=sharing', '_blank')">
+            ⚖️ Laws of Motion
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1N44MSoeuxZF0PGVmEwjG7ahZdQmx8plJ/view?usp=sharing', '_blank')">
+            ⚡ Work, Energy, and Power
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/16W1B9Mj9mSfqHPyVY7PR840fOGVk7L7k/view?usp=sharing', '_blank')">
+            🌍 Gravitation
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1OkxUtWDMPXkd1psyGzV9y4YUxZhRzu-8/view?usp=sharing', '_blank')">
+            🔗 System of Particles
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1aNcdWLMbCX5_AiES6o-onDLjqeSIJ9F5/view?usp=sharing', '_blank')">
+            🏗 Mechanical Properties of Solids
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/14PzqVsFOtCn7zfKhiupHVqzhLFOCziGh/view?usp=sharing', '_blank')">
+            💧 Mechanical Properties of Fluids
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1AmN32J6P_MzpoWh8bR-A62w0_zdCqBCz/view?usp=sharing', '_blank')">
+            🔥 Thermal Properties of Matter
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1M1Sd-iwKpVYgCaFXtsUZiXszTyh2nMD2/view?usp=sharing', '_blank')">
+            🌡️ Kinetic Theory
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1AmN32J6P_MzpoWh8bR-A62w0_zdCqBCz/view?usp=sharing', '_blank')">
+            🔥 Thermodynamics
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1lcOABaY5aC1TCtn6SSdRmnCq1Xyb0xKW/view?usp=sharing', '_blank')">
+            🎶 Oscillations
+        </div>
+        <div class="topic" onclick="window.open('https://drive.google.com/file/d/1DPZsZgT06dnq2WB6UB6nXX3SuitmA_Px/view?usp=sharing', '_blank')">
+            🌊 Waves
+        </div>
+    </div>
+</body>
+</html>
