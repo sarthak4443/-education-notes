@@ -17,6 +17,56 @@
             scroll-behavior: smooth;
             transition: all 0.5s ease-in-out;
         }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: black;
+            box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.5);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00ff00;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease-in-out;
+        }
+        .nav-menu a:hover {
+            color: #00ff00;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                background: black;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 150px;
+                box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.5);
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
         .class-slots {
             display: flex;
             flex-wrap: wrap;
@@ -58,6 +108,15 @@
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo">Education Notes</div>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <nav class="nav-menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
     <div class="class-slots">
         <a href="#" class="class-slot">Class 9</a>
         <a href="#" class="class-slot">Class 10</a>
@@ -67,5 +126,10 @@
     <footer>
         <p>&copy; 2025 Education Notes. All rights reserved.</p>
     </footer>
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-menu").classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
