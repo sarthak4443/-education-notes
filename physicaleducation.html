@@ -30,15 +30,16 @@
             cursor: pointer;
             color: white;
             background: #ff0000;
-            padding: 8px;
+            padding: 10px;
             border-radius: 50%;
             text-decoration: none;
+            width: 40px;
+            height: 40px;
+            border: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 35px;
-            height: 35px;
-            z-index: 1000; /* Ensure it is above all elements */
+            z-index: 9999; /* ऊपर लाने के लिए */
         }
         .close-btn:hover {
             background: #cc0000;
@@ -95,7 +96,7 @@
 
     <script>
         function goBack() {
-            window.history.back();
+            window.history.back(); // यह पिछला पेज खोलेगा
         }
     </script>
 </body>
