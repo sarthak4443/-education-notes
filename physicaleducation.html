@@ -30,14 +30,15 @@
             cursor: pointer;
             color: white;
             background: #ff0000;
-            padding: 8px 12px;
+            padding: 8px;
             border-radius: 50%;
             text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
+            z-index: 1000; /* Ensure it is above all elements */
         }
         .close-btn:hover {
             background: #cc0000;
@@ -51,7 +52,7 @@
         .chapter {
             background: linear-gradient(90deg, #004488, #0066cc, #0088ff);
             padding: 14px;
-            margin: 20px 0; /* Space between chapters */
+            margin: 20px 0;
             border-radius: 10px;
             font-size: 20px;
             font-weight: bold;
@@ -71,14 +72,14 @@
         }
         @media (max-width: 768px) {
             .chapter {
-                margin: 30px 0; /* Extra space on mobile */
+                margin: 30px 0;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="javascript:void(0);" class="close-btn" onclick="goBack()">✖</a>
+        <button class="close-btn" onclick="goBack()">✖</button>
         <h1>📖 Physical Education Notes</h1>
         <div class="chapter">🏃‍♂️ <a href="#">1. Changing Trends & Career in Physical Education</a></div>
         <div class="chapter">🥇 <a href="#">2. Olympic Value Education</a></div>
