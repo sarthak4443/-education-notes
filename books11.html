@@ -16,20 +16,20 @@
         header {
             background: linear-gradient(to right, #004d00, #29a329); /* Deep Green Gradient */
             color: white;
-            padding: 30px;
-            font-size: 40px;
+            padding: 25px;
+            font-size: 36px;
             font-weight: bold;
             text-shadow: 2px 2px 10px rgba(0, 255, 0, 0.7);
             letter-spacing: 2px;
             border-bottom: 4px solid #00ff00; /* Bright Green */
         }
         .book-list {
-            padding: 40px;
-            width: 65%;
-            min-width: 350px;
-            border-radius: 15px;
+            padding: 30px;
+            width: 60%;
+            min-width: 300px;
+            border-radius: 12px;
             background: rgba(0, 60, 20, 0.9);
-            margin: 50px auto;
+            margin: 40px auto;
             box-shadow: 0px 6px 20px rgba(0, 255, 0, 0.4);
             transition: transform 0.3s ease;
         }
@@ -38,14 +38,14 @@
             box-shadow: 0px 10px 30px rgba(0, 255, 0, 0.6);
         }
         .book-item {
-            font-size: 26px;
-            padding: 22px;
-            margin: 15px 0;
-            border-radius: 10px;
+            font-size: 24px;
+            padding: 20px;
+            margin: 12px 0;
+            border-radius: 8px;
             font-weight: bold;
             transition: all 0.3s ease;
             cursor: pointer;
-            border-left: 7px solid rgba(0, 255, 0, 0.9);
+            border-left: 5px solid rgba(0, 255, 0, 0.9);
             box-shadow: 3px 3px 12px rgba(0, 255, 0, 0.3);
         }
         .book-item:nth-child(1) { background: #005c2c; } /* Dark Teal */
@@ -75,11 +75,11 @@
                 padding: 20px;
             }
             .book-item {
-                font-size: 22px;
+                font-size: 20px;
                 padding: 18px;
             }
             header {
-                font-size: 32px;
+                font-size: 30px;
                 padding: 20px;
             }
         }
@@ -87,15 +87,30 @@
         @media (max-width: 480px) {
             .book-list {
                 width: 90%;
-                padding: 15px;
+                padding: 10px;
             }
             .book-item {
-                font-size: 20px;
-                padding: 16px;
+                font-size: 18px;
+                padding: 15px;
             }
             header {
-                font-size: 28px;
+                font-size: 24px;
                 padding: 15px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .book-list {
+                width: 95%;
+                padding: 8px;
+            }
+            .book-item {
+                font-size: 16px;
+                padding: 12px;
+            }
+            header {
+                font-size: 20px;
+                padding: 12px;
             }
         }
     </style>
