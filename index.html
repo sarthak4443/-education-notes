@@ -6,59 +6,56 @@
     <title>Education Notes</title>
     <style>
         body {
-            background-color: #1a2e10;
+            background-color: #132a13;
             color: white;
-            text-align: center;
             font-family: Arial, sans-serif;
+            text-align: center;
             margin: 0;
+            padding: 0;
         }
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        .header {
             background: #333;
-            padding: 10px 20px;
-        }
-        .navbar img {
-            height: 30px;
-            margin-right: 10px;
-        }
-        .navbar h1 {
-            font-size: 22px;
+            padding: 10px;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
-        .menu {
-            font-size: 24px;
-            cursor: pointer;
+        .header img {
+            height: 40px;
+            margin-right: 10px;
         }
         .container {
             padding: 20px;
         }
-        .container h2 {
-            font-size: 24px;
+        h1 {
+            font-size: 26px;
         }
-        .box {
-            width: 80%;
-            max-width: 300px;
-            background: black;
+        .class-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .class-button {
+            background-color: black;
             color: white;
-            padding: 15px;
-            margin: 10px auto;
+            padding: 15px 30px;
+            width: 200px;
             font-size: 18px;
             font-weight: bold;
+            text-decoration: none;
             border-radius: 8px;
             border: 2px solid transparent;
-            box-shadow: 0px 0px 15px blue;
-            transition: 0.5s;
-            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 10px #0ff;
         }
-        .box:hover {
-            box-shadow: 0px 0px 20px pink;
-            transform: scale(1.05);
+        .class-button:hover {
+            border-color: #0ff;
+            box-shadow: 0 0 20px #0ff, 0 0 40px #f0f;
         }
         .footer {
-            background: black;
+            background-color: black;
             padding: 10px;
             position: relative;
             bottom: 0;
@@ -67,17 +64,19 @@
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <h1><img src="logo.PNG" alt="Logo"> Education Notes</h1>
-        <div class="menu">&#9776;</div>
+    <div class="header">
+        <img src="logo.PNG" alt="Logo">
+        <h2>Education Notes</h2>
     </div>
     <div class="container">
-        <h2>Welcome to Education Notes</h2>
+        <h1>Welcome to Education Notes</h1>
         <p>Find notes for all subjects and classes except commerce.</p>
-        <a href="class9.html" class="box">Class 9</a>
-        <a href="class10.html" class="box">Class 10</a>
-        <a href="class11.html" class="box">Class 11</a>
-        <a href="class12.html" class="box">Class 12</a>
+        <div class="class-buttons">
+            <a href="class9.html" class="class-button">Class 9</a>
+            <a href="class10.html" class="class-button">Class 10</a>
+            <a href="class11.html" class="class-button">Class 11</a>
+            <a href="class12.html" class="class-button">Class 12</a>
+        </div>
     </div>
     <div class="footer">
         &copy; 2025 Education Notes. All rights reserved.
