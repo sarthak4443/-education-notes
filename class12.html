@@ -31,7 +31,7 @@
             margin-top: 40px;
         }
         .subject {
-            background-color: #3c763d;
+            background-color: #0d260d;
             padding: 30px;
             width: 40%;
             min-width: 300px;
@@ -41,33 +41,25 @@
             text-align: center;
             font-weight: bold;
             text-transform: uppercase;
-            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
-            border-left: 8px solid rgba(34, 139, 34, 0.9);
+            box-shadow: 0 0 15px #00ff00;
+            border: 3px solid #00ff00;
             transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
             cursor: pointer;
             position: relative;
         }
-        .subject:nth-child(1) { background: #228b22; }
-        .subject:nth-child(2) { background: #2e8b57; }
-        .subject:nth-child(3) { background: #3c763d; }
-        .subject:nth-child(4) { background: #006400; }
-        .subject:nth-child(5) { background: #008000; }
-        .subject:nth-child(6) { background: #32cd32; color: black; }
-
         .subject:hover {
             transform: scale(1.07);
             background: #39ff14;
             color: black;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 25px #39ff14;
+            border-color: #39ff14;
         }
-
-        /* Style for the message next to English */
         #message {
             display: none;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            right: -250px; /* Adjust the distance from the English subject */
+            right: -250px;
             padding: 5px 10px;
             background-color: red;
             color: white;
@@ -89,14 +81,12 @@
         <div class="subject" onclick="window.location.href='physicaleducation12.html'">Physical Education</div>
         <div class="subject" onclick="window.location.href='biology12.html'">Biology</div>
     </div>
-
     <script>
-        // JavaScript to handle the click on the English subject
         document.getElementById('english-subject').addEventListener('click', function() {
             var message = document.getElementById('message');
-            message.style.display = 'block'; // Show the message next to English
+            message.style.display = 'block';
             setTimeout(function() {
-                message.style.display = 'none'; // Hide the message after 5 seconds
+                message.style.display = 'none';
             }, 5000);
         });
     </script>
