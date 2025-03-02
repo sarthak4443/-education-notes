@@ -5,77 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education Notes</title>
     <style>
-        body {
-            background-color: #132a13;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #1c2417;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
         }
         .header {
-            background: #333;
+            background-color: #2d2d2d;
             padding: 10px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
         }
-        .header img {
-            height: 40px;
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            width: 30px;
             margin-right: 10px;
         }
-        .container {
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .content {
             padding: 20px;
         }
-        h1 {
-            font-size: 26px;
-        }
-        .class-buttons {
+        .buttons {
             display: flex;
             flex-direction: column;
-            align-items: center;
             gap: 15px;
+            align-items: center;
             margin-top: 20px;
         }
-        .class-button {
+        .button {
             background-color: black;
             color: white;
-            padding: 15px 30px;
-            width: 200px;
+            padding: 15px 40px;
+            border: 3px solid blue;
+            border-radius: 10px;
             font-size: 18px;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 8px;
-            border: 2px solid transparent;
-            transition: 0.3s;
-            box-shadow: 0 0 10px #0ff;
-        }
-        .class-button:hover {
-            border-color: #0ff;
-            box-shadow: 0 0 20px #0ff, 0 0 40px #f0f;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 0 10px blue;
         }
         .footer {
             background-color: black;
+            color: white;
             padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            margin-top: auto;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <img src="logo.PNG" alt="Logo">
-        <h2>Education Notes</h2>
+        <div class="logo">
+            <img src="logo.PNG" alt="Logo">
+            <span>Education Notes</span>
+        </div>
+        <div class="menu-icon">&#9776;</div>
     </div>
-    <div class="container">
-        <h1>Welcome to Education Notes</h1>
+    <div class="content">
+        <h2>Welcome to Education Notes</h2>
         <p>Find notes for all subjects and classes except commerce.</p>
-        <div class="class-buttons">
-            <a href="class9.html" class="class-button">Class 9</a>
-            <a href="class10.html" class="class-button">Class 10</a>
-            <a href="class11.html" class="class-button">Class 11</a>
-            <a href="class12.html" class="class-button">Class 12</a>
+        <div class="buttons">
+            <a href="#" class="button">Class 9</a>
+            <a href="#" class="button">Class 10</a>
+            <a href="#" class="button">Class 11</a>
+            <a href="#" class="button">Class 12</a>
         </div>
     </div>
     <div class="footer">
