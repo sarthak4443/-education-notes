@@ -43,10 +43,23 @@
             font-weight: bold;
             text-transform: uppercase;
             box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
-            border-left: 8px solid rgba(34, 139, 34, 0.9);
+            text-decoration: none;
+            border: 8px solid;
+            border-image: linear-gradient(45deg, #39ff14, #f3f315, #ff073a, #15f3f3) 1;
+            animation: neonBorder 5s infinite linear; /* Animation for neon effect */
             transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
             cursor: pointer;
-            text-decoration: none;
+        }
+        @keyframes neonBorder {
+            0% {
+                border-image-source: linear-gradient(45deg, #39ff14, #f3f315, #ff073a, #15f3f3);
+            }
+            50% {
+                border-image-source: linear-gradient(45deg, #15f3f3, #ff073a, #f3f315, #39ff14);
+            }
+            100% {
+                border-image-source: linear-gradient(45deg, #39ff14, #f3f315, #ff073a, #15f3f3);
+            }
         }
         .subject:hover {
             transform: scale(1.07);
