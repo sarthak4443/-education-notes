@@ -34,6 +34,9 @@
             border-radius: 50%;
             text-decoration: none;
         }
+        .close-btn:hover {
+            background: #cc0000;
+        }
         h1 {
             font-size: 32px;
             text-transform: uppercase;
@@ -43,7 +46,7 @@
         .chapter {
             background: linear-gradient(90deg, #004488, #0066cc, #0088ff);
             padding: 14px;
-            margin: 12px 0;
+            margin: 20px 0; /* Increased space between chapters */
             border-radius: 10px;
             font-size: 20px;
             font-weight: bold;
@@ -61,22 +64,27 @@
             color: #ffffff;
             text-decoration: none;
         }
+        @media (max-width: 768px) {
+            .chapter {
+                margin: 30px 0; /* Extra space for mobile */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="#" class="close-btn">✖</a>
+        <a href="javascript:history.back()" class="close-btn">✖</a>
         <h1>📖 Physical Education Notes</h1>
-        <div class="chapter">🏃‍♂️ <a href="https://drive.google.com/file/d/1ItD3u-XuqluQNShjdtjgMQ1IklDd96dI/view?usp=sharing" target="_blank">1. Changing Trends & Career in Physical Education</a></div>
-        <div class="chapter">🥇 <a href="https://drive.google.com/file/d/1bnDAjsQOIDN2W9_AOpJ9B88nLsVCGpUJ/view?usp=sharing" target="_blank">2. Olympic Value Education</a></div>
-        <div class="chapter">🧘‍♂️ <a href="https://drive.google.com/file/d/1b1lb03ivIqZkiI2RCIJTqdrtXLZ2BE1J/view?usp=sharing" target="_blank">3. Yoga</a></div>
-        <div class="chapter">♿ <a href="https://drive.google.com/file/d/1e7nRChu3F7yGt_1859mCfTnjLoBuG3UL/view?usp=sharing" target="_blank">4. Physical Education & Sports for CWSN</a></div>
-        <div class="chapter">💪 <a href="https://drive.google.com/file/d/1jaq0ibP3xVKutrSc5Vre8uvAGQ-S9HQD/view?usp=sharing" target="_blank">5. Physical Fitness, Wellness</a></div>
-        <div class="chapter">📏 <a href="https://drive.google.com/file/d/1gQddN5SH7otadAHiB9q8XcVZHDY0l7Qk/view?usp=sharing" target="_blank">6. Test, Measurements & Evaluation</a></div>
-        <div class="chapter">🔬 <a href="https://drive.google.com/file/d/1yQzKAZiM3DBjXVIsWmPo_g0ewYN4IhFf/view?usp=sharing" target="_blank">7. Fundamentals of Anatomy and Physiology in Sports</a></div>
-        <div class="chapter">🏋️ <a href="https://drive.google.com/file/d/1jivfdFMNDLYid4DnpVpX0QzthbhBOpKT/view?usp=sharing" target="_blank">8. Fundamentals of Kinesiology and Biomechanics in Sports</a></div>
-        <div class="chapter">🧠 <a href="https://drive.google.com/file/d/1b4y1euD_KcC2Jckhqrw31_LB7kaqim2-/view?usp=sharing" target="_blank">9. Psychology and Sports</a></div>
-        <div class="chapter">🚀 <a href="https://drive.google.com/file/d/1FjwEhG2yCPAFxaGzzk-hPR0aTEJp_Go9/view?usp=sharing" target="_blank">10. Training & Doping in Sports</a></div>
+        <div class="chapter">🏃‍♂️ <a href="#">1. Changing Trends & Career in Physical Education</a></div>
+        <div class="chapter">🥇 <a href="#">2. Olympic Value Education</a></div>
+        <div class="chapter">🧘‍♂️ <a href="#">3. Yoga</a></div>
+        <div class="chapter">♿ <a href="#">4. Physical Education & Sports for CWSN</a></div>
+        <div class="chapter">💪 <a href="#">5. Physical Fitness, Wellness</a></div>
+        <div class="chapter">📏 <a href="#">6. Test, Measurements & Evaluation</a></div>
+        <div class="chapter">🔬 <a href="#">7. Fundamentals of Anatomy and Physiology in Sports</a></div>
+        <div class="chapter">🏋️ <a href="#">8. Fundamentals of Kinesiology and Biomechanics in Sports</a></div>
+        <div class="chapter">🧠 <a href="#">9. Psychology and Sports</a></div>
+        <div class="chapter">🚀 <a href="#">10. Training & Doping in Sports</a></div>
     </div>
 </body>
 </html>
