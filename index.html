@@ -26,8 +26,13 @@
         }
 
         /* Neon Glow Effect for Class Slots */
+        .class-slot-wrapper {
+            margin: 15px auto;
+            width: 90%;
+            max-width: 400px;
+        }
         .class-slot {
-            background: #4CAF50;
+            background: #0f0f0f;
             color: white;
             padding: 20px;
             font-size: 20px;
@@ -35,16 +40,18 @@
             text-align: center;
             font-weight: bold;
             text-decoration: none;
-            transition: 0.3s ease-in-out;
-            border: 2px solid transparent;
-            display: inline-block;
+            display: block;
             width: 100%;
             cursor: pointer;
+            position: relative;
+            border: 2px solid #00ff00;
+            transition: 0.4s ease-in-out;
+            box-shadow: 0 0 5px #00ff00;
         }
         .class-slot:hover {
             transform: scale(1.05);
-            border-color: #00ff00;
             box-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00, 0 0 45px #00ff00;
+            background: black;
         }
 
         footer {
@@ -81,16 +88,16 @@
             <h2>Welcome to Education Notes</h2>
             <p>Find notes for all subjects and classes except commerce.</p>
             <div class="row mt-4">
-                <div class="col-md-12 mb-3">
+                <div class="class-slot-wrapper">
                     <a href="class9.html" class="class-slot">Class 9</a>
                 </div>
-                <div class="col-md-12 mb-3">
+                <div class="class-slot-wrapper">
                     <a href="class10.html" class="class-slot">Class 10</a>
                 </div>
-                <div class="col-md-12 mb-3">
+                <div class="class-slot-wrapper">
                     <a href="class11.html" class="class-slot">Class 11</a>
                 </div>
-                <div class="col-md-12 mb-3">
+                <div class="class-slot-wrapper">
                     <a href="class12.html" class="class-slot">Class 12</a>
                 </div>
             </div>
