@@ -12,24 +12,34 @@
             margin: 0;
             padding: 0;
             color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         header {
             background: linear-gradient(to right, #004d00, #29a329); /* Deep Green Gradient */
             color: white;
-            padding: 25px;
-            font-size: 36px;
+            padding: 30px;
+            font-size: 48px;
             font-weight: bold;
             text-shadow: 2px 2px 10px rgba(0, 255, 0, 0.7);
             letter-spacing: 2px;
             border-bottom: 4px solid #00ff00; /* Bright Green */
         }
+        .container {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .book-list {
-            padding: 30px;
             width: 60%;
-            min-width: 300px;
+            max-width: 600px;
+            min-width: 350px;
             border-radius: 12px;
             background: rgba(0, 60, 20, 0.9);
-            margin: 40px auto;
+            padding: 20px;
+            margin: 20px;
             box-shadow: 0px 6px 20px rgba(0, 255, 0, 0.4);
             transition: transform 0.3s ease;
         }
@@ -72,14 +82,13 @@
         @media (max-width: 768px) {
             .book-list {
                 width: 80%;
-                padding: 20px;
             }
             .book-item {
                 font-size: 20px;
                 padding: 18px;
             }
             header {
-                font-size: 30px;
+                font-size: 36px;
                 padding: 20px;
             }
         }
@@ -87,14 +96,13 @@
         @media (max-width: 480px) {
             .book-list {
                 width: 90%;
-                padding: 10px;
             }
             .book-item {
                 font-size: 18px;
                 padding: 15px;
             }
             header {
-                font-size: 24px;
+                font-size: 28px;
                 padding: 15px;
             }
         }
@@ -102,14 +110,13 @@
         @media (max-width: 360px) {
             .book-list {
                 width: 95%;
-                padding: 8px;
             }
             .book-item {
                 font-size: 16px;
                 padding: 12px;
             }
             header {
-                font-size: 20px;
+                font-size: 24px;
                 padding: 12px;
             }
         }
@@ -120,26 +127,28 @@
         BOOKS
     </header>
 
-    <div class="book-list">
-        <div class="book-item">
-            <a href="https://drive.google.com/file/d/1A-rOLTASI4szfQl8Rr2WrPcmHq-HuvYI/view?usp=sharing" target="_blank">
-                1. Biology Handbook
-            </a>
-        </div>
-        <div class="book-item">
-            <a href="https://drive.google.com/drive/folders/1kRd-zhTo7z2FAEhjFzTQ-vfVKy-kYkWO?usp=sharing" target="_blank">
-                2. NCERT Maths
-            </a>
-        </div>
-        <div class="book-item">
-            <a href="https://drive.google.com/file/d/19s3X3FbwmpkjVrrPLmQyXZXqPHIqMcgB/view?usp=sharing" target="_blank">
-                3. Chemistry Handbook
-            </a>
-        </div>
-        <div class="book-item">
-            <a href="https://drive.google.com/file/d/1Nyr61nT35pPejVbqy0vRolxbfuqzaueB/view?usp=sharing" target="_blank">
-                4. Physics Handbook
-            </a>
+    <div class="container">
+        <div class="book-list">
+            <div class="book-item">
+                <a href="https://drive.google.com/file/d/1A-rOLTASI4szfQl8Rr2WrPcmHq-HuvYI/view?usp=sharing" target="_blank">
+                    1. Biology Handbook
+                </a>
+            </div>
+            <div class="book-item">
+                <a href="https://drive.google.com/drive/folders/1kRd-zhTo7z2FAEhjFzTQ-vfVKy-kYkWO?usp=sharing" target="_blank">
+                    2. NCERT Maths
+                </a>
+            </div>
+            <div class="book-item">
+                <a href="https://drive.google.com/file/d/19s3X3FbwmpkjVrrPLmQyXZXqPHIqMcgB/view?usp=sharing" target="_blank">
+                    3. Chemistry Handbook
+                </a>
+            </div>
+            <div class="book-item">
+                <a href="https://drive.google.com/file/d/1Nyr61nT35pPejVbqy0vRolxbfuqzaueB/view?usp=sharing" target="_blank">
+                    4. Physics Handbook
+                </a>
+            </div>
         </div>
     </div>
 </body>
