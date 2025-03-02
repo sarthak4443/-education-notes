@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biology</title>
+    <title>Biology Notes</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,6 +14,9 @@
             color: white;
         }
         header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: linear-gradient(to right, #ff6600, #ff3300);
             color: white;
             padding: 25px;
@@ -22,18 +25,19 @@
             text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6);
             letter-spacing: 2px;
             border-bottom: 5px solid #ff3300;
-            box-shadow: 0px 6px 20px rgba(255, 102, 0, 0.6);
-            overflow: hidden;
-            white-space: nowrap;
             position: relative;
         }
-        .slide-text {
-            display: inline-block;
-            animation: slide 8s linear infinite;
-        }
-        @keyframes slide {
-            from { transform: translateX(100%); }
-            to { transform: translateX(-100%); }
+        .back-button {
+            position: absolute;
+            right: 20px;
+            top: 10%; /* Shifted upwards */
+            transform: translateY(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: black;
         }
         .container {
             display: flex;
@@ -75,22 +79,23 @@
 </head>
 <body>
     <header>
-        <span class="slide-text">🌱 Biology Premium Revision Notes 🌿</span>
+        🌱 Biology Premium Revision Notes 🌿
+        <button class="back-button" onclick="history.back()">&#x274C;</button>
     </header>
     <div class="container">
-        <div class="subject-section"><a href="https://drive.google.com/file/d/1DlZJwrUcamJ0rkqgm4_ryJt5m1RbCR98/view?usp=sharing">Sexual Reproduction in Flowering Plants</a></div>
-        <div class="subject-section"><a href="https://drive.google.com/file/d/1mrw9sMvjFMVI03ZDrJJzGjPpj4czbtFi/view?usp=sharing">Human Reproduction</a></div>
-        <div class="subject-section"><a href="https://drive.google.com/file/d/1AhD64d-yI2XTR72KKT87PwFSueKoSyHs/view?usp=sharing">Reproductive Health</a></div>
-        <div class="subject-section"><a href="https://drive.google.com/file/d/1N_-WsyOtNAmy7FQyOQWkx6cbfuEGhEhd/view?usp=sharing">Principles of Inheritance and Variation</a></div>
-        <div class="subject-section"><a href="https://drive.google.com/file/d/1jY95G7LaDFPh9g1ONXEPpxqaS0GyIF-s/view?usp=sharing">Molecular Basis of Inheritance</a></div>
-        <div class="subject-section"><a href="https://drive.google.com/file/d/1kRDOSXatuxRk8xK0BmmPky24k0DZ4v9b/view?usp=sharing">Evolution</a></div>
-        <div class="subject-section"><a href="https://drive.google.com/file/d/1N33xfOAacEfYilRZGWX0QUjSNOFvzjq7/view?usp=sharing">Human Health and Disease</a></div>
-        <div class="subject-section"><a href="https://drive.google.com/file/d/174fgx5KmgFG7ANXBhSowpQC-lxqsgZCJ/view?usp=sharing">Microbes in Human Welfare</a></div>
-        <div class="subject-section"><a href="https://drive.google.com/file/d/1c7c5ikxdw8VJln0M1JbuAZOm_dZjYBwV/view?usp=sharing">Biotechnology: Principles and Processes</a></div>
-        <div class="subject-section"><a href="https://drive.google.com/file/d/1YL0_CNMLQAQsKc_W14kubAkfIjWyOot8/view?usp=sharing">Biotechnology and its Applications</a></div>
-        <div class="subject-section"><a href="https://drive.google.com/file/d/1YL0_CNMLQAQsKc_W14kubAkfIjWyOot8/view?usp=sharing">Organisms and Populations</a></div>
-        <div class="subject-section"><a href="https://drive.google.com/file/d/1wLvCZvTQUjpnD8OOekP43f6Y4PHmQg4H/view?usp=sharing">Ecosystems</a></div>
-        <div class="subject-section"><a href="https://drive.google.com/file/d/1xldousIeXNpvk1bgFyXIgHK98O3F_ZFX/view?usp=sharing">Biodiversity and Conservation</a></div>
+        <div class="subject-section"><a href="#">Sexual Reproduction in Flowering Plants</a></div>
+        <div class="subject-section"><a href="#">Human Reproduction</a></div>
+        <div class="subject-section"><a href="#">Reproductive Health</a></div>
+        <div class="subject-section"><a href="#">Principles of Inheritance and Variation</a></div>
+        <div class="subject-section"><a href="#">Molecular Basis of Inheritance</a></div>
+        <div class="subject-section"><a href="#">Evolution</a></div>
+        <div class="subject-section"><a href="#">Human Health and Disease</a></div>
+        <div class="subject-section"><a href="#">Microbes in Human Welfare</a></div>
+        <div class="subject-section"><a href="#">Biotechnology: Principles and Processes</a></div>
+        <div class="subject-section"><a href="#">Biotechnology and its Applications</a></div>
+        <div class="subject-section"><a href="#">Organisms and Populations</a></div>
+        <div class="subject-section"><a href="#">Ecosystems</a></div>
+        <div class="subject-section"><a href="#">Biodiversity and Conservation</a></div>
     </div>
 </body>
 </html>
