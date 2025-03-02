@@ -1,169 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education Notes</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #001a00, #004d00);
-            color: white;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            scroll-behavior: smooth;
-        }
-        body.dark-mode {
-            background: linear-gradient(to bottom, #000000, #222222);
-            color: #ddd;
-        }
-        .top-bar {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(to right, #002200, #006600);
-            color: white;
-            padding: 12px 20px;
-            font-size: 14px;
-            border-bottom: 2px solid #00ff00;
-        }
-        .contact-info {
-            font-weight: bold;
-            text-align: center;
-            flex: 1;
-        }
-        .social-icons {
-            display: flex;
-            gap: 10px;
-        }
-        .social-icons img {
-            height: 24px;
-            width: 24px;
-        }
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 5px 15px;
-            background: black;
-            color: white;
-            border-bottom: 3px solid #00ff00;
-            box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.5);
-            flex-wrap: wrap;
-            height: 50px;
-        }
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .logo {
-            height: 40px;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 10px;
-            font-size: 14px;
-            padding: 0;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .class-slots {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            margin: 20px 0;
-        }
-        .class-slot {
-            background: #4CAF50;
-            color: white;
-            padding: 20px;
-            font-size: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 300px;
-            text-align: center;
-            text-decoration: none;
-        }
-        footer {
-            background: #111;
-            color: #ddd;
-            padding: 15px;
-            width: 100%;
-            text-align: center;
-            margin-top: auto;
-        }
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                gap: 8px;
-            }
-            .top-bar, header {
-                flex-direction: column;
-                align-items: center;
-                height: auto;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education Notes</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;  /* Remove default margin */
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #001a00, #004d00);
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to right, #002200, #006600);
+      color: white;
+      padding: 12px 20px;
+      font-size: 14px;
+      border-bottom: 2px solid #00ff00;
+    }
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      background: #000;  /* Pure black */
+      color: white;
+      border-bottom: 3px solid #00ff00;
+      box-shadow: 0 0 8px #00ff00, 0 0 16px #00ff00;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      font-size: 18px;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .class-slots {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .class-slot {
+      background: #4CAF50;
+      color: white;
+      padding: 20px;
+      font-size: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 300px;
+      text-align: center;
+      text-decoration: none;
+    }
+    footer {
+      background: #000;  /* Pure black */
+      color: #00ff00;
+      padding: 15px;
+      width: 100%;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #00ff00;
+      box-shadow: 0 0 8px #00ff00, 0 0 16px #00ff00;
+    }
+  </style>
 </head>
 <body>
-    <div class="top-bar">
-        <div class="contact-info">
-            <span>Email: singhsarthak825@gmail.com</span>
-        </div>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/sarthaksingh9994/?__pwa=1#" target="_blank">
-                <img src="Instagram_icon.png" alt="Instagram">
-            </a>
-            <a href="https://www.threads.net/@sarthaksingh9994" target="_blank">
-                <img src="Threads.png" alt="Threads">
-            </a>
-            <a href="https://pin.it/W6H3JZySU" target="_blank">
-                <img src="Pinterest-logo.png" alt="Pinterest">
-            </a>
-            <a href="http://www.youtube.com/@sarthaksingh4129" target="_blank">
-                <img src="youtube-logo-png-photo-0.png" alt="YouTube">
-            </a>
-        </div>
+  <div class="top-bar">
+    <div class="contact-info">
+      <span>Email: singhsarthak825@gmail.com</span>
     </div>
-    
-    <header>
-        <div class="header-left">
-            <img src="logo.PNG" alt="Logo" class="logo">
-            <h1>Education Notes</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="home">
-        <h2>Welcome to Education Notes</h2>
-        <p>Find notes for all subjects and classes except commerce.</p>
-        <div class="class-slots">
-            <a href="class9.html" class="class-slot">Class 9</a>
-            <a href="class10.html" class="class-slot">Class 10</a>
-            <a href="class11.html" class="class-slot">Class 11</a>
-            <a href="class12.html" class="class-slot">Class 12</a>
-        </div>
-    </section>
+  </div>
+  
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section id="home">
+    <h2>Welcome to Education Notes</h2>
+    <p>Find notes for all subjects and classes except commerce.</p>
+    <div class="class-slots">
+      <a href="class9.html" class="class-slot">Class 9</a>
+      <a href="class10.html" class="class-slot">Class 10</a>
+      <a href="class11.html" class="class-slot">Class 11</a>
+      <a href="class12.html" class="class-slot">Class 12</a>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Education Notes. All rights reserved.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Education Notes. All rights reserved.</p>
+  </footer>
 </body>
 </html>
