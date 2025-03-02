@@ -22,7 +22,7 @@
             box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.5);
         }
         .navbar-brand {
-            font-size: 20px;
+            font-size: 18px; /* Size thoda chhota kiya */
             font-weight: bold;
             display: flex;
             align-items: center;
@@ -30,16 +30,20 @@
         }
         .navbar-brand img {
             height: 32px;
-            margin-right: 10px;
+            margin-right: 8px;
         }
         .navbar-toggler {
             border: none;
             outline: none;
         }
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Ensure elements are spaced properly */
+        }
         .content {
             flex: 1;
         }
-
         footer {
             background: black;
             color: white;
