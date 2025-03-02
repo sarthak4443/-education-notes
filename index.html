@@ -34,23 +34,26 @@
         .class-slot {
             background: black;
             color: white;
-            padding: 15px;
-            font-size: 20px;
-            border-radius: 12px;
-            width: 100%;
-            text-align: center;
+            padding: 20px;
+            font-size: 22px;
             font-weight: bold;
+            text-align: center;
             text-decoration: none;
+            border-radius: 15px;
+            width: 100%;
+            display: block;
             transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid transparent;
             animation: neonBorder 2s infinite alternate;
+            box-shadow: 0px 0px 20px blue;
+            border: 3px solid blue;
         }
         @keyframes neonBorder {
-            0% { box-shadow: 0px 0px 15px blue; border-color: blue; }
-            100% { box-shadow: 0px 0px 15px pink; border-color: pink; }
+            0% { box-shadow: 0px 0px 20px blue; border-color: blue; }
+            100% { box-shadow: 0px 0px 20px pink; border-color: pink; }
         }
         .class-slot:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
+            box-shadow: 0px 0px 25px pink;
         }
         .footer {
             background: black;
