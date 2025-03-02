@@ -7,61 +7,42 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #0a0a2a, #1c1c3c); /* Dark Navy Blue */
+            background: linear-gradient(to bottom, #0a0a2a, #1c1c3c);
             text-align: center;
             margin: 0;
             padding: 0;
             color: white;
         }
         header {
-            background: linear-gradient(to right, #00ff88, #00cc66); /* Neon Green */
+            background: linear-gradient(to right, #00ff88, #00cc66);
             color: black;
-            padding: 25px;
-            font-size: 32px;
+            padding: 20px;
+            font-size: 28px;
             font-weight: bold;
             text-shadow: 2px 2px 10px rgba(0, 255, 136, 0.7);
             letter-spacing: 2px;
             border-bottom: 4px solid #00ff88;
         }
         .topic-list {
-            padding: 30px;
-            width: 60%;
-            min-width: 350px;
-            border-radius: 12px;
-            background: rgba(15, 15, 45, 0.9);
-            margin: 40px auto;
-            box-shadow: 0px 6px 20px rgba(0, 255, 136, 0.4);
-            transition: transform 0.3s ease;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
             gap: 20px;
         }
-        .topic-list:hover {
-            transform: scale(1.02);
-            box-shadow: 0px 10px 30px rgba(0, 255, 136, 0.6);
-        }
         .topic-item {
-            font-size: 22px;
-            padding: 18px;
-            margin: 12px 0;
+            font-size: 20px;
+            padding: 15px;
             border-radius: 8px;
             font-weight: bold;
             transition: all 0.3s ease;
             cursor: pointer;
             border-left: 5px solid rgba(0, 255, 136, 0.9);
             box-shadow: 3px 3px 12px rgba(0, 255, 136, 0.3);
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
         }
-        .topic-item:nth-child(1) { background: #2e8b57; } /* Sea Green */
-        .topic-item:nth-child(2) { background: #008080; } /* Teal */
-        .topic-item:nth-child(3) { background: #4169e1; } /* Royal Blue */
-        .topic-item:nth-child(4) { background: #9932cc; } /* Dark Orchid */
-        .topic-item:nth-child(5) { background: #ff8c00; } /* Dark Orange */
-        .topic-item:nth-child(6) { background: #6a5acd; } /* Slate Blue */
-        .topic-item:nth-child(7) { background: #dc143c; } /* Crimson */
-        .topic-item:nth-child(8) { background: #20b2aa; } /* Light Sea Green */
-        .topic-item:nth-child(9) { background: #ff4500; } /* Orange Red */
-        .topic-item:nth-child(10) { background: #8b4513; } /* Saddle Brown */
-        .topic-item:nth-child(11) { background: #4682b4; } /* Steel Blue */
         .topic-item a {
             text-decoration: none;
             color: white;
@@ -70,74 +51,44 @@
         }
         .topic-item:hover {
             transform: translateY(-4px);
-            background: #00ff88; /* Bright Neon Green */
+            background: #00ff88;
             color: black;
             box-shadow: 0px 0px 20px rgba(0, 255, 136, 1);
         }
         .topic-item:hover a { color: black; }
+        
+        @media (max-width: 768px) {
+            .topic-item {
+                font-size: 18px;
+                padding: 12px;
+            }
+        }
+        @media (max-width: 480px) {
+            header {
+                font-size: 24px;
+                padding: 15px;
+            }
+            .topic-item {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        Welcome to Chemistry Notes
-    </header>
-
+    <header>Welcome to Chemistry Notes</header>
     <div class="topic-list">
-        <div class="topic-item">
-            <a href="https://drive.google.com/file/d/1VUWVJ8vEaSNNZFznB-QnMgsXLtWqzqnV/view?usp=sharing" target="_blank">
-                1. Solutions
-            </a>
-        </div>
-        <div class="topic-item">
-            <a href="https://drive.google.com/file/d/1KO5KrH760C0qUYEBjNXJ3w4BU83pZhRQ/view?usp=sharing" target="_blank">
-                2. Electrochemistry
-            </a>
-        </div>
-        <div class="topic-item">
-            <a href="https://drive.google.com/drive/folders/1blpvPfDnMM5pci8Evd5mbpHsJdWcO7VD?usp=sharing" target="_blank">
-                3. Chemical Kinetics
-            </a>
-        </div>
-        <div class="topic-item">
-            <a href="https://drive.google.com/file/d/1Z9oc1-oH7SL0CtpzoBuRIzR1N4SaIm9b/view?usp=sharing" target="_blank">
-                4. d and f Block Elements
-            </a>
-        </div>
-        <div class="topic-item">
-            <a href="https://drive.google.com/file/d/1ATzMYbuXMDAbBmR77gQNflDcdQ1p3GIs/view?usp=sharing" target="_blank">
-                5. Coordination Compounds
-            </a>
-        </div>
-        <div class="topic-item">
-            <a href="https://drive.google.com/file/d/1aTgVpqI2Qkl2M19pLy2KugWPopPIogVs/view?usp=sharing" target="_blank">
-                6. Haloalkanes and Haloarenes
-            </a>
-        </div>
-        <div class="topic-item">
-            <a href="https://drive.google.com/file/d/1tD6ZL2Q88jv3Ey5ZYdv7CLrFAhs0Hz-_/view?usp=sharing" target="_blank">
-                7. Alcohols, Phenols, and Ethers
-            </a>
-        </div>
-        <div class="topic-item">
-            <a href="https://drive.google.com/file/d/1VCtFVnOnOCk7zVtHTHkt9xdrBNYeKBl2/view?usp=sharing" target="_blank">
-                8. Aldehydes, Ketones, and Carboxylic Acids
-            </a>
-        </div>
-        <div class="topic-item">
-            <a href="https://drive.google.com/file/d/1ZVINCvT5uTFB27JZhLPADbn1wmq8AHGZ/view?usp=sharing" target="_blank">
-                9. Amines
-            </a>
-        </div>
-        <div class="topic-item">
-            <a href="https://drive.google.com/file/d/1mewnJ8cZ1YT9TG-OoWybV9e4r4OEPYub/view?usp=sharing" target="_blank">
-                10. Biomolecules
-            </a>
-        </div>
-        <div class="topic-item">
-            <a href="https://drive.google.com/file/d/1MT4OoTKaWLoiavc3vC2WgLCZsZo1yJgY/view?usp=sharing" target="_blank">
-                11. It is Important
-            </a>
-        </div>
+        <div class="topic-item"><a href="https://drive.google.com/file/d/1VUWVJ8vEaSNNZFznB-QnMgsXLtWqzqnV/view?usp=sharing" target="_blank">1. Solutions</a></div>
+        <div class="topic-item"><a href="https://drive.google.com/file/d/1KO5KrH760C0qUYEBjNXJ3w4BU83pZhRQ/view?usp=sharing" target="_blank">2. Electrochemistry</a></div>
+        <div class="topic-item"><a href="https://drive.google.com/drive/folders/1blpvPfDnMM5pci8Evd5mbpHsJdWcO7VD?usp=sharing" target="_blank">3. Chemical Kinetics</a></div>
+        <div class="topic-item"><a href="https://drive.google.com/file/d/1Z9oc1-oH7SL0CtpzoBuRIzR1N4SaIm9b/view?usp=sharing" target="_blank">4. d and f Block Elements</a></div>
+        <div class="topic-item"><a href="https://drive.google.com/file/d/1ATzMYbuXMDAbBmR77gQNflDcdQ1p3GIs/view?usp=sharing" target="_blank">5. Coordination Compounds</a></div>
+        <div class="topic-item"><a href="https://drive.google.com/file/d/1aTgVpqI2Qkl2M19pLy2KugWPopPIogVs/view?usp=sharing" target="_blank">6. Haloalkanes and Haloarenes</a></div>
+        <div class="topic-item"><a href="https://drive.google.com/file/d/1tD6ZL2Q88jv3Ey5ZYdv7CLrFAhs0Hz-_/view?usp=sharing" target="_blank">7. Alcohols, Phenols, and Ethers</a></div>
+        <div class="topic-item"><a href="https://drive.google.com/file/d/1VCtFVnOnOCk7zVtHTHkt9xdrBNYeKBl2/view?usp=sharing" target="_blank">8. Aldehydes, Ketones, and Carboxylic Acids</a></div>
+        <div class="topic-item"><a href="https://drive.google.com/file/d/1ZVINCvT5uTFB27JZhLPADbn1wmq8AHGZ/view?usp=sharing" target="_blank">9. Amines</a></div>
+        <div class="topic-item"><a href="https://drive.google.com/file/d/1mewnJ8cZ1YT9TG-OoWybV9e4r4OEPYub/view?usp=sharing" target="_blank">10. Biomolecules</a></div>
+        <div class="topic-item"><a href="https://drive.google.com/file/d/1MT4OoTKaWLoiavc3vC2WgLCZsZo1yJgY/view?usp=sharing" target="_blank">11. It is Important</a></div>
     </div>
 </body>
 </html>
