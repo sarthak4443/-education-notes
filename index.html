@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Education Notes</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
   <style>
+    /* Global Styling with Neon Border around the entire website */
     body {
       margin: 0; /* Remove default margin */
       font-family: Arial, sans-serif;
@@ -16,33 +17,35 @@
       flex-direction: column;
       min-height: 100vh;
       scroll-behavior: smooth;
+      border: 3px solid #00ff00; /* Neon border */
+      box-shadow: 0 0 8px #00ff00, 0 0 16px #00ff00;
     }
-    .top-bar {
+    /* Social Media Bar (only Instagram and YouTube) */
+    .social-media-bar {
+      width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
-      background: linear-gradient(to right, #002200, #006600);
-      color: white;
-      padding: 12px 20px;
-      font-size: 14px;
-      border-bottom: 2px solid #00ff00;
+      padding: 5px 20px;
+      background: #000;
+      border-bottom: 3px solid #00ff00;
+      box-shadow: 0 0 8px #00ff00, 0 0 16px #00ff00;
     }
-    .social-icons {
-      display: flex;
-      gap: 10px;
+    .social-media-bar a {
+      margin-left: 10px;
     }
-    .social-icons img {
+    .social-media-bar img {
       height: 24px;
       width: 24px;
     }
+    /* Header Styling */
     header {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
-      background: #000; /* Pure black background */
-      color: white;
+      background: #000;
       border-bottom: 3px solid #00ff00;
       box-shadow: 0 0 8px #00ff00, 0 0 16px #00ff00;
     }
@@ -51,22 +54,27 @@
       align-items: center;
       gap: 10px;
     }
-    .logo {
-      height: 40px;
+    .header-left img {
+      height: 50px;
+    }
+    .header-left h1 {
+      font-size: 24px;
+      margin: 0;
     }
     nav ul {
       list-style: none;
       display: flex;
       gap: 20px;
       font-size: 18px;
-      padding: 0;
       margin: 0;
+      padding: 0;
     }
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
+    /* Class Slots Section */
     .class-slots {
       display: flex;
       flex-direction: column;
@@ -84,9 +92,16 @@
       max-width: 300px;
       text-align: center;
       text-decoration: none;
+      border: 3px solid #00ff00; /* Neon border for class slots */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .class-slot:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 8px #00ff00, 0 0 16px #00ff00;
+    }
+    /* Footer Styling */
     footer {
-      background: #000; /* Pure black background */
+      background: #000;
       color: #00ff00;
       padding: 15px;
       width: 100%;
@@ -98,29 +113,20 @@
   </style>
 </head>
 <body>
-  <div class="top-bar">
-    <div class="contact-info">
-      <span>Email: singhsarthak825@gmail.com</span>
-    </div>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/sarthaksingh9994/?__pwa=1#" target="_blank">
-        <img src="Instagram_icon.png" alt="Instagram">
-      </a>
-      <a href="https://www.threads.net/@sarthaksingh9994" target="_blank">
-        <img src="Threads.png" alt="Threads">
-      </a>
-      <a href="https://pin.it/W6H3JZySU" target="_blank">
-        <img src="Pinterest-logo.png" alt="Pinterest">
-      </a>
-      <a href="http://www.youtube.com/@sarthaksingh4129" target="_blank">
-        <img src="youtube-logo-png-photo-0.png" alt="YouTube">
-      </a>
-    </div>
+  <!-- Social Media Bar -->
+  <div class="social-media-bar">
+    <a href="https://www.instagram.com/sarthaksingh9994/?__pwa=1#" target="_blank">
+      <img src="Instagram_icon.png" alt="Instagram" />
+    </a>
+    <a href="http://www.youtube.com/@sarthaksingh4129" target="_blank">
+      <img src="youtube-logo-png-photo-0.png" alt="YouTube" />
+    </a>
   </div>
-  
+
+  <!-- Header with Logo, Name and Navigation -->
   <header>
     <div class="header-left">
-      <img src="logo.PNG" alt="Logo" class="logo">
+      <img src="logo.PNG" alt="Logo" />
       <h1>Education Notes</h1>
     </div>
     <nav>
@@ -131,7 +137,8 @@
       </ul>
     </nav>
   </header>
-  
+
+  <!-- Main Content Section -->
   <section id="home">
     <h2>Welcome to Education Notes</h2>
     <p>Find notes for all subjects and classes except commerce.</p>
@@ -143,6 +150,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Education Notes. All rights reserved.</p>
   </footer>
