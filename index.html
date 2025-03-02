@@ -185,6 +185,8 @@
             header {
                 flex-direction: column;
                 text-align: center;
+                padding: 10px;
+                font-size: 14px;
             }
             .header-left {
                 flex-direction: column;
@@ -194,6 +196,7 @@
             nav ul {
                 flex-direction: column;
                 gap: 10px;
+                font-size: 16px;
             }
             .contact-info {
                 flex-direction: column;
@@ -202,6 +205,7 @@
             }
             .social-icons {
                 gap: 15px;
+                justify-content: center;
             }
             .class-slot {
                 width: 80%;
@@ -269,6 +273,52 @@
     </script>
 </head>
 <body>
-    <!-- Your HTML content here -->
+    <div class="top-bar">
+        <div class="contact-info">
+            <span>Email: info@educationnotes.com</span>
+            <span>Phone: +1234567890</span>
+        </div>
+        <div class="social-icons">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-left">
+            <img src="logo.png" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-right">
+            <button id="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+            <a href="signin.html" class="sign-in-button">Sign In</a>
+        </div>
+    </header>
+
+    <div class="class-slots">
+        <div class="class-row">
+            <div class="class-slot">
+                <a href="#class1">Class 1</a>
+            </div>
+            <div class="class-slot">
+                <a href="#class2">Class 2</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact-message" class="contact-message">
+        Your message has been sent successfully!
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Education Notes. All rights reserved.</p>
+    </footer>
 </body>
 </html>
