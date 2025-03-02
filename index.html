@@ -15,11 +15,30 @@
             display: flex;
             flex-direction: column;
         }
+        .top-info {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .top-info a {
+            color: cyan;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .top-info a:hover {
+            text-decoration: underline;
+        }
+        .top-info img {
+            height: 20px;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
         .navbar {
             background: linear-gradient(to right, #111, #333);
             border-bottom: 3px solid #00ff00;
             box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.5);
             padding: 10px;
+            margin-top: 10px;
         }
         .navbar-brand {
             display: flex;
@@ -69,13 +88,21 @@
             color: white;
             padding: 5px;
             text-align: center;
-            border-top: 3px solid #00f;
-            box-shadow: 0px -4px 10px rgba(0, 0, 255, 0.5);
             font-size: 14px;
+            border-top: none;
+            box-shadow: none;
         }
     </style>
 </head>
 <body>
+    <!-- Top Info -->
+    <div class="top-info">
+        <a href="mailto:singhsarthak825@gmail.com">📧 singhsarthak825@gmail.com</a> |
+        <a href="https://www.instagram.com/sarthaksingh9994/?__pwa=1#" target="_blank">
+            <img src="Instagram_icon.png" alt="Instagram">
+        </a>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
