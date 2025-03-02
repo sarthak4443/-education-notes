@@ -59,10 +59,15 @@
             box-shadow: 0 0 20px #ffffff, 0 0 30px currentColor;
             background: rgba(0, 0, 0, 0.8);
         }
+        @keyframes neonGlow {
+            0% { box-shadow: 0px 0px 10px cyan; }
+            50% { box-shadow: 0px 0px 20px magenta; }
+            100% { box-shadow: 0px 0px 10px lime; }
+        }
         footer {
             background: black;
             color: white;
-            padding: 10px;
+            padding: 5px;
             text-align: center;
             border-top: 3px solid #00f;
             box-shadow: 0px -4px 10px rgba(0, 0, 255, 0.5);
