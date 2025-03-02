@@ -17,6 +17,7 @@
             flex-direction: column;
         }
         header {
+            position: relative;
             background: linear-gradient(to right, #004d00, #29a329); /* Deep Green Gradient */
             color: white;
             padding: 30px;
@@ -26,6 +27,24 @@
             letter-spacing: 2px;
             border-bottom: 4px solid #00ff00; /* Bright Green */
         }
+        /* Back button styling */
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
         .container {
             flex-grow: 1;
             display: flex;
@@ -33,12 +52,12 @@
             justify-content: center;
         }
         .book-list {
-            width: 60%;
-            max-width: 600px;
+            width: 65%;
+            max-width: 650px;
             min-width: 350px;
             border-radius: 12px;
             background: rgba(0, 60, 20, 0.9);
-            padding: 20px;
+            padding: 30px;
             margin: 20px;
             box-shadow: 0px 6px 20px rgba(0, 255, 0, 0.4);
             transition: transform 0.3s ease;
@@ -48,9 +67,9 @@
             box-shadow: 0px 10px 30px rgba(0, 255, 0, 0.6);
         }
         .book-item {
-            font-size: 24px;
-            padding: 20px;
-            margin: 12px 0;
+            font-size: 26px;
+            padding: 25px;
+            margin: 15px 0;
             border-radius: 8px;
             font-weight: bold;
             transition: all 0.3s ease;
@@ -81,15 +100,22 @@
         /* Responsive Styles */
         @media (max-width: 768px) {
             .book-list {
-                width: 80%;
+                width: 85%;
             }
             .book-item {
-                font-size: 20px;
-                padding: 18px;
+                font-size: 22px;
+                padding: 22px;
             }
             header {
                 font-size: 36px;
                 padding: 20px;
+            }
+            .back-btn {
+                top: 15px;
+                left: 15px;
+                width: 35px;
+                height: 35px;
+                font-size: 20px;
             }
         }
 
@@ -98,12 +124,19 @@
                 width: 90%;
             }
             .book-item {
-                font-size: 18px;
-                padding: 15px;
+                font-size: 20px;
+                padding: 18px;
             }
             header {
                 font-size: 28px;
                 padding: 15px;
+            }
+            .back-btn {
+                top: 10px;
+                left: 10px;
+                width: 30px;
+                height: 30px;
+                font-size: 18px;
             }
         }
 
@@ -112,18 +145,26 @@
                 width: 95%;
             }
             .book-item {
-                font-size: 16px;
-                padding: 12px;
+                font-size: 18px;
+                padding: 15px;
             }
             header {
                 font-size: 24px;
                 padding: 12px;
+            }
+            .back-btn {
+                top: 8px;
+                left: 8px;
+                width: 28px;
+                height: 28px;
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
     <header>
+        <button class="back-btn" onclick="window.history.back()">X</button>
         BOOKS
     </header>
 
