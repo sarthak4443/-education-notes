@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     body {
-      margin: 0;  /* Remove default margin */
+      margin: 0; /* Remove default margin */
       font-family: Arial, sans-serif;
       background: linear-gradient(to bottom, #001a00, #004d00);
       color: white;
@@ -27,17 +27,32 @@
       font-size: 14px;
       border-bottom: 2px solid #00ff00;
     }
-    header {
-      width: 100%; /* Full width */
+    .social-icons {
       display: flex;
-      justify-content: center;
+      gap: 10px;
+    }
+    .social-icons img {
+      height: 24px;
+      width: 24px;
+    }
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      padding: 10px 0;
-      background: #000;  /* Pure black background */
+      padding: 10px 20px;
+      background: #000; /* Pure black background */
       color: white;
       border-bottom: 3px solid #00ff00;
-      /* Neon glow effect */
       box-shadow: 0 0 8px #00ff00, 0 0 16px #00ff00;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo {
+      height: 40px;
     }
     nav ul {
       list-style: none;
@@ -71,14 +86,13 @@
       text-decoration: none;
     }
     footer {
-      background: #000;  /* Pure black background */
+      background: #000; /* Pure black background */
       color: #00ff00;
       padding: 15px;
       width: 100%;
       text-align: center;
       margin-top: auto;
       border-top: 3px solid #00ff00;
-      /* Neon glow effect */
       box-shadow: 0 0 8px #00ff00, 0 0 16px #00ff00;
     }
   </style>
@@ -88,9 +102,27 @@
     <div class="contact-info">
       <span>Email: singhsarthak825@gmail.com</span>
     </div>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/sarthaksingh9994/?__pwa=1#" target="_blank">
+        <img src="Instagram_icon.png" alt="Instagram">
+      </a>
+      <a href="https://www.threads.net/@sarthaksingh9994" target="_blank">
+        <img src="Threads.png" alt="Threads">
+      </a>
+      <a href="https://pin.it/W6H3JZySU" target="_blank">
+        <img src="Pinterest-logo.png" alt="Pinterest">
+      </a>
+      <a href="http://www.youtube.com/@sarthaksingh4129" target="_blank">
+        <img src="youtube-logo-png-photo-0.png" alt="YouTube">
+      </a>
+    </div>
   </div>
   
   <header>
+    <div class="header-left">
+      <img src="logo.PNG" alt="Logo" class="logo">
+      <h1>Education Notes</h1>
+    </div>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
