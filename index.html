@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(to bottom, #001a00, #004d00);
@@ -175,6 +176,77 @@
             border-top: 3px solid #00ff00;
             box-shadow: 0px -4px 10px rgba(0, 255, 0, 0.5);
         }
+
+        /* Mobile-friendly Styles */
+        @media only screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-left {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+                font-size: 12px;
+            }
+            .social-icons {
+                gap: 15px;
+            }
+            .class-slot {
+                width: 80%;
+                padding: 30px;
+                font-size: 20px;
+            }
+            .class-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+            footer {
+                font-size: 14px;
+            }
+        }
+
+        /* Small mobile devices */
+        @media only screen and (max-width: 480px) {
+            .top-bar {
+                font-size: 12px;
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .social-icons {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .class-slot {
+                width: 90%;
+                padding: 25px;
+                font-size: 18px;
+            }
+            .header-right {
+                flex-direction: column;
+                gap: 10px;
+            }
+            #dark-mode-toggle, .sign-in-button {
+                width: 100%;
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
     </style>
     <script>
         function showContactMessage() {
@@ -333,6 +405,5 @@
 
     <footer>
         <p>&copy; 2025 Education Notes. All rights reserved.</p>
-    </footer>
-</body>
+    </footer> </body>
 </html>
