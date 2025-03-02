@@ -4,15 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education Notes</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Ensure the link is correct if using an external CSS file -->
+    <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* Existing Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #001a00, #004d00);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+            transition: all 0.5s ease-in-out;
+        }
+        body.dark-mode {
+            background: linear-gradient(to bottom, #000000, #222222);
+            color: #ddd;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, #2d572c, #00a000);
+            color: white;
+            padding: 12px 20px;
+            font-size: 14px;
+            border-bottom: 2px solid #00ff00;
+        }
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-weight: bold;
+        }
         .social-icons {
             display: flex;
             gap: 12px;
-            justify-content: center;
-            margin-top: 20px;
         }
         .social-icons img {
             height: 26px;
@@ -22,8 +50,39 @@
         .social-icons a:hover img {
             transform: scale(1.2);
         }
-        
-        /* Responsive class layout */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #111, #333); 
+            color: white;
+            border-bottom: 3px solid #00ff00;
+            box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.5);
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo {
+            height: 55px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            font-size: 18px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+        nav ul li a:hover {
+            color: #00ff00;
+        }
         .class-slots {
             display: flex;
             flex-direction: column;
@@ -34,10 +93,10 @@
         .class-slot {
             background: #4CAF50;
             color: white;
-            padding: 20px;
-            font-size: 20px;
+            padding: 60px;
+            font-size: 30px;
             border-radius: 12px;
-            width: 90%;
+            width: 220px;
             text-align: center;
             font-weight: bold;
             cursor: pointer;
@@ -48,46 +107,56 @@
             transform: scale(1.05);
             box-shadow: 0px 8px 20px rgba(0, 255, 0, 0.7);
         }
-        .class-slot a {
-            color: white;
-            text-decoration: none;
-            display: block;
-        }
-        
-        /* Responsive header */
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 15px;
-            font-size: 12px;
-        }
-        @media (max-width: 768px) {
-            .top-bar {
-                padding: 5px 10px;
-                font-size: 10px;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="top-bar">
         <div class="contact-info">
-            <span>Email: info@educationnotes.com</span>
-            <span>Phone: +1234567890</span>
+            <span>Email: singhsarthak825@gmail.com</span>
         </div>
         <div class="social-icons">
-            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
-            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+            <a href="https://www.instagram.com/sarthaksingh9994/?__pwa=1#" target="_blank">
+                <img src="Instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.threads.net/@sarthaksingh9994" target="_blank">
+                <img src="Threads.png" alt="Threads">
+            </a>
+            <a href="https://pin.it/W6H3JZySU" target="_blank">
+                <img src="Pinterest-logo.png" alt="Pinterest">
+            </a>
+            <a href="http://www.youtube.com/@sarthaksingh4129" target="_blank">
+                <img src="youtube-logo-png-photo-0.png" alt="YouTube">
+            </a>
         </div>
     </div>
     
-    <div class="class-slots">
-        <div class="class-slot"><a href="#class9">Class 9</a></div>
-        <div class="class-slot"><a href="#class10">Class 10</a></div>
-        <div class="class-slot"><a href="#class11">Class 11</a></div>
-        <div class="class-slot"><a href="#class12">Class 12</a></div>
-    </div>
+    <header>
+        <div class="header-left">
+            <img src="logo.PNG" alt="Logo" class="logo">
+            <h1>Education Notes</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2>Welcome to Education Notes</h2>
+        <p>Find notes for all subjects and classes except commerce.</p>
+        <div class="class-slots">
+            <a href="class9.html" class="class-slot">Class 9</a>
+            <a href="class10.html" class="class-slot">Class 10</a>
+            <a href="class11.html" class="class-slot">Class 11</a>
+            <a href="class12.html" class="class-slot">Class 12</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Education Notes. All rights reserved.</p>
+    </footer>
 </body>
 </html>
