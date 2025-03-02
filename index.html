@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Education Notes</title>
-    <meta name="description" content="Find study notes for all subjects (except commerce) for Classes 9 to 12.">
-    <meta name="keywords" content="education, study notes, Class 9, Class 10, Class 11, Class 12, CBSE, ICSE">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -24,53 +22,22 @@
             box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.5);
         }
         .navbar-brand {
-            font-size: 28px;
+            font-size: 20px;
             font-weight: bold;
             display: flex;
             align-items: center;
+            white-space: nowrap;
         }
         .navbar-brand img {
-            height: 40px;
+            height: 32px;
             margin-right: 10px;
+        }
+        .navbar-toggler {
+            border: none;
+            outline: none;
         }
         .content {
             flex: 1;
-        }
-
-        /* Neon Glow Animation */
-        @keyframes neonGlow {
-            0% { border-color: #00f; box-shadow: 0 0 15px #00f; }
-            50% { border-color: #f0f; box-shadow: 0 0 15px #f0f; }
-            100% { border-color: #00f; box-shadow: 0 0 15px #00f; }
-        }
-
-        .class-slot-wrapper {
-            margin: 15px auto;
-            width: 90%;
-            max-width: 400px;
-        }
-
-        .class-slot {
-            background: black;
-            color: white;
-            padding: 20px;
-            font-size: 20px;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: bold;
-            display: block;
-            width: 100%;
-            cursor: pointer;
-            position: relative;
-            border: 2px solid #00f;
-            animation: neonGlow 2s infinite alternate ease-in-out;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .class-slot:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px #ffffff, 0 0 30px currentColor;
-            background: rgba(0, 0, 0, 0.8);
         }
 
         footer {
@@ -85,12 +52,12 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="logo.PNG" alt="Logo"> Education Notes
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
