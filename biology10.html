@@ -23,20 +23,6 @@
             letter-spacing: 2px;
             border-bottom: 5px solid #00ffff;
             box-shadow: 0px 8px 25px rgba(0, 255, 255, 0.7);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .back-button {
-            background: #ff3333;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            text-decoration: none;
-            margin-left: 10px;
         }
         .topic-list {
             padding: 20px;
@@ -70,11 +56,22 @@
             display: block;
         }
         .topic-item:hover a { color: black; }
+        .back-button {
+            background: #ff3333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <a href="index.html" class="back-button">&#8592; Back</a>
         🧬 Premium Biology Notes 🌿
     </header>
     <div class="topic-list">
@@ -84,5 +81,6 @@
         <div class="topic-item"><a href="https://drive.google.com/file/d/1uNcIhjtXGtfziCMf44zSVjZc83eorVmB/view?usp=sharing" target="_blank">Reproduction</a></div>
         <div class="topic-item"><a href="https://drive.google.com/file/d/1qiEkYCLR5jIwmc5xc73Ww4UemCqB-y0P/view?usp=sharing" target="_blank">Our Environment</a></div>
     </div>
+    <a href="index.html" class="back-button">&#8592; Back</a>
 </body>
 </html>
