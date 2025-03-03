@@ -22,6 +22,22 @@
             text-transform: uppercase;
             color: black;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .back-button {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
         }
         .container {
             display: flex;
@@ -42,17 +58,20 @@
             text-align: center;
             font-weight: bold;
             text-transform: uppercase;
-            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 15px #fff;
             transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
             cursor: pointer;
             position: relative;
-            border: 5px solid transparent;
+            border: 5px solid;
+            animation: neonGlow 2s infinite alternate;
         }
-        .subject:nth-child(1) { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }
-        .subject:nth-child(2) { border-color: #00ff00; box-shadow: 0 0 15px #00ff00; }
-        .subject:nth-child(3) { border-color: #0000ff; box-shadow: 0 0 15px #0000ff; }
-        .subject:nth-child(4) { border-color: #ff0000; box-shadow: 0 0 15px #ff0000; }
-
+        @keyframes neonGlow {
+            0% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }
+            25% { border-color: #00ff00; box-shadow: 0 0 15px #00ff00; }
+            50% { border-color: #0000ff; box-shadow: 0 0 15px #0000ff; }
+            75% { border-color: #ff0000; box-shadow: 0 0 15px #ff0000; }
+            100% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }
+        }
         .subject:hover {
             transform: scale(1.07);
             background: #39ff14;
@@ -62,7 +81,10 @@
     </style>
 </head>
 <body>
-    <h1>Class 10 Subjects</h1>
+    <div class="header">
+        <h1>Class 10 Subjects</h1>
+        <button class="back-button" onclick="window.history.back()">X</button>
+    </div>
     <div class="container">
         <div class="subject" onclick="window.location.href='science10.html'">Science</div>
         <div class="subject" onclick="window.location.href='socialscience10.html'">Social Studies</div>
