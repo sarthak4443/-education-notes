@@ -7,14 +7,17 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #1a002b, #30004d); /* Deep Royal Purple */
+            background: linear-gradient(to bottom, #1a002b, #30004d);
             text-align: center;
             margin: 0;
             padding: 0;
             color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         header {
-            background: linear-gradient(to right, #00e6e6, #007acc); /* Electric Cyan */
+            background: linear-gradient(to right, #00e6e6, #007acc);
             color: black;
             padding: 25px;
             font-size: 34px;
@@ -23,15 +26,17 @@
             letter-spacing: 2px;
             border-bottom: 5px solid #00e6e6;
             box-shadow: 0px 5px 20px rgba(0, 230, 230, 0.5);
+            width: 100%;
+            text-align: center;
         }
         .topic-list {
             padding: 30px;
             width: 50%;
             min-width: 350px;
             border-radius: 15px;
-            background: rgba(30, 0, 50, 0.9); /* Deep Purple Transparency */
+            background: rgba(30, 0, 50, 0.9);
             margin: 40px auto;
-            box-shadow: 0px 6px 25px rgba(255, 215, 0, 0.5); /* Gold Glow */
+            box-shadow: 0px 6px 25px rgba(255, 215, 0, 0.5);
             transition: transform 0.3s ease;
         }
         .topic-list:hover {
@@ -46,12 +51,12 @@
             font-weight: bold;
             transition: all 0.3s ease;
             cursor: pointer;
-            border-left: 6px solid rgba(255, 215, 0, 0.9); /* Gold Accent */
+            border-left: 6px solid rgba(255, 215, 0, 0.9);
             box-shadow: 4px 4px 15px rgba(255, 215, 0, 0.4);
         }
-        .topic-item:nth-child(1) { background: #ff007f; } /* Vivid Magenta */
-        .topic-item:nth-child(2) { background: #00e6e6; } /* Electric Cyan */
-        .topic-item:nth-child(3) { background: #ffcc00; } /* Gold */
+        .topic-item:nth-child(1) { background: #ff007f; }
+        .topic-item:nth-child(2) { background: #00e6e6; }
+        .topic-item:nth-child(3) { background: #ffcc00; }
         .topic-item a {
             text-decoration: none;
             color: white;
@@ -60,11 +65,29 @@
         }
         .topic-item:hover {
             transform: translateY(-5px) scale(1.05);
-            background: #ffd700; /* Bright Gold */
+            background: #ffd700;
             color: black;
             box-shadow: 0px 0px 25px rgba(255, 215, 0, 1);
         }
         .topic-item:hover a { color: black; }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .topic-list {
+                width: 80%;
+                min-width: auto;
+                padding: 20px;
+                margin: 20px auto;
+            }
+            .topic-item {
+                font-size: 20px;
+                padding: 15px;
+            }
+            header {
+                font-size: 28px;
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
