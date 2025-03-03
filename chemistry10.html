@@ -8,29 +8,53 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #000000, #0b3d02); /* Gradient Black to Dark Green */
+            background: linear-gradient(to bottom, #000000, #0b3d02);
             text-align: center;
             margin: 0;
             padding: 0;
             color: white;
         }
         header {
-            background: linear-gradient(to right, #004d00, #0b6623); /* Dark Green Gradient */
+            background: linear-gradient(to right, #004d00, #0b6623);
             color: white;
-            padding: 25px;
-            font-size: 32px;
+            padding: 20px;
+            font-size: 28px;
             font-weight: bold;
             text-shadow: 2px 2px 10px rgba(0, 255, 0, 0.6);
             letter-spacing: 2px;
             border-bottom: 3px solid #32cd32;
+            position: relative;
+        }
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: black;
+            color: white;
+            font-size: 18px;
+            border: 2px solid red;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px red;
+            transition: transform 0.2s ease;
+        }
+        .back-button:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0px 0px 15px red;
         }
         .chapter-list {
-            padding: 30px;
-            width: 55%;
-            min-width: 350px;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
             border-radius: 12px;
-            background: rgba(26, 26, 26, 0.9); /* Dark Grey with transparency */
-            margin: 40px auto;
+            background: rgba(26, 26, 26, 0.9);
+            margin: 30px auto;
             box-shadow: 0px 6px 20px rgba(0, 255, 0, 0.4);
             transition: transform 0.3s ease;
         }
@@ -39,9 +63,9 @@
             box-shadow: 0px 8px 25px rgba(50, 205, 50, 0.7);
         }
         .chapter-item {
-            font-size: 22px;
-            padding: 18px;
-            margin: 12px 0;
+            font-size: 20px;
+            padding: 15px;
+            margin: 10px 0;
             border-radius: 8px;
             font-weight: bold;
             transition: all 0.3s ease;
@@ -49,18 +73,11 @@
             box-shadow: 3px 3px 12px rgba(0, 255, 0, 0.3);
             border-left: 5px solid rgba(50, 205, 50, 0.9);
         }
-        .chapter-item:nth-child(1) {
-            background: #006400; /* Deep Dark Green */
+        .chapter-item:nth-child(odd) {
+            background: #006400;
         }
-        .chapter-item:nth-child(2) {
-            background: #0b6623; /* Slightly Lighter Green */
-        }
-        .chapter-item:nth-child(3) {
-            background: #228b22; /* Brighter Green */
-        }
-        .chapter-item:nth-child(4) {
-            background: #32cd32; /* Neon Green */
-            color: black;
+        .chapter-item:nth-child(even) {
+            background: #0b6623;
         }
         .chapter-item a {
             text-decoration: none;
@@ -68,12 +85,9 @@
             display: block;
             transition: color 0.2s ease;
         }
-        .chapter-item:nth-child(4) a {
-            color: black;
-        }
         .chapter-item:hover {
             transform: translateY(-4px);
-            background: #39ff14; /* Bright Green */
+            background: #39ff14;
             color: black;
             box-shadow: 0px 0px 20px rgba(50, 205, 50, 1);
         }
@@ -84,6 +98,7 @@
 </head>
 <body>
     <header>
+        <div class="back-button" onclick="goBack()">X</div>
         Welcome to CHEMISTRY Notes
     </header>
 
@@ -109,5 +124,11 @@
             </a>
         </div>
     </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 </html>
