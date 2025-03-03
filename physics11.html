@@ -25,18 +25,36 @@
             text-shadow: 0 0 10px rgba(255, 87, 51, 0.7);
         }
 
+        .back-button {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 40px;
+            height: 40px;
+            background: red;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
         .container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             max-width: 1200px;
             margin: 30px auto;
+            padding: 0 20px;
         }
 
         .topic {
-            padding: 30px;
+            padding: 20px;
             border-radius: 10px;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.4s ease-in-out;
@@ -50,25 +68,12 @@
             transform: scale(1.05);
             box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
         }
-
-        .topic:nth-child(1) { background: linear-gradient(45deg, #004d00, #00cc00); }
-        .topic:nth-child(2) { background: linear-gradient(45deg, #ff5733, #ff9966); }
-        .topic:nth-child(3) { background: linear-gradient(45deg, #00509e, #00aaff); }
-        .topic:nth-child(4) { background: linear-gradient(45deg, #8a2be2, #d8bfd8); }
-        .topic:nth-child(5) { background: linear-gradient(45deg, #ffcc00, #ff9900); }
-        .topic:nth-child(6) { background: linear-gradient(45deg, #2e8b57, #98fb98); }
-        .topic:nth-child(7) { background: linear-gradient(45deg, #ff4500, #ff6347); }
-        .topic:nth-child(8) { background: linear-gradient(45deg, #4682b4, #5f9ea0); }
-        .topic:nth-child(9) { background: linear-gradient(45deg, #9932cc, #ba55d3); }
-        .topic:nth-child(10) { background: linear-gradient(45deg, #556b2f, #6b8e23); }
-        .topic:nth-child(11) { background: linear-gradient(45deg, #dc143c, #ff69b4); }
-        .topic:nth-child(12) { background: linear-gradient(45deg, #ff8c00, #ffd700); }
-        .topic:nth-child(13) { background: linear-gradient(45deg, #008b8b, #20b2aa); }
-        .topic:nth-child(14) { background: linear-gradient(45deg, #191970, #4169e1); }
     </style>
 </head>
 <body>
+    <div class="back-button" onclick="history.back()">X</div>
     <h1>Physics Notes</h1>
+   
     <div class="container">
         <div class="topic" onclick="window.open('https://drive.google.com/file/d/1k2TvoJ4PXpfAhhCWbSgrD6v-DacCXRwA/view?usp=sharing', '_blank')">
             📏 Unit and Measurement
@@ -113,5 +118,6 @@
             🌊 Waves
         </div>
     </div>
+
 </body>
 </html>
