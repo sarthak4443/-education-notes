@@ -7,17 +7,17 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #001a00, #004d00); /* Dark Green Gradient */
+            background: linear-gradient(to bottom, #001a00, #004d00);
             text-align: center;
             padding: 20px;
             color: white;
-            position: relative;
+            margin: 0;
         }
         header {
-            background: linear-gradient(to right, #008000, #004d00); /* Green Gradient */
+            background: linear-gradient(to right, #008000, #004d00);
             color: white;
             padding: 20px;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: bold;
             letter-spacing: 2px;
             border-bottom: 4px solid #00ff00;
@@ -31,34 +31,36 @@
             font-weight: bold;
             color: red;
             text-decoration: none;
-            cursor: pointer;
         }
         .container {
             max-width: 900px;
             margin: auto;
-            background: rgba(0, 50, 0, 0.9); /* Dark Green */
+            background: rgba(0, 50, 0, 0.9);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0px 6px 20px rgba(0, 255, 0, 0.4);
         }
         h1, h2 {
-            color: #00ff00; /* Neon Green */
+            color: #00ff00;
         }
         .about-text {
             text-align: justify;
-            padding: 0 20px;
             font-size: 18px;
             line-height: 1.6;
         }
         .image-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            gap: 30px;
+            gap: 20px;
             margin-top: 20px;
         }
+        .image-container div {
+            text-align: center;
+        }
         .image-container img {
-            width: 250px;  /* Increased Size */
+            width: 100%;
+            max-width: 250px;
             height: auto;
             border-radius: 15px;
             border: 4px solid #00ff00;
@@ -69,6 +71,27 @@
             color: #00ff00;
             font-size: 16px;
             margin-top: 10px;
+        }
+        ul {
+            text-align: left;
+            display: inline-block;
+            padding-left: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            header {
+                font-size: 24px;
+                padding: 15px;
+            }
+            .container {
+                padding: 20px;
+            }
+            .about-text {
+                font-size: 16px;
+            }
+            .image-container img {
+                max-width: 200px;
+            }
         }
     </style>
 </head>
@@ -82,18 +105,17 @@
         <p class="about-text">Welcome to <strong>Education Notes</strong>! We aim to provide quality study materials for students of all classes, making learning easier and more accessible.</p>
         
         <h2>Owner</h2>
-        <p class="about-text">This website is created and managed by <strong>Sarthak Singh</strong>, a passionate student of kamm scholars school dedicated to helping others through well-structured and easy-to-understand notes.</p>
+        <p class="about-text">This website is created and managed by <strong>Sarthak Singh</strong>, a passionate student of Kamm Scholars School dedicated to helping others through well-structured and easy-to-understand notes.</p>
         
         <h2>Our Motto</h2>
         <p class="about-text">"Empowering students with knowledge to build a brighter future."</p>
         
         <h2>Why Choose Us?</h2>
-        <ul style="text-align: left; display: inline-block;">
+        <ul>
             <li>Comprehensive Notes for Classes 9 to 12</li>
             <li>Easy to Access and Free of Cost</li>
             <li>Updated Study Material Based on the Latest Syllabus</li>
         </ul>
-
         <div class="image-container">
             <div>
                 <img src="Screenshot 2025-02-21 000053.png" alt="Sarthak Singh">
@@ -107,4 +129,3 @@
     </div>
 </body>
 </html>
- 
