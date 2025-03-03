@@ -14,9 +14,6 @@
             color: white;
         }
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             background: linear-gradient(to right, #8b8000, #b8860b);
             color: white;
             padding: 20px;
@@ -26,54 +23,58 @@
             letter-spacing: 2px;
             border-bottom: 4px solid #ffd700;
         }
-        .back-button {
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-            font-weight: bold;
-            background: none;
-            border: none;
-            padding: 0 15px;
-        }
         .chapter-list {
-            padding: 20px;
-            width: 90%;
-            max-width: 400px;
+            padding: 30px;
+            width: 70%;
+            max-width: 600px;
             border-radius: 12px;
             background: rgba(10, 10, 50, 0.9);
             margin: 40px auto;
-            box-shadow: 0px 6px 20px rgba(255, 215, 0, 0.4);
+            box-shadow: 0px 6px 30px rgba(255, 215, 0, 0.7);
             transition: transform 0.3s ease;
         }
         .chapter-list:hover {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
         .chapter-item {
-            font-size: 18px;
-            padding: 15px;
-            margin: 10px 0;
+            font-size: 20px;
+            padding: 18px;
+            margin: 12px 0;
             border-radius: 8px;
             font-weight: bold;
             transition: all 0.3s ease;
             cursor: pointer;
             border-left: 5px solid rgba(255, 215, 0, 0.9);
-            box-shadow: 3px 3px 12px rgba(255, 215, 0, 0.3);
+            box-shadow: 0px 0px 20px rgba(255, 215, 0, 1);
+            background: rgba(255, 215, 0, 0.2);
+        }
+        .chapter-item:hover {
+            background: #ffd700;
+            color: black;
+            box-shadow: 0px 0px 30px rgba(255, 215, 0, 1);
         }
         .chapter-item a {
             text-decoration: none;
             color: white;
             display: block;
         }
-        .chapter-item:hover {
-            background: #ffd700;
-            color: black;
-        }
         .chapter-item:hover a { color: black; }
+        .back-button {
+            font-size: 24px;
+            color: red;
+            cursor: pointer;
+            font-weight: bold;
+            background: none;
+            border: none;
+            padding: 15px;
+            display: block;
+            margin: 30px auto;
+            text-shadow: 2px 2px 8px rgba(255, 0, 0, 0.7);
+        }
     </style>
 </head>
 <body>
     <header>
-        <button class="back-button" onclick="goBack()">&times;</button>
         <span>History Notes</span>
     </header>
 
@@ -84,6 +85,8 @@
         <div class="chapter-item"><a href="https://drive.google.com/file/d/1pY0NuqDFGC4mrdAHbE_lxX98nBXoPDQv/view?usp=sharing" target="_blank">4. The Age of Industrialization</a></div>
         <div class="chapter-item"><a href="https://drive.google.com/file/d/1oOoozet1WtwQmtiMCmRD3l1U_c8LJi7d/view?usp=sharing" target="_blank">5. Print Culture and the Modern World</a></div>
     </div>
+
+    <button class="back-button" onclick="goBack()">&times; Go Back</button>
 
     <script>
         function goBack() {
