@@ -16,7 +16,7 @@
         }
 
         header {
-            background: linear-gradient(to right, #004d00, #0b6623); /* Dark Green Gradient */
+            background: linear-gradient(to right, #004d00, #0b6623);
             color: white;
             padding: 25px;
             font-size: 32px;
@@ -28,39 +28,34 @@
 
         .chapter-list {
             padding: 30px;
-            width: 70%; /* Increased width for better fit */
-            min-width: 350px;
+            width: 90%;
+            max-width: 1200px;
             border-radius: 12px;
-            background: rgba(26, 26, 26, 0.9); /* Dark Grey with transparency */
+            background: rgba(26, 26, 26, 0.9);
             margin: 40px auto;
             box-shadow: 0px 6px 20px rgba(0, 255, 0, 0.4);
-            display: grid; /* Grid display */
-            grid-template-columns: repeat(2, 1fr); /* Two columns */
-            gap: 20px; /* Spacing between items */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
             transition: transform 0.3s ease;
-        }
-        .chapter-list:hover {
-            transform: scale(1.02);
-            box-shadow: 0px 8px 25px rgba(50, 205, 50, 0.7);
         }
 
         .chapter-item {
-            font-size: 22px;
-            padding: 18px;
-            margin: 12px 0;
-            border-radius: 8px;
+            font-size: 24px;
+            padding: 20px;
+            border-radius: 10px;
             font-weight: bold;
             transition: all 0.3s ease;
             cursor: pointer;
             box-shadow: 3px 3px 12px rgba(0, 255, 0, 0.3);
-            border-left: 5px solid rgba(50, 205, 50, 0.9);
+            border-left: 6px solid rgba(50, 205, 50, 0.9);
         }
 
         .chapter-item:nth-child(odd) {
-            background: #006400; /* Deep Dark Green */
+            background: #006400;
         }
         .chapter-item:nth-child(even) {
-            background: #0b6623; /* Slightly Lighter Green */
+            background: #0b6623;
         }
 
         .chapter-item a {
@@ -72,7 +67,7 @@
 
         .chapter-item:hover {
             transform: translateY(-4px);
-            background: #39ff14; /* Bright Green */
+            background: #39ff14;
             color: black;
             box-shadow: 0px 0px 20px rgba(50, 205, 50, 1);
         }
@@ -88,101 +83,25 @@
     </header>
 
     <div class="chapter-list">
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1s2aubGtjrzmyDDjMoeHP7nXdKCWxeNyV/view?usp=sharing" target="_blank">
-                🌱 The Living World
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1WkO6l-g2ZFBFbfZwiGwjz9mjTP7Cqfyg/view?usp=sharing" target="_blank">
-                🔬 Biological Classification
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1jVmvAnJZ-cTU66wj33RA-Pi-Eq-cGaqG/view?usp=sharing" target="_blank">
-                🦁 Animal Kingdom
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1SpEsurXBch16CsB0EUDY0nBv668PcF-j/view?usp=sharing" target="_blank">
-                🌳 Plant Kingdom
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1D4KBjoVCOjsfz9JXjFYIGC0v0Jaerr31/view?usp=sharing" target="_blank">
-                🌼 Anatomy of Flowering Plants
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1TAPN0DS08CooFr7Rzw8rbHTQfR79v7KW/view?usp=sharing" target="_blank">
-                🌿 Morphology of Flowering Plants
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1ham0kPmUYv3TpEqdZT-Oi8prEiHyycf5/view?usp=sharing" target="_blank">
-                🧪 Biomolecules
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1IaSvSKtiK9W-og0XwJ67Gn8cxx_lpoCt/view?usp=sharing" target="_blank">
-                🧬 The Unit of Life
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1m8slQY2S-Kzzecq-5nsZuVMN-ynxUueh/view?usp=sharing" target="_blank">
-                🦴 Structural Organisation in Animals
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1XMrZeF6uByEgfpla5QoeSgvnTK-V-WYi/view?usp=sharing" target="_blank">
-                🔄 Cell Cycle and Cell Division
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1GuEILIJ5uy7-03T1NJavp4t1NXOTKp8F/view?usp=sharing" target="_blank">
-                🌱 Plant Growth and Development
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1pBUPk608Jo_--WYIfroz7B0n_udZDQEe/view?usp=sharing" target="_blank">
-                🍃 Respiration in Plants
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1ldSBqW6_z9QY3Zxw5y4i012Z8yFBSvob/view?usp=sharing" target="_blank">
-                🌞 Photosynthesis in Higher Plants
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1dX0h_Hky6XJmLPOmQ__1MQH6d_Qwb0D0/view?usp=sharing" target="_blank">
-                💨 Breathing and Exchange of Gases
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/10AOVKxMc5Hb1OG5UMX_LMgcsl9vsvdmG/view?usp=sharing" target="_blank">
-                💉 Body Fluids and Circulation
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1Oj1U1vMZxa5fbW89M54LaHYolYBpoILG/view?usp=sharing" target="_blank">
-                🏃 Locomotion and Movement
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1mzwUYSOh5Kkn7ayK3NrosBoMgwPY3h4s/view?usp=sharing" target="_blank">
-                🚽 Excretory Products and Their Elimination
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1Mp9oIHjIxiC_mvQ0KBmHMtutaEk6KNIY/view?usp=sharing" target="_blank">
-                🧠 Neural Control and Coordination
-            </a>
-        </div>
-        <div class="chapter-item">
-            <a href="https://drive.google.com/file/d/1nLncC0n7F_-4ZAmt46Thycop2vLsW4wl/view?usp=sharing" target="_blank">
-                🧪 Chemical Coordination and Integration
-            </a>
-        </div>
+        <div class="chapter-item"><a href="#">🌱 The Living World</a></div>
+        <div class="chapter-item"><a href="#">🔬 Biological Classification</a></div>
+        <div class="chapter-item"><a href="#">🦁 Animal Kingdom</a></div>
+        <div class="chapter-item"><a href="#">🌳 Plant Kingdom</a></div>
+        <div class="chapter-item"><a href="#">🌼 Anatomy of Flowering Plants</a></div>
+        <div class="chapter-item"><a href="#">🌿 Morphology of Flowering Plants</a></div>
+        <div class="chapter-item"><a href="#">🧪 Biomolecules</a></div>
+        <div class="chapter-item"><a href="#">🧬 The Unit of Life</a></div>
+        <div class="chapter-item"><a href="#">🦴 Structural Organisation in Animals</a></div>
+        <div class="chapter-item"><a href="#">🔄 Cell Cycle and Cell Division</a></div>
+        <div class="chapter-item"><a href="#">🌱 Plant Growth and Development</a></div>
+        <div class="chapter-item"><a href="#">🍃 Respiration in Plants</a></div>
+        <div class="chapter-item"><a href="#">🌞 Photosynthesis in Higher Plants</a></div>
+        <div class="chapter-item"><a href="#">💨 Breathing and Exchange of Gases</a></div>
+        <div class="chapter-item"><a href="#">💉 Body Fluids and Circulation</a></div>
+        <div class="chapter-item"><a href="#">🏃 Locomotion and Movement</a></div>
+        <div class="chapter-item"><a href="#">🚽 Excretory Products and Their Elimination</a></div>
+        <div class="chapter-item"><a href="#">🧠 Neural Control and Coordination</a></div>
+        <div class="chapter-item"><a href="#">🧪 Chemical Coordination and Integration</a></div>
     </div>
 </body>
 </html>
