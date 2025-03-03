@@ -15,40 +15,12 @@
             display: flex;
             flex-direction: column;
         }
-        .top-info {
-            margin-top: 10px;
-            text-align: center;
-            font-size: 14px;
-        }
-        .top-info a {
-            color: cyan;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .top-info a:hover {
-            text-decoration: underline;
-        }
-        .top-info img {
-            height: 20px;
-            vertical-align: middle;
-            margin-left: 5px;
-        }
         .navbar {
             background: linear-gradient(to right, #111, #333);
             border-bottom: 3px solid #00ff00;
             box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.5);
             padding: 10px;
             margin-top: 10px;
-        }
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .navbar-brand img {
-            height: 40px;
-            margin-right: 10px;
         }
         .content {
             flex: 1;
@@ -83,15 +55,6 @@
             50% { box-shadow: 0px 0px 20px magenta; }
             100% { box-shadow: 0px 0px 10px lime; }
         }
-        footer {
-            background: black;
-            color: white;
-            padding: 5px;
-            text-align: center;
-            font-size: 14px;
-            border-top: none;
-            box-shadow: none;
-        }
         .popup-container {
             position: fixed;
             top: 0;
@@ -117,6 +80,11 @@
             border-image-slice: 1;
             animation: neon-border 2s infinite alternate;
         }
+        @keyframes neon-border {
+            0% { box-shadow: 0px 0px 10px cyan; }
+            50% { box-shadow: 0px 0px 20px magenta; }
+            100% { box-shadow: 0px 0px 10px lime; }
+        }
     </style>
 </head>
 <body>
@@ -128,6 +96,28 @@
             <button onclick="closePopup()">Enter Website</button>
         </div>
     </div>
+
+    <div class="content">
+        <section id="home" class="container mt-5">
+            <h2>Welcome to Education Notes</h2>
+            <p>Find notes for all subjects and classes except commerce.</p>
+            <div class="row mt-4">
+                <div class="class-slot-wrapper">
+                    <a href="class9.html" class="class-slot">Class 9</a>
+                </div>
+                <div class="class-slot-wrapper">
+                    <a href="class10.html" class="class-slot">Class 10</a>
+                </div>
+                <div class="class-slot-wrapper">
+                    <a href="class11.html" class="class-slot">Class 11</a>
+                </div>
+                <div class="class-slot-wrapper">
+                    <a href="class12.html" class="class-slot">Class 12</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <script>
         function closePopup() {
             document.getElementById("popup-container").style.visibility = "hidden";
