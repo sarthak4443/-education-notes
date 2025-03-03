@@ -31,10 +31,10 @@
             gap: 15px;
         }
         .topic-item {
-            width: 90%; /* Responsive width */
-            max-width: 400px; /* Maximum width for larger screens */
-            font-size: 20px;
-            padding: 15px;
+            width: 95%; /* Increased width for better mobile visibility */
+            max-width: 450px; /* Larger max width for bigger screens */
+            font-size: 22px;
+            padding: 18px;
             border-radius: 8px;
             font-weight: bold;
             transition: all 0.3s ease;
@@ -42,6 +42,8 @@
             border-left: 5px solid rgba(0, 255, 136, 0.9);
             box-shadow: 3px 3px 12px rgba(0, 255, 136, 0.3);
             text-align: center;
+            margin-right: auto; /* Aligning to the left side */
+            margin-left: auto; /* Centering for proper alignment */
         }
         .topic-item a {
             text-decoration: none;
@@ -59,14 +61,38 @@
         }
         .topic-item:hover a { color: black; }
 
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            background: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+        .back-button:hover {
+            background: #cc0000;
+            transform: scale(1.05);
+        }
+
         @media (max-width: 600px) {
             header {
                 font-size: 24px;
                 padding: 15px;
             }
             .topic-item {
-                font-size: 18px;
-                padding: 12px;
+                font-size: 20px;
+                padding: 16px;
+                width: 90%; /* Adjusted width for smaller screens */
+            }
+            .back-button {
+                font-size: 16px;
+                padding: 10px 20px;
             }
         }
     </style>
@@ -90,5 +116,6 @@
             <a href="https://drive.google.com/file/d/1yee0waIUSGC82ljkm7QF3zVvKltfgPfb/view?usp=sharing" target="_blank">5. Work, Energy and Power</a>
         </div>
     </div>
+    <a href="javascript:history.back()" class="back-button">⬅ Back</a>
 </body>
 </html>
