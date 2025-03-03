@@ -15,46 +15,6 @@
             display: flex;
             flex-direction: column;
         }
-        .navbar {
-            background: linear-gradient(to right, #111, #333);
-            border-bottom: 3px solid #00ff00;
-            box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.5);
-            padding: 10px;
-            margin-top: 10px;
-        }
-        .content {
-            flex: 1;
-        }
-        .class-slot-wrapper {
-            margin: 15px auto;
-            width: 90%;
-            max-width: 400px;
-        }
-        .class-slot {
-            background: black;
-            color: white;
-            padding: 20px;
-            font-size: 20px;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: bold;
-            text-decoration: none;
-            display: block;
-            width: 100%;
-            border: 2px solid #00f;
-            animation: neonGlow 2s infinite alternate ease-in-out;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .class-slot:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px #ffffff, 0 0 30px currentColor;
-            background: rgba(0, 0, 0, 0.8);
-        }
-        @keyframes neonGlow {
-            0% { box-shadow: 0px 0px 10px cyan; }
-            50% { box-shadow: 0px 0px 20px magenta; }
-            100% { box-shadow: 0px 0px 10px lime; }
-        }
         .popup-container {
             position: fixed;
             top: 0;
@@ -65,8 +25,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            visibility: visible;
-            opacity: 1;
+            visibility: hidden;
+            opacity: 0;
             transition: 0.4s ease-in-out;
         }
         .popup {
@@ -85,6 +45,35 @@
             50% { box-shadow: 0px 0px 20px magenta; }
             100% { box-shadow: 0px 0px 10px lime; }
         }
+        .popup h2 {
+            margin-bottom: 15px;
+            color: cyan;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            outline: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            background: linear-gradient(90deg, cyan, magenta);
+            border: none;
+            border-radius: 5px;
+            color: black;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: linear-gradient(90deg, magenta, cyan);
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -93,36 +82,35 @@
             <h2>Enter Your Details</h2>
             <input type="text" id="name" placeholder="Enter Your Name" required>
             <input type="text" id="class" placeholder="Enter Your Class" required>
-            <button onclick="closePopup()">Enter Website</button>
+            <button onclick="saveUserData()">Enter Website</button>
         </div>
     </div>
-
-    <div class="content">
-        <section id="home" class="container mt-5">
-            <h2>Welcome to Education Notes</h2>
-            <p>Find notes for all subjects and classes except commerce.</p>
-            <div class="row mt-4">
-                <div class="class-slot-wrapper">
-                    <a href="class9.html" class="class-slot">Class 9</a>
-                </div>
-                <div class="class-slot-wrapper">
-                    <a href="class10.html" class="class-slot">Class 10</a>
-                </div>
-                <div class="class-slot-wrapper">
-                    <a href="class11.html" class="class-slot">Class 11</a>
-                </div>
-                <div class="class-slot-wrapper">
-                    <a href="class12.html" class="class-slot">Class 12</a>
-                </div>
-            </div>
-        </section>
-    </div>
-
+    
     <script>
+        function saveUserData() {
+            let name = document.getElementById("name").value;
+            let className = document.getElementById("class").value;
+
+            if (name && className) {
+                closePopup();
+            } else {
+                alert("Please fill in all details.");
+            }
+        }
+
         function closePopup() {
             document.getElementById("popup-container").style.visibility = "hidden";
             document.getElementById("popup-container").style.opacity = "0";
         }
+
+        function showPopup() {
+            document.getElementById("popup-container").style.visibility = "visible";
+            document.getElementById("popup-container").style.opacity = "1";
+        }
+
+        window.onload = function() {
+            showPopup();
+        };
     </script>
 </body>
 </html>
