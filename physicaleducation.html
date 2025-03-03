@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📚 Physical Education Notes</title>
+    <title>📚 Class 12 Physical Education</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #2b2b2b, #3a3a3a, #0077ff);
+            background: linear-gradient(135deg, #1c1c1c, #2e2e2e, #0055ff);
             color: white;
             text-align: center;
             margin: 0;
             padding: 20px;
         }
         .container {
-            max-width: 700px;
+            max-width: 800px;
             margin: auto;
-            background: linear-gradient(145deg, #1e1e1e, #292929, #0055aa);
+            background: linear-gradient(145deg, #121212, #1f1f1f, #007744);
             padding: 25px;
             border-radius: 15px;
             box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
@@ -30,19 +30,26 @@
             cursor: pointer;
             color: white;
             background: #ff0000;
-            padding: 10px;
+            padding: 5px 10px;
             border-radius: 50%;
             text-decoration: none;
-            width: 40px;
-            height: 40px;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999; /* ऊपर लाने के लिए */
         }
-        .close-btn:hover {
-            background: #cc0000;
+        .back-btn {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            color: white;
+            background: #007bff;
+            padding: 6px 12px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .back-btn:hover {
+            background: #0056b3;
         }
         h1 {
             font-size: 32px;
@@ -51,9 +58,9 @@
             text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
         }
         .chapter {
-            background: linear-gradient(90deg, #004488, #0066cc, #0088ff);
+            background: linear-gradient(90deg, #003300, #004d00, #006600);
             padding: 14px;
-            margin: 20px 0;
+            margin: 12px 0;
             border-radius: 10px;
             font-size: 20px;
             font-weight: bold;
@@ -64,39 +71,43 @@
             justify-content: center;
         }
         .chapter:hover {
-            background: linear-gradient(90deg, #0088ff, #0066cc, #004488);
+            background: linear-gradient(90deg, #006600, #004d00, #003300);
             transform: scale(1.05);
         }
         .chapter a {
             color: #ffffff;
             text-decoration: none;
         }
-        @media (max-width: 768px) {
-            .chapter {
-                margin: 30px 0;
-            }
+        footer {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #bbb;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <button class="close-btn" onclick="goBack()">✖</button>
-        <h1>📖 Physical Education Notes</h1>
-        <div class="chapter">🏃‍♂️ <a href="#">1. Changing Trends & Career in Physical Education</a></div>
-        <div class="chapter">🥇 <a href="#">2. Olympic Value Education</a></div>
-        <div class="chapter">🧘‍♂️ <a href="#">3. Yoga</a></div>
-        <div class="chapter">♿ <a href="#">4. Physical Education & Sports for CWSN</a></div>
-        <div class="chapter">💪 <a href="#">5. Physical Fitness, Wellness</a></div>
-        <div class="chapter">📏 <a href="#">6. Test, Measurements & Evaluation</a></div>
-        <div class="chapter">🔬 <a href="#">7. Fundamentals of Anatomy and Physiology in Sports</a></div>
-        <div class="chapter">🏋️ <a href="#">8. Fundamentals of Kinesiology and Biomechanics in Sports</a></div>
-        <div class="chapter">🧠 <a href="#">9. Psychology and Sports</a></div>
-        <div class="chapter">🚀 <a href="#">10. Training & Doping in Sports</a></div>
+        <button class="back-btn" onclick="goBack()">⬅ Back</button>
+        <a href="#" class="close-btn">✖</a>
+        <h1>📖 Class 12 Physical Education</h1>
+        <div class="chapter">🏆 <a href="https://drive.google.com/file/d/16C4Wo1sKKLltSZP2-Ivfyy8ljTS-EpgC/view?usp=drive_link" target="_blank">Management of Sporting Events</a></div>
+        <div class="chapter">👩‍👦 <a href="https://drive.google.com/file/d/1uuwr5biLS1Dw3ynB6_mxrQB1cAN3yPdu/view?usp=sharing" target="_blank">Children and Women in Sports</a></div>
+        <div class="chapter">🧘‍♂️ <a href="https://drive.google.com/file/d/1JlZbnL0_5cqEHlXGAXUdjv5uE3ObCpr3/view?usp=sharing" target="_blank">Yoga as Preventive Measure</a></div>
+        <div class="chapter">♿ <a href="https://drive.google.com/file/d/15v2Wlt2cGWthZerDPPLXrek3o0jdtd_z/view?usp=sharing" target="_blank">Physical Education & Sports for CWSN</a></div>
+        <div class="chapter">🥗 <a href="https://drive.google.com/file/d/17NEB6LaaGQtqDgG9pGka7bHx5MU3MJYJ/view?usp=sharing" target="_blank">Sports & Nutrition</a></div>
+        <div class="chapter">📏 <a href="https://drive.google.com/file/d/19n33lwssgUam48tm4rcpMixJVYXPfsFF/view?usp=sharing" target="_blank">Test and Measurement in Sports</a></div>
+        <div class="chapter">🔬 <a href="https://drive.google.com/file/d/1cm39P1MzPYAOg444RX-JlIdIAyVKrCiy/view?usp=sharing" target="_blank">Physiology & Injuries in Sport</a></div>
+        <div class="chapter">🏋️ <a href="https://drive.google.com/file/d/1iU3QetEYp9kJnb3LpbyvfP0tHKkudr99/view?usp=sharing" target="_blank">Biomechanics and Sports</a></div>
+        <div class="chapter">🧠 <a href="https://drive.google.com/file/d/1YS3lRpANS2DQKsKHzsptGnJdXnjAm3Xq/view?usp=sharing" target="_blank">Psychology and Sports</a></div>
+        <div class="chapter">🚀 <a href="https://drive.google.com/file/d/1GvowPdQm4a53sqgXbWfMi-Ycp6SQKPyj/view?usp=sharing" target="_blank">Training in Sports</a></div>
     </div>
+    <footer>
+        <p>✨ Thanks for visiting us! ✨</p>
+    </footer>
 
     <script>
         function goBack() {
-            window.history.back(); // यह पिछला पेज खोलेगा
+            window.history.back();
         }
     </script>
 </body>
