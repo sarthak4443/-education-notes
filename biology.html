@@ -7,17 +7,17 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #0a0a2a, #1a1a40); /* Sapphire Blue Gradient */
+            background: linear-gradient(to bottom, #0a0a2a, #1a1a40);
             text-align: center;
             margin: 0;
             padding: 0;
             color: white;
         }
         header {
-            background: linear-gradient(to right, #ff0000, #cc0000); /* Ruby Red */
+            background: linear-gradient(to right, #ff0000, #cc0000);
             color: white;
-            padding: 30px;
-            font-size: 36px;
+            padding: 20px;
+            font-size: 28px;
             font-weight: bold;
             text-shadow: 3px 3px 15px rgba(255, 0, 0, 0.8);
             letter-spacing: 2px;
@@ -25,35 +25,38 @@
             box-shadow: 0px 8px 25px rgba(255, 0, 0, 0.5);
         }
         .topic-list {
-            padding: 30px;
-            width: 50%;
-            min-width: 350px;
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
             border-radius: 15px;
-            background: rgba(20, 20, 60, 0.95); /* Dark Sapphire */
-            margin: 40px auto;
-            box-shadow: 0px 8px 30px rgba(0, 255, 127, 0.7); /* Emerald Glow */
+            background: rgba(20, 20, 60, 0.95);
+            margin: 30px auto;
+            box-shadow: 0px 8px 30px rgba(0, 255, 127, 0.7);
             transition: transform 0.3s ease;
         }
         .topic-list:hover {
             transform: scale(1.03);
-            box-shadow: 0px 12px 35px rgba(0, 255, 127, 0.9); /* Emerald Intense */
+            box-shadow: 0px 12px 35px rgba(0, 255, 127, 0.9);
         }
         .topic-item {
-            font-size: 24px;
-            padding: 20px;
-            margin: 15px 0;
+            font-size: 20px;
+            padding: 15px;
+            margin: 10px 0;
             border-radius: 10px;
             font-weight: bold;
             transition: all 0.3s ease;
             cursor: pointer;
-            border-left: 6px solid rgba(255, 0, 255, 0.9); /* Amethyst Glow */
+            border-left: 6px solid rgba(255, 0, 255, 0.9);
             box-shadow: 4px 4px 15px rgba(255, 0, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .topic-item:nth-child(1) { background: #008f39; } /* Emerald Green */
-        .topic-item:nth-child(2) { background: #800080; } /* Amethyst Purple */
+        .topic-item:nth-child(1) { background: #008f39; }
+        .topic-item:nth-child(2) { background: #800080; }
         .topic-item:hover {
             transform: translateY(-5px) scale(1.05);
-            background: #ffcc00; /* Rich Gold */
+            background: #ffcc00;
             color: black;
             box-shadow: 0px 0px 30px rgba(255, 204, 0, 1);
         }
@@ -62,15 +65,32 @@
             color: white;
             display: block;
             transition: color 0.2s ease;
+            width: 100%;
         }
         .topic-item:hover a { color: black; }
+        .back-button {
+            background: #ff0000;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.8);
+            margin-bottom: 20px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .back-button:hover {
+            background: #cc0000;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
     <header>
-        🧬 Premium Biology notes 🌿
+        🧬 Premium Biology Notes 🌿
     </header>
-
     <div class="topic-list">
         <div class="topic-item">
             <a href="https://drive.google.com/file/d/1Ai-AhY0UpacS40fcZLlcktlH07Ecxlsj/view?usp=sharing" target="_blank">
@@ -83,5 +103,6 @@
             </a>
         </div>
     </div>
+    <button class="back-button" onclick="history.back()">⬅ Back</button>
 </body>
 </html>
