@@ -36,7 +36,7 @@
         .topic-list {
             padding: 20px;
             width: 90%;
-            max-width: 450px;
+            max-width: 500px;
             border-radius: 12px;
             background: rgba(15, 15, 45, 0.9);
             margin: 30px auto;
@@ -44,10 +44,10 @@
             transition: transform 0.3s ease;
         }
         .topic-item {
-            font-size: 24px;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 10px;
+            font-size: 26px;
+            padding: 25px;
+            margin: 18px 0;
+            border-radius: 12px;
             font-weight: bold;
             transition: all 0.3s ease;
             cursor: pointer;
@@ -70,6 +70,25 @@
             display: block;
         }
         .topic-item:hover a { color: black; }
+        @media (max-width: 600px) {
+            header {
+                font-size: 22px;
+                padding: 15px;
+            }
+            .back-button {
+                font-size: 20px;
+                padding: 8px;
+            }
+            .topic-list {
+                width: 95%;
+                padding: 15px;
+            }
+            .topic-item {
+                font-size: 20px;
+                padding: 18px;
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
