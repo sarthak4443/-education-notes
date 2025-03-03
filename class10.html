@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 10 Subjects</title>
+    <title>Subjects</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -16,18 +16,18 @@
             padding: 0;
         }
         h1 {
-            margin-top: 20px;
             font-size: 36px;
             font-weight: bold;
             text-transform: uppercase;
             color: black;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            display: inline-block;
+            margin: 20px auto;
         }
         .header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            position: relative;
             padding: 10px 20px;
         }
         .back-button {
@@ -38,6 +38,8 @@
             background: none;
             border: none;
             outline: none;
+            position: absolute;
+            right: 20px;
         }
         .container {
             display: flex;
@@ -82,7 +84,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>Class 10 Subjects</h1>
+        <h1>Subjects</h1>
         <button class="back-button" onclick="window.history.back()">X</button>
     </div>
     <div class="container">
