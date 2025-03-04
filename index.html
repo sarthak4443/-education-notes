@@ -106,9 +106,12 @@
 <div class="popup-container" id="popup-container">
     <div class="popup">
         <h2>Enter Your Details</h2>
-        <input type="text" id="name" placeholder="Enter Your Name" required>
-        <input type="text" id="class" placeholder="Enter Your Class" required>
-        <button onclick="saveUserData()">Enter Website</button>
+        
+        <form name="submit-to-google-sheet">
+            <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+            <input type="text" name="class" id="class" placeholder="Enter Your Class" required>
+            <button type="submit">Enter Website</button>
+        </form>
     </div>
 </div>
 
@@ -261,10 +264,7 @@
             alert("Contact feature coming soon!");
         } 
 
-    <!-- SweetAlert CDN (yeh zaroori hai) -->
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-<script>
+ <script>
     const scriptURL = "https://script.google.com/macros/s/AKfycbyvWhFqukg0uz-9rnLnQpD2G8mNica6CWI7GB3DrtkWxmUNLQ5AJUjwaYWRmDiauYMp3w/exec";
     const form = document.forms["submit-to-google-sheet"];
 
@@ -272,32 +272,34 @@
         e.preventDefault();
         var formData = new FormData(form);
 
-        // Form ke input values ko FormData me add karna
-        var ex = document.getElementById("ex")?.checked;
-        var age = document.getElementById("age")?.checked;
-
-        if (age) {
-            formData.append("age", "Yes");
-        } else {
-            formData.append("age", "No");
-        }
-        if (ex) {
-            formData.append("ex", "Yes");
-        } else {
-            formData.append("ex", "No");
-        }
-
-        // Google Sheets me data send karna
         fetch(scriptURL, { method: "POST", body: formData })
             .then(response => {
                 swal("Success", "Submitted Successfully!", "success");
-                form.reset(); // Form reset karne ke liye
+                form.reset();
+                closePopup(); // Popup बंद करने के लिए
             })
             .catch(error => {
                 swal("Error", "Something went wrong, please try again!", "error");
             });
     });
-</script>
+
+    function closePopup() {
+        document.getElementById("popup-container").style.visibility = "hidden";
+        document.getElementById("popup-container").style.opacity = "0";
+    }
+
+    function showPopup() {
+        document.getElementById("popup-container").style.visibility = "visible";
+        document.getElementById("popup-container").style.opacity = "1";
+    }
+
+    window.onload = function() {
+        if (!localStorage.getItem("userName") || !localStorage.getItem("userClass")) {
+            showPopup();
+        }
+    };
+
+    </script>
 
     </script>
 </body>
