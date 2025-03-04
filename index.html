@@ -264,7 +264,7 @@
             alert("Contact feature coming soon!");
         } 
     </script>
-    
+ <script>   
 const scriptURL = "https://script.google.com/macros/s/AKfycbx5HzgcYv5tgTGJ1GkScO25ByKk6uoVyo9XBq68xBW3wzkEFR25oKFxuK_3Sp_pZ8_jtw/exec";
 
 function saveUserData() {
@@ -272,24 +272,24 @@ function saveUserData() {
     let className = document.getElementById("class").value;
 
     if (name && className) {
-        // FormData object create करो
-        let formData = new FormData();
-        formData.append("name", name);
-        formData.append("class", className);
+        localStorage.setItem("userName", name);
+        localStorage.setItem("userClass", className);
 
-        // Google Apps Script API Call
-        fetch(scriptURL, { method: "POST", body: formData })
-            .then(response => response.text())
-            .then(() => {
-                localStorage.setItem("userName", name);
-                localStorage.setItem("userClass", className);
-                closePopup(); // Popup बंद करो
-                alert("Data submitted successfully!");
-            })
-            .catch(error => {
-                console.error("Error!", error);
-                alert("Something went wrong. Try again!");
-            });
+        // Google Sheet में डेटा भेजने के लिए fetch API
+        fetch(scriptURL, {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `name=${encodeURIComponent(name)}&class=${encodeURIComponent(className)}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Success:", data);
+            closePopup(); // Popup बंद करो
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("Data submission failed! Try again.");
+        });
     } else {
         alert("Please fill in all details.");
     }
