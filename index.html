@@ -261,37 +261,44 @@
             alert("Contact feature coming soon!");
         } 
 
-    <script>
-      const scriptURL =                       
-    https://script.google.com/macros/s/AKfycbyvWhFqukg0uz-9rnLnQpD2G8mNica6CWI7GB3DrtkWxmUNLQ5AJUjwaYWRmDiauYMp3w/exec
-      const form = document.forms["submit-to-google-sheet"];
-      form.addEventListener("submit", (e) => {
+    <!-- SweetAlert CDN (yeh zaroori hai) -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbyvWhFqukg0uz-9rnLnQpD2G8mNica6CWI7GB3DrtkWxmUNLQ5AJUjwaYWRmDiauYMp3w/exec";
+    const form = document.forms["submit-to-google-sheet"];
+
+    form.addEventListener("submit", (e) => {
         e.preventDefault();
         var formData = new FormData(form);
-        var ex = document.getElementById("ex").checked;
-        var age = document.getElementById("age").checked;
+
+        // Form ke input values ko FormData me add karna
+        var ex = document.getElementById("ex")?.checked;
+        var age = document.getElementById("age")?.checked;
 
         if (age) {
-          formData.append("age", "Yes");
+            formData.append("age", "Yes");
         } else {
-          formData.append("age", "No");
+            formData.append("age", "No");
         }
         if (ex) {
-          formData.append("ex", "Yes");
+            formData.append("ex", "Yes");
         } else {
-          formData.append("ex", "No");
+            formData.append("ex", "No");
         }
 
+        // Google Sheets me data send karna
         fetch(scriptURL, { method: "POST", body: formData })
-          .then((response) => {
-            swal("Done", "Submitted Successfully.", "success");
-          })
-          .catch((error) => {
-            swal("Error", "Something went wrong. please try again!", "error");
-          });
-      });
-                          
-     
+            .then(response => {
+                swal("Success", "Submitted Successfully!", "success");
+                form.reset(); // Form reset karne ke liye
+            })
+            .catch(error => {
+                swal("Error", "Something went wrong, please try again!", "error");
+            });
+    });
+</script>
+
     </script>
 </body>
 </html>
