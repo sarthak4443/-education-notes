@@ -95,7 +95,7 @@
     </style>
 </head>
 <body>  
-    <!-- Popup Form -->
+ <!-- Popup Form -->
 <div class="popup-container" id="popup-container">
     <div class="popup">
         <h2>Enter Your Details</h2>
@@ -177,7 +177,22 @@
         if (name && className) {
             localStorage.setItem("userName", name);
             localStorage.setItem("userClass", className);
-            closePopup();
+
+            // FormSubmit API से ईमेल भेजना
+            let formData = new FormData();
+            formData.append("Name", name);
+            formData.append("Class", className);
+            formData.append("_captcha", "false"); // No Captcha
+            formData.append("_template", "table"); // Email में डेटा टेबल फॉर्मेट में आएगा
+
+            fetch("https://formsubmit.co/YOUR-EMAIL@example.com", {
+                method: "POST",
+                body: formData
+            }).then(response => {
+                if (response.ok) {
+                    closePopup(); // Popup बंद करना
+                }
+            }).catch(error => console.error("Error:", error));
         } else {
             alert("Please fill in all details.");
         }
@@ -198,7 +213,8 @@
             showPopup();
         }
     };
-</script> 
+</script>
+
     <!-- Top Info -->
     <div class="top-info">
         <a href="mailto:singhsarthak825@gmail.com">📧 singhsarthak825@gmail.com</a> |
