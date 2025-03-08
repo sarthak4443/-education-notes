@@ -99,16 +99,22 @@
 <div class="popup-container" id="popup-container">
     <div class="popup">
         <h2>Enter Your Details</h2>
-        <form id="popupForm">
-            <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
-            <input type="text" id="class" name="class" placeholder="Enter Your Class" required>
+        <form id="userForm" action="https://formsubmit.co/YOUR-EMAIL@example.com" method="POST">
+            <input type="text" name="Name" id="name" placeholder="Enter Your Name" required>
+            <input type="text" name="Class" id="class" placeholder="Enter Your Class" required>
+
+            <!-- Hidden Inputs for FormSubmit Features -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table"> <!-- Data को Table Format में Email भेजेगा -->
+            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html"> <!-- फॉर्म के बाद Redirect -->
+
             <button type="submit">Enter Website</button>
         </form>
     </div>
 </div>
 
 <style>
-    /* Popup Modal Styling */
+    /* Popup Styling */
     .popup-container {
         position: fixed;
         top: 0;
@@ -119,9 +125,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        visibility: hidden;
-        opacity: 0;
-        transition: 0.4s ease-in-out;
     }
 
     .popup {
@@ -172,54 +175,13 @@
 </style>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Popup show करने के लिए
-        function showPopup() {
-            document.getElementById("popup-container").style.visibility = "visible";
-            document.getElementById("popup-container").style.opacity = "1";
-        }
+    function showPopup() {
+        document.getElementById("popup-container").style.display = "flex";
+    }
 
-        // Popup hide करने के लिए
-        function closePopup() {
-            document.getElementById("popup-container").style.visibility = "hidden";
-            document.getElementById("popup-container").style.opacity = "0";
-        }
-
-        // जब पेज लोड होगा, तो popup दिखाओ (अगर पहले से डेटा नहीं है)
-        if (!localStorage.getItem("userName") || !localStorage.getItem("userClass")) {
-            showPopup();
-        }
-
-        // Form को handle करना
-        document.getElementById("popupForm").addEventListener("submit", function (event) {
-            event.preventDefault(); // Form submit होने से रोकना
-
-            let name = document.getElementById("name").value;
-            let className = document.getElementById("class").value;
-
-            if (name && className) {
-                localStorage.setItem("userName", name);
-                localStorage.setItem("userClass", className);
-
-                // Form Data तैयार करना
-                let formData = new FormData();
-                formData.append("name", name);
-                formData.append("class", className);
-
-                // अपने Email पर Data भेजने के लिए
-                fetch("https://formsubmit.co/singhsarthak825@gmail.com", { 
-                    method: "POST",
-                    body: formData
-                }).then(response => {
-                    closePopup(); // Popup बंद करना
-                }).catch(error => {
-                    console.error("Error sending form:", error);
-                });
-            } else {
-                alert("Please fill in all details.");
-            }
-        });
-    });
+    window.onload = function() {
+        showPopup();
+    };
 </script>
 
     <!-- Top Info -->
