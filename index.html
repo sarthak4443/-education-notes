@@ -171,15 +171,12 @@
         transform: scale(1.1);
     }
 </style>
-
 <script>
-    function showPopup() {
-        document.getElementById("popup-container").style.visibility = "visible";
-        document.getElementById("popup-container").style.opacity = "1";
-    }
-
-    window.onload = function() {
-        setTimeout(showPopup, 500); // 0.5 सेकंड बाद पॉपअप दिखेगा
+    document.getElementById("contactForm").onsubmit = function() {
+        document.getElementById("popup").style.display = "block"; // Show popup
+        setTimeout(function() {
+            window.location.href = "https://sarthak4443.github.io/"; // Fast redirect
+        }, 1500); // 1.5 seconds delay
     };
 </script>
 
