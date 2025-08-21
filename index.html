@@ -231,8 +231,9 @@
     </div>
 
     <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 Education Notes. All rights reserved.</p>
+    
+     <footer>
+        <p>&copy; 2025 Education Notes. All rights reserved.</p>
         <p><b>Total Visitors:</b> <span id="visits">Loading...</span></p>
     </footer>
 
@@ -242,6 +243,13 @@
         function showContactMessage() {
             alert("Contact feature coming soon!");
         }
+
+        // Visitor Counter (CountAPI)
+        fetch('https://api.countapi.xyz/hit/sarthak-education-notes/visits')
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById('visits').innerText = data.value;
+          });
     </script>
 </body>
 </html>
