@@ -1,360 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Education Notes</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body  {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #001a00, #004d00);
-            color: white;
-            text-align: center;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        .top-info {
-            margin-top: 10px;
-            text-align: center;
-            font-size: 14px;
-        }
-        .top-info a {
-            color: cyan;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .top-info a:hover {
-            text-decoration: underline;
-        }
-        .top-info img {
-            height: 20px;
-            vertical-align: middle;
-            margin-left: 5px;
-        }
-        .navbar {
-            background: linear-gradient(to right, #111, #333);
-            border-bottom: 3px solid #00ff00;
-            box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.5);
-            padding: 10px;
-            margin-top: 10px;
-        }
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .navbar-brand img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        .content {
-            flex: 1;
-        }
-        .class-slot-wrapper {
-            margin: 15px auto;
-            width: 90%;
-            max-width: 400px;
-        }
-        .class-slot {
-            background: black;
-            color: white;
-            padding: 20px;
-            font-size: 20px;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: bold;
-            text-decoration: none;
-            display: block;
-            width: 100%;
-            border: 2px solid #00f;
-            animation: neonGlow 2s infinite alternate ease-in-out;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .class-slot:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px #ffffff, 0 0 30px currentColor;
-            background: rgba(0, 0, 0, 0.8);
-        }
-        @keyframes neonGlow {
-            0% { box-shadow: 0px 0px 10px cyan; }
-            50% { box-shadow: 0px 0px 20px magenta; }
-            100% { box-shadow: 0px 0px 10px lime; }
-        }
-        footer {
-            background: black;
-            color: white;
-            padding: 5px;
-            text-align: center;
-            font-size: 14px;
-            border-top: none;
-            box-shadow: none;
-        }
-    </style>
-</head>
-<body>  
- <!-- Popup Form -->
-<div class="popup-container" id="popup-container">
-    <div class="popup">
-        <h2>Enter Your Details</h2>
-        <form action="https://formsubmit.co/singhsarthak825@gmail.com" method="POST">
-            <input type="email" name="email" required>
-            <input type="hidden" name="_next" value="https://sarthak4443.github.io/-education-notes/">
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-</div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education Notes</title>
+  <style>
+    /* General Page Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+    }
 
-<style>
+    header {
+      background: #222;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
     /* Popup Modal Styling */
     .popup-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        visibility: hidden;
-        opacity: 0;
-        transition: 0.4s ease-in-out;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: flex; justify-content: center; align-items: center;
+      visibility: hidden; opacity: 0;
+      transition: 0.4s ease-in-out;
+      z-index: 9999;
+    }
+
+    .popup-container.active {
+      visibility: visible; 
+      opacity: 1;
     }
 
     .popup {
-        background: #1e1e2f;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
-        border: 3px solid;
-        border-image-source: linear-gradient(45deg, cyan, magenta, lime);
-        border-image-slice: 1;
-        animation: neon-border 2s infinite alternate;
+      background: rgba(30,30,47,0.95);
+      padding: 25px;
+      border-radius: 16px;
+      text-align: center;
+      width: 320px;
+      box-shadow: 0px 0px 25px rgba(0,255,200,0.4);
+      border: 2px solid transparent;
+      border-image-source: linear-gradient(45deg, cyan, magenta, lime);
+      border-image-slice: 1;
+      animation: neon-border 2s infinite alternate;
     }
 
     @keyframes neon-border {
-        0% { box-shadow: 0px 0px 10px cyan; }
-        50% { box-shadow: 0px 0px 20px magenta; }
-        100% { box-shadow: 0px 0px 10px lime; }
+      0% { box-shadow: 0px 0px 10px cyan; }
+      50% { box-shadow: 0px 0px 20px magenta; }
+      100% { box-shadow: 0px 0px 10px lime; }
     }
 
-    input {
-        width: 90%;
-        padding: 10px;
-        margin: 10px 0;
-        border: none;
-        border-radius: 5px;
-        text-align: center;
-        font-size: 16px;
-        outline: none;
+    .popup h2 {
+      margin-bottom: 15px;
+      color: #fff;
+      font-size: 22px;
     }
 
-    button {
-        padding: 10px 20px;
-        font-size: 16px;
-        font-weight: bold;
-        background: linear-gradient(90deg, cyan, magenta);
-        border: none;
-        border-radius: 5px;
-        color: black;
-        cursor: pointer;
-        transition: 0.3s;
+    .popup input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 16px;
+      outline: none;
     }
 
-    button:hover {
-        background: linear-gradient(90deg, magenta, cyan);
-        transform: scale(1.1);
+    .popup button {
+      padding: 10px 22px;
+      font-size: 16px;
+      font-weight: bold;
+      background: linear-gradient(90deg, cyan, magenta);
+      border: none;
+      border-radius: 8px;
+      color: black;
+      cursor: pointer;
+      transition: 0.3s;
     }
-</style>
-<script>
-    document.getElementById("contactForm").onsubmit = function() {
-        document.getElementById("popup").style.display = "block"; 
-        setTimeout(function() {
-            window.location.href = "https://sarthak4443.github.io/"; 
-        }, 1500); 
-    };
-</script>
 
-    <!-- Top Info -->
-    <div class="top-info">
-        <a href="mailto:singhsarthak825@gmail.com">📧 singhsarthak825@gmail.com</a> |
-        <a href="https://www.instagram.com/sarthaksingh9994/?__pwa=1#" target="_blank">
-            <img src="Instagram_icon.png" alt="Instagram">
-        </a>
+    .popup button:hover {
+      background: linear-gradient(90deg, magenta, cyan);
+      transform: scale(1.08);
+    }
+
+    .popup-founder {
+      margin-top: 15px;
+      text-align: center;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .popup-founder .founder-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 8px;
+      border: 2px solid #00ffcc;
+      box-shadow: 0 0 12px rgba(0,255,200,0.5);
+    }
+
+    /* Close Button */
+    .close-btn {
+      position: absolute;
+      top: 15px; right: 20px;
+      font-size: 22px;
+      color: white;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    📚 Education Notes
+  </header>
+
+  <main>
+    <p>Welcome to Education Notes Website! Scroll and explore study materials.</p>
+    <p>👇 All notes and content available here 👇</p>
+  </main>
+
+  <!-- ================= POPUP FORM ================= -->
+  <div class="popup-container" id="popup-container">
+    <div class="popup">
+      <span class="close-btn" id="close-btn">&times;</span>
+      <h2>Enter Your Details</h2>
+      <form action="https://formsubmit.co/singhsarthak825@gmail.com" method="POST">
+        <input type="email" name="email" required placeholder="Enter your email">
+        <input type="hidden" name="_next" value="https://sarthak4443.github.io/-education-notes/">
+        <button type="submit">Submit</button>
+      </form>
+      <div class="popup-founder">
+        <img src="Screenshot 2025-09-16 124953.png" alt="Founder" class="founder-img">
+        <p>👨‍💻 Founder: <b>Sarthak</b></p>
+      </div>
     </div>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="logo.PNG" alt="Logo">
-                Education Notes
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact" onclick="showContactMessage()">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <div class="content">
-        <section id="home" class="container mt-5">
-            <h2>Welcome to Education Notes</h2>
-            <p>Find notes for all subjects and classes except commerce.</p>
-            <div class="row mt-4">
-                <div class="class-slot-wrapper">
-                    <a href="class9.html" class="class-slot">Class 9</a>
-                </div>
-                <div class="class-slot-wrapper">
-                    <a href="class10.html" class="class-slot">Class 10</a>
-                </div>
-                <div class="class-slot-wrapper">
-                    <a href="class11.html" class="class-slot">Class 11</a>
-                </div>
-                <div class="class-slot-wrapper">
-                    <a href="class12.html" class="class-slot">Class 12</a>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
-   <footer>
-    <p>&copy; 2025 Education Notes. All rights reserved.</p>
-    <p><b>Your Visits (this browser):</b> <span id="visits">0</span></p>
-   </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function showContactMessage() 
-        // Per-browser visit counter (no API)
-        (function () {
-          var key = 'en_visits';
-          var current = parseInt(localStorage.getItem(key) || '0', 10);
-          current += 1; 
-          localStorage.setItem(key, String(current));
-          var el = document.getElementById('visits');
-          if (el) el.textContent = current;
-        })(); {
-            alert("Contact feature coming soon!");
-        }
-
-        // Visitor Counter (CountAPI)
-        fetch('https://api.countapi.xyz/hit/sarthak-education-notes/visits')
-          .then(response => response.json())
-          .then(data => {
-            document.getElementById('visits').innerText = data.value;
-          });
-    </script>
-
-<!-- ================== PASSWORD LOCK OVERLAY ================== -->
-<style>
-  #site-lock-overlay {
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.95), rgba(0,0,0,0.96));
-    z-index: 99999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-  }
-  #site-lock-card {
-    width: 92%;
-    max-width: 540px;
-    background: linear-gradient(180deg,#0b2b0b,#071508);
-    border-radius: 12px;
-    padding: 22px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-    border: 2px solid rgba(0,255,128,0.15);
-  }
-  #site-lock-card h2 { margin: 0 0 8px; font-size: 1.4rem; color: #fffb; }
-  #site-lock-card p { margin: 0 0 16px; font-size: 0.98rem; color: #dfffdc; }
-  #lock-input {
-    width: 80%;
-    max-width: 320px;
-    padding: 10px 12px;
-    margin: 8px 0 12px;
-    border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.12);
-    outline: none;
-    background: rgba(255,255,255,0.03);
-    color: #fff;
-    font-size: 16px;
-    text-align: center;
-  }
-  #lock-btn {
-    padding: 10px 18px;
-    border-radius: 8px;
-    font-weight: 700;
-    cursor: pointer;
-    border: none;
-    background: linear-gradient(90deg,#00ffd0,#00bfff);
-    color: #000;
-    font-size: 15px;
-  }
-  #lock-error { color: #ffb3b3; min-height: 18px; margin-top: 8px; font-size: 0.95rem; }
-</style>
-
-<div id="site-lock-overlay">
-  <div id="site-lock-card">
-    <h2>This website has been stopped by the founder for all people</h2>
-    <p>To proceed, enter the password below. (Case-sensitive)</p>
-    <input id="lock-input" type="password" placeholder="Enter password" autocomplete="off" />
-    <div><button id="lock-btn">Unlock</button></div>
-    <div id="lock-error"></div>
-    <p style="margin-top:12px; font-size:0.82rem; color:#cfeed3;">If you are the founder, enter the correct password.</p>
   </div>
-</div>
 
-<script>
-(function() {
-  const CORRECT = 'IMUCET';
-  const overlay = document.getElementById('site-lock-overlay');
-  const input = document.getElementById('lock-input');
-  const btn = document.getElementById('lock-btn');
-  const err = document.getElementById('lock-error');
-  const STORAGE_KEY = 'education_notes_unlocked_v1';
-
-  if (sessionStorage.getItem(STORAGE_KEY) === 'true') {
-    overlay.remove();
-    return;
-  }
-
-  input.focus();
-
-  function tryUnlock() {
-    if (input.value === CORRECT) {
-      sessionStorage.setItem(STORAGE_KEY,'true');
-      overlay.style.opacity = '0';
-      overlay.style.transition = 'opacity 0.3s ease';
-      setTimeout(()=>overlay.remove(),300);
-    } else {
-      err.textContent = 'Incorrect password. Try again.';
-      input.value='';
-      input.focus();
+  <script>
+    // Show popup on page load
+    window.onload = function() {
+      document.getElementById("popup-container").classList.add("active");
     }
-  }
 
-  btn.addEventListener('click', tryUnlock);
-  input.addEventListener('keypress', e=>{ if(e.key==='Enter'){ tryUnlock(); }});
-})();
-</script>
-<!-- ================== END PASSWORD LOCK ================== -->
+    // Close button functionality
+    document.getElementById("close-btn").addEventListener("click", function() {
+      document.getElementById("popup-container").classList.remove("active");
+    });
+  </script>
 
 </body>
 </html>
