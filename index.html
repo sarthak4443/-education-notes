@@ -6,28 +6,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Education Notes | Learn Better</title>
+<title>Education Notes</title>
 
 <style>
 
-/* =========================================================
+/* =====================================================
    ROOT
-========================================================= */
+===================================================== */
 
 :root {
     --green: #00e66a;
-    --green-soft: rgba(0,230,106,.14);
+    --green-light: #4dff9a;
     --dark: #000b04;
-    --dark2: #00180b;
+    --dark-2: #00170a;
+    --card: rgba(0, 38, 17, 0.55);
     --text: #f4fff8;
     --muted: #8fa197;
-    --border: rgba(0,230,106,.16);
+    --border: rgba(0, 230, 106, 0.15);
 }
 
 
-/* =========================================================
+/* =====================================================
    RESET
-========================================================= */
+===================================================== */
 
 * {
     margin: 0;
@@ -51,20 +52,22 @@ body {
         );
 
     color: var(--text);
+
     min-height: 100vh;
+
     overflow-x: hidden;
 }
 
 
-/* =========================================================
-   CURSOR LIGHT
-========================================================= */
+/* =====================================================
+   CURSOR FOLLOWING GREEN LIGHT
+===================================================== */
 
 .cursor-light {
     position: fixed;
 
-    width: 350px;
-    height: 350px;
+    width: 380px;
+    height: 380px;
 
     border-radius: 50%;
 
@@ -73,197 +76,240 @@ body {
     background:
         radial-gradient(
             circle,
-            rgba(0,230,106,.13) 0%,
-            rgba(0,230,106,.06) 28%,
-            transparent 68%
+            rgba(0, 230, 106, 0.13) 0%,
+            rgba(0, 230, 106, 0.06) 25%,
+            transparent 70%
         );
 
     transform: translate(-50%, -50%);
 
     z-index: 9990;
 
-    mix-blend-mode: screen;
+    opacity: 0.8;
 
     transition:
-        left .08s linear,
-        top .08s linear;
+        left 0.08s linear,
+        top 0.08s linear;
+}
 
-    opacity: .8;
+@media (pointer: coarse) {
+
+    .cursor-light {
+        display: none;
+    }
 }
 
 
-/* =========================================================
-   TOP CONTACT BAR
-========================================================= */
+/* =====================================================
+   TOP BAR
+===================================================== */
 
 .top-bar {
+
     height: 42px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: flex-end;
 
     padding: 0 6%;
 
-    background: rgba(0,10,4,.65);
+    gap: 12px;
 
-    border-bottom: 1px solid rgba(255,255,255,.04);
+    background:
+        rgba(0, 10, 4, 0.72);
 
-    backdrop-filter: blur(12px);
+    border-bottom:
+        1px solid rgba(255,255,255,0.04);
 
-    gap: 18px;
+    backdrop-filter: blur(14px);
 }
 
+
+/* =====================================================
+   SOCIAL ICONS
+===================================================== */
+
 .top-social {
-    width: 30px;
-    height: 30px;
+
+    width: 32px;
+    height: 32px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    border-radius: 50%;
+    color: #9baa9f;
 
     text-decoration: none;
 
-    color: #aebdb4;
-
-    transition: .3s ease;
-
-    position: relative;
-}
-
-.top-social::after {
-    content: "";
-
-    position: absolute;
-
-    inset: -5px;
-
     border-radius: 50%;
 
-    background: rgba(0,230,106,.12);
-
-    filter: blur(10px);
-
-    opacity: 0;
-
-    transition: .3s;
-}
-
-.top-social:hover {
-    color: var(--green);
-    transform: translateY(-2px);
-}
-
-.top-social:hover::after {
-    opacity: 1;
+    transition:
+        color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
 .top-social svg {
+
     width: 17px;
     height: 17px;
 
-    position: relative;
-    z-index: 2;
+}
+
+.top-social:hover {
+
+    color: var(--green);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 22px rgba(0,230,106,.18);
+
 }
 
 
-/* =========================================================
+/* =====================================================
    NAVBAR
-========================================================= */
+===================================================== */
 
 .navbar {
+
+    height: 76px;
+
     position: sticky;
+
     top: 0;
 
     z-index: 1000;
 
-    height: 76px;
-
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     padding: 0 6%;
 
-    background: rgba(0,20,9,.78);
+    background:
+        rgba(0, 20, 9, 0.78);
 
     backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
 
-    border-bottom: 1px solid rgba(0,230,106,.12);
+    border-bottom:
+        1px solid rgba(0,230,106,.12);
+
 }
 
+
+/* BRAND */
+
 .brand {
+
     display: flex;
+
     align-items: center;
 
     gap: 12px;
 
-    color: white;
     text-decoration: none;
+
+    color: white;
+
 }
 
 .brand img {
+
     width: 42px;
     height: 42px;
 
     object-fit: contain;
+
 }
 
 .brand-name {
+
     font-size: 21px;
+
     font-weight: 750;
+
 }
 
 .brand-name span {
+
     color: var(--green);
+
 }
 
+
+/* NAV LINKS */
+
 .nav-links {
+
     display: flex;
 
     align-items: center;
 
-    gap: 30px;
+    gap: 28px;
 
     list-style: none;
+
 }
 
 .nav-links a {
-    color: #b7c6bd;
+
+    color: #b5c2ba;
 
     text-decoration: none;
 
     font-size: 13px;
+
     font-weight: 650;
 
     transition: .25s ease;
+
 }
 
 .nav-links a:hover {
+
     color: var(--green);
+
 }
 
 .nav-contact {
-    border: 1px solid rgba(0,230,106,.3);
 
     padding: 9px 17px;
 
-    border-radius: 4px;
+    border:
+        1px solid rgba(0,230,106,.3);
+
+}
+
+.nav-contact:hover {
+
+    background:
+        rgba(0,230,106,.08);
+
 }
 
 
-/* =========================================================
+/* =====================================================
    HERO
-========================================================= */
+===================================================== */
 
 .hero {
-    min-height: calc(100vh - 118px);
+
+    min-height:
+        calc(100vh - 118px);
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -271,57 +317,67 @@ body {
     padding: 80px 20px;
 
     position: relative;
+
 }
 
 .hero::before {
+
     content: "";
 
     position: absolute;
 
-    width: 600px;
-    height: 600px;
+    width: 650px;
+    height: 650px;
 
     left: 50%;
     top: 50%;
 
-    transform: translate(-50%,-50%);
+    transform:
+        translate(-50%, -50%);
 
     background:
         radial-gradient(
             circle,
-            rgba(0,230,106,.09),
+            rgba(0,230,106,.08),
             transparent 68%
         );
 
-    filter: blur(30px);
+    filter: blur(25px);
 
     pointer-events: none;
+
 }
 
 .hero-content {
+
     position: relative;
+
+    z-index: 2;
 
     max-width: 950px;
 
-    z-index: 2;
 }
 
 .eyebrow {
+
     color: var(--green);
 
-    font-size: 11px;
+    font-size: 10px;
 
-    font-weight: 750;
+    font-weight: 800;
 
     letter-spacing: 4px;
 
     text-transform: uppercase;
 
     margin-bottom: 25px;
+
 }
 
 .hero h1 {
-    font-size: clamp(48px,8vw,88px);
+
+    font-size:
+        clamp(48px, 8vw, 88px);
 
     line-height: .98;
 
@@ -330,28 +386,34 @@ body {
     font-weight: 800;
 
     margin-bottom: 28px;
+
 }
 
 .hero h1 span {
+
     color: var(--green);
 
     text-shadow:
-        0 0 35px rgba(0,230,106,.14);
+        0 0 35px rgba(0,230,106,.15);
+
 }
 
 .hero-description {
-    max-width: 670px;
+
+    max-width: 650px;
 
     margin: auto;
 
-    color: #a4b3aa;
+    color: #a3b1a9;
 
     font-size: 16px;
 
     line-height: 1.8;
+
 }
 
 .hero-buttons {
+
     display: flex;
 
     justify-content: center;
@@ -361,10 +423,12 @@ body {
     margin-top: 36px;
 
     flex-wrap: wrap;
+
 }
 
 .primary-btn,
 .secondary-btn {
+
     display: inline-block;
 
     padding: 13px 24px;
@@ -376,82 +440,107 @@ body {
     font-weight: 750;
 
     transition: .3s ease;
+
 }
 
 .primary-btn {
-    color: #001308;
 
-    background: var(--green);
+    background:
+        var(--green);
 
-    border: 1px solid var(--green);
+    color:
+        #001308;
+
 }
 
 .primary-btn:hover {
-    transform: translateY(-3px);
+
+    transform:
+        translateY(-3px);
 
     box-shadow:
-        0 10px 35px rgba(0,230,106,.2);
+        0 12px 35px rgba(0,230,106,.22);
+
 }
 
 .secondary-btn {
+
     color: white;
 
-    background: rgba(255,255,255,.025);
+    background:
+        rgba(255,255,255,.025);
 
-    border: 1px solid rgba(255,255,255,.14);
+    border:
+        1px solid rgba(255,255,255,.13);
+
 }
 
 .secondary-btn:hover {
-    color: var(--green);
 
-    border-color: rgba(0,230,106,.5);
+    color:
+        var(--green);
 
-    transform: translateY(-3px);
+    border-color:
+        rgba(0,230,106,.45);
+
+    transform:
+        translateY(-3px);
+
 }
 
 
-/* =========================================================
+/* =====================================================
    MAIN
-========================================================= */
+===================================================== */
 
 .main {
+
     width: 88%;
 
     max-width: 1180px;
 
     margin: auto;
+
 }
 
 .section {
+
     padding: 90px 0;
 
     border-top:
         1px solid rgba(255,255,255,.05);
+
 }
 
 .section-label {
+
     color: var(--green);
 
     font-size: 10px;
 
-    font-weight: 750;
+    font-weight: 800;
 
     letter-spacing: 3px;
 
     text-transform: uppercase;
 
     margin-bottom: 14px;
+
 }
 
 .section-title {
-    font-size: clamp(30px,4vw,46px);
+
+    font-size:
+        clamp(30px, 4vw, 46px);
 
     letter-spacing: -1.5px;
 
     margin-bottom: 16px;
+
 }
 
 .section-description {
+
     color: var(--muted);
 
     line-height: 1.8;
@@ -459,14 +548,16 @@ body {
     font-size: 15px;
 
     max-width: 650px;
+
 }
 
 
-/* =========================================================
-   CLASSES
-========================================================= */
+/* =====================================================
+   CLASS SECTION
+===================================================== */
 
 .classes-heading {
+
     display: flex;
 
     justify-content: space-between;
@@ -476,19 +567,21 @@ body {
     gap: 30px;
 
     margin-bottom: 45px;
+
 }
 
 .classes-grid {
+
     display: grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+        repeat(4, 1fr);
 
     gap: 14px;
+
 }
 
 .class-card {
-    position: relative;
 
     min-height: 235px;
 
@@ -503,6 +596,8 @@ body {
     text-decoration: none;
 
     color: white;
+
+    position: relative;
 
     overflow: hidden;
 
@@ -520,70 +615,82 @@ body {
         transform .35s ease,
         border-color .35s ease,
         box-shadow .35s ease;
+
 }
 
+.class-card::before {
 
-/* Mouse glow inside cards */
-
-.class-card::after {
     content: "";
 
     position: absolute;
 
-    width: 180px;
-    height: 180px;
+    width: 190px;
+    height: 190px;
 
-    left: var(--mx,50%);
-    top: var(--my,50%);
+    left: var(--mx, 50%);
+    top: var(--my, 50%);
 
-    transform: translate(-50%,-50%);
+    transform:
+        translate(-50%, -50%);
 
     background:
         radial-gradient(
             circle,
-            rgba(0,230,106,.13),
+            rgba(0,230,106,.15),
             transparent 68%
         );
 
     opacity: 0;
 
-    transition: opacity .3s;
-
     pointer-events: none;
+
+    transition: opacity .25s;
+
 }
 
-.class-card:hover::after {
+.class-card:hover::before {
+
     opacity: 1;
+
 }
 
 .class-card:hover {
-    transform: translateY(-7px);
+
+    transform:
+        translateY(-7px);
 
     border-color:
         rgba(0,230,106,.5);
 
     box-shadow:
-        0 18px 45px rgba(0,0,0,.25),
+        0 20px 50px rgba(0,0,0,.3),
         0 0 35px rgba(0,230,106,.06);
+
 }
 
 .class-number {
-    color: var(--green);
 
-    font-size: 11px;
+    color:
+        var(--green);
 
-    font-weight: 750;
+    font-size: 10px;
+
+    font-weight: 800;
 
     letter-spacing: 2px;
+
 }
 
 .class-name {
+
     font-size: 30px;
 
     font-weight: 750;
+
 }
 
 .class-bottom {
+
     display: flex;
 
     justify-content: space-between;
@@ -593,62 +700,79 @@ body {
     color: #7f9187;
 
     font-size: 11px;
+
 }
 
 .arrow {
-    color: var(--green);
+
+    color:
+        var(--green);
 
     font-size: 21px;
 
     transition: .25s;
+
 }
 
 .class-card:hover .arrow {
-    transform: translateX(6px);
+
+    transform:
+        translateX(6px);
+
 }
 
 
-/* =========================================================
+/* =====================================================
    STATS
-========================================================= */
+===================================================== */
 
 .stats {
+
     display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
     border-top:
         1px solid var(--border);
 
     border-bottom:
         1px solid var(--border);
+
 }
 
 .stat {
+
     text-align: center;
 
     padding: 30px;
 
     border-right:
         1px solid var(--border);
+
 }
 
 .stat:last-child {
+
     border-right: none;
+
 }
 
 .stat-number {
-    color: var(--green);
+
+    color:
+        var(--green);
 
     font-size: 30px;
 
     font-weight: 800;
 
     margin-bottom: 5px;
+
 }
 
 .stat-text {
+
     color: #7f9187;
 
     font-size: 10px;
@@ -656,58 +780,70 @@ body {
     letter-spacing: 1.5px;
 
     text-transform: uppercase;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    PHILOSOPHY
-========================================================= */
+===================================================== */
 
 .philosophy {
+
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
     gap: 90px;
 
     align-items: center;
+
 }
 
 .quote {
+
     border-left:
         2px solid var(--green);
 
     padding-left: 28px;
 
     font-size:
-        clamp(25px,3vw,38px);
+        clamp(25px, 3vw, 38px);
 
     font-weight: 700;
 
     line-height: 1.4;
+
 }
 
 .quote span {
-    color: var(--green);
+
+    color:
+        var(--green);
+
 }
 
 
-/* =========================================================
+/* =====================================================
    FEATURES
-========================================================= */
+===================================================== */
 
 .features {
+
     display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
     gap: 16px;
 
     margin-top: 45px;
+
 }
 
 .feature {
+
     padding: 30px;
 
     background:
@@ -717,20 +853,26 @@ body {
         1px solid rgba(255,255,255,.06);
 
     transition: .3s ease;
+
 }
 
 .feature:hover {
-    transform: translateY(-5px);
+
+    transform:
+        translateY(-5px);
 
     border-color:
         rgba(0,230,106,.25);
 
     box-shadow:
         0 15px 40px rgba(0,0,0,.18);
+
 }
 
 .feature-number {
-    color: var(--green);
+
+    color:
+        var(--green);
 
     font-size: 10px;
 
@@ -739,66 +881,82 @@ body {
     font-weight: bold;
 
     margin-bottom: 35px;
+
 }
 
 .feature h3 {
+
     font-size: 20px;
 
     margin-bottom: 12px;
+
 }
 
 .feature p {
+
     color: #83948b;
 
     font-size: 13px;
 
     line-height: 1.7;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    CTA
-========================================================= */
+===================================================== */
 
 .cta {
+
     text-align: center;
 
     padding: 110px 20px;
 
     border-top:
         1px solid rgba(255,255,255,.05);
+
 }
 
 .cta h2 {
+
     font-size:
         clamp(32px,5vw,55px);
 
     line-height: 1.1;
 
     margin-bottom: 17px;
+
 }
 
 .cta p {
-    color: #8c9d93;
+
+    color:
+        #8c9d93;
 
     margin-bottom: 30px;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    FOOTER
-========================================================= */
+===================================================== */
 
 footer {
-    background: #000903;
+
+    background:
+        #000903;
 
     border-top:
         1px solid rgba(0,230,106,.12);
 
     padding: 42px 7%;
+
 }
 
 .footer-top {
+
     display: flex;
 
     justify-content: space-between;
@@ -809,25 +967,34 @@ footer {
 
     border-bottom:
         1px solid rgba(255,255,255,.05);
+
 }
 
 .footer-brand {
+
     font-size: 19px;
 
     font-weight: 750;
+
 }
 
 .footer-brand span {
-    color: var(--green);
+
+    color:
+        var(--green);
+
 }
 
 .footer-socials {
+
     display: flex;
 
     gap: 10px;
+
 }
 
 .footer-social {
+
     width: 34px;
     height: 34px;
 
@@ -836,7 +1003,8 @@ footer {
     align-items: center;
     justify-content: center;
 
-    color: #7f9187;
+    color:
+        #7f9187;
 
     border:
         1px solid rgba(255,255,255,.08);
@@ -844,46 +1012,60 @@ footer {
     border-radius: 50%;
 
     transition: .3s;
+
 }
 
 .footer-social:hover {
-    color: var(--green);
+
+    color:
+        var(--green);
 
     border-color:
         rgba(0,230,106,.4);
 
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
     box-shadow:
         0 5px 20px rgba(0,230,106,.12);
+
 }
 
 .footer-social svg {
+
     width: 16px;
+
 }
 
 .footer-bottom {
+
     display: flex;
 
     justify-content: space-between;
 
     padding-top: 22px;
 
-    color: #53645b;
+    color:
+        #53645b;
 
     font-size: 11px;
+
 }
 
 .footer-bottom span {
-    color: var(--green);
+
+    color:
+        var(--green);
+
 }
 
 
-/* =========================================================
+/* =====================================================
    WELCOME POPUP
-========================================================= */
+===================================================== */
 
 .welcome-popup-backdrop {
+
     position: fixed;
 
     inset: 0;
@@ -891,12 +1073,14 @@ footer {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     background:
         rgba(0,8,3,.87);
 
-    backdrop-filter: blur(10px);
+    backdrop-filter:
+        blur(10px);
 
     z-index: 99990;
 
@@ -905,15 +1089,19 @@ footer {
     opacity: 0;
 
     transition: .3s;
+
 }
 
 .welcome-popup-backdrop.active {
+
     visibility: visible;
 
     opacity: 1;
+
 }
 
 .welcome-popup {
+
     width: 400px;
 
     max-width: 92%;
@@ -940,69 +1128,93 @@ footer {
 
     animation:
         popupIn .45s ease;
+
 }
 
 @keyframes popupIn {
 
     from {
+
         opacity: 0;
+
         transform:
             translateY(25px)
             scale(.96);
+
     }
 
     to {
+
         opacity: 1;
+
         transform:
             translateY(0)
             scale(1);
+
     }
+
 }
 
 .welcome-popup h2 {
+
     font-size: 27px;
 
     margin-bottom: 13px;
+
 }
 
 .welcome-popup h2 span {
-    color: var(--green);
+
+    color:
+        var(--green);
+
 }
 
 .welcome-popup .lead {
-    color: #9caf a5;
+
+    color:
+        #9cafa5;
 
     font-size: 14px;
 
     line-height: 1.7;
 
     margin-bottom: 25px;
+
 }
 
 .welcome-continue {
+
     padding: 12px 30px;
 
     border: none;
 
-    background: var(--green);
+    background:
+        var(--green);
 
-    color: #001308;
+    color:
+        #001308;
 
     font-weight: 800;
 
     cursor: pointer;
 
     transition: .25s;
+
 }
 
 .welcome-continue:hover {
-    transform: translateY(-3px);
+
+    transform:
+        translateY(-3px);
 
     box-shadow:
         0 10px 30px rgba(0,230,106,.2);
+
 }
 
 .welcome-founder {
+
     margin-top: 25px;
 
     display: flex;
@@ -1012,9 +1224,11 @@ footer {
     align-items: center;
 
     gap: 10px;
+
 }
 
 .founder-thumb {
+
     width: 45px;
     height: 45px;
 
@@ -1024,41 +1238,55 @@ footer {
 
     border:
         2px solid rgba(0,230,106,.35);
+
 }
 
 .founder-text {
+
     font-size: 13px;
 
-    color: #d5e3da;
+    color:
+        #d5e3da;
+
 }
 
 .founder-text strong {
-    color: var(--green);
+
+    color:
+        var(--green);
+
 }
 
 .welcome-close {
+
     position: absolute;
 
     top: 12px;
+
     right: 15px;
 
-    color: #718078;
+    color:
+        #718078;
 
     font-size: 22px;
 
     cursor: pointer;
+
 }
 
 .welcome-close:hover {
+
     color: white;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    PASSWORD LOCK
-========================================================= */
+===================================================== */
 
 #site-lock-overlay {
+
     position: fixed;
 
     inset: 0;
@@ -1066,6 +1294,7 @@ footer {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     background:
@@ -1077,9 +1306,14 @@ footer {
         );
 
     z-index: 99999;
+
+    transition:
+        opacity .3s ease;
+
 }
 
 #site-lock-card {
+
     width: 92%;
 
     max-width: 470px;
@@ -1096,35 +1330,45 @@ footer {
 
     box-shadow:
         0 30px 80px rgba(0,0,0,.7);
+
 }
 
 .lock-label {
-    color: var(--green);
+
+    color:
+        var(--green);
 
     font-size: 10px;
 
-    font-weight: bold;
+    font-weight: 800;
 
     letter-spacing: 3px;
 
     margin-bottom: 15px;
+
 }
 
 #site-lock-card h2 {
+
     font-size: 25px;
 
     margin-bottom: 12px;
+
 }
 
 #site-lock-card p {
-    color: #91a49a;
+
+    color:
+        #91a49a;
 
     font-size: 14px;
 
     line-height: 1.6;
+
 }
 
 #lock-input {
+
     width: 100%;
 
     max-width: 330px;
@@ -1146,18 +1390,28 @@ footer {
     text-align: center;
 
     font-size: 15px;
+
 }
 
 #lock-input:focus {
-    border-color: var(--green);
+
+    border-color:
+        var(--green);
+
+    box-shadow:
+        0 0 20px rgba(0,230,106,.08);
+
 }
 
 #lock-btn {
+
     padding: 12px 27px;
 
-    background: var(--green);
+    background:
+        var(--green);
 
-    color: #001509;
+    color:
+        #001509;
 
     border: none;
 
@@ -1166,165 +1420,231 @@ footer {
     cursor: pointer;
 
     transition: .25s;
+
 }
 
 #lock-btn:hover {
-    transform: translateY(-2px);
+
+    transform:
+        translateY(-2px);
 
     box-shadow:
         0 8px 25px rgba(0,230,106,.2);
+
 }
 
 #lock-error {
-    color: #ff8f8f;
+
+    color:
+        #ff8f8f;
 
     min-height: 20px;
 
     margin-top: 10px;
 
     font-size: 13px;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    MOBILE
-========================================================= */
+===================================================== */
 
 @media(max-width:900px) {
 
     .classes-grid {
-        grid-template-columns: repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
+
     }
 
     .philosophy {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
 
         gap: 45px;
+
     }
 
     .features {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
+
 }
 
 
 @media(max-width:650px) {
 
     .top-bar {
+
         padding-right: 18px;
+
     }
 
     .navbar {
+
         height: 68px;
 
-        padding: 0 18px;
+        padding:
+            0 18px;
+
     }
 
     .nav-links {
+
         gap: 13px;
+
     }
 
     .nav-links li:nth-child(1),
     .nav-links li:nth-child(3) {
+
         display: none;
+
     }
 
     .brand img {
+
         width: 35px;
         height: 35px;
+
     }
 
     .brand-name {
+
         font-size: 18px;
+
     }
 
     .hero {
+
         min-height:
             calc(100vh - 110px);
 
         padding:
             60px 18px;
+
     }
 
     .hero h1 {
-        letter-spacing: -2px;
+
+        letter-spacing:
+            -2px;
+
     }
 
     .hero-description {
+
         font-size: 15px;
+
     }
 
     .main {
+
         width: 90%;
+
     }
 
     .section {
-        padding: 65px 0;
+
+        padding:
+            65px 0;
+
     }
 
     .classes-heading {
+
         display: block;
+
     }
 
     .classes-grid {
-        grid-template-columns: 1fr 1fr;
+
+        grid-template-columns:
+            1fr 1fr;
+
     }
 
     .class-card {
-        min-height: 190px;
 
-        padding: 20px;
+        min-height:
+            190px;
+
+        padding:
+            20px;
+
     }
 
     .class-name {
-        font-size: 24px;
+
+        font-size:
+            24px;
+
     }
 
     .stats {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
 
     .stat {
-        border-right: none;
+
+        border-right:
+            none;
 
         border-bottom:
             1px solid var(--border);
+
     }
 
     .stat:last-child {
-        border-bottom: none;
+
+        border-bottom:
+            none;
+
     }
 
     .footer-top,
     .footer-bottom {
-        flex-direction: column;
 
-        gap: 18px;
+        flex-direction:
+            column;
 
-        text-align: center;
+        gap:
+            18px;
+
+        text-align:
+            center;
+
     }
+
 }
 
 
 @media(max-width:400px) {
 
     .classes-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
 
     .hero h1 {
-        font-size: 43px;
+
+        font-size:
+            43px;
+
     }
-}
 
-
-/* Don't show cursor light on touch devices */
-
-@media(pointer:coarse) {
-
-    .cursor-light {
-        display: none;
-    }
 }
 
 </style>
@@ -1334,18 +1654,22 @@ footer {
 <body>
 
 
-<!-- =========================================================
+<!-- =====================================================
      CURSOR LIGHT
-========================================================= -->
+===================================================== -->
 
-<div class="cursor-light" id="cursorLight"></div>
+<div
+    class="cursor-light"
+    id="cursorLight">
+</div>
 
 
-<!-- =========================================================
-     TOP SOCIAL BAR
-========================================================= -->
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
 
 <div class="top-bar">
+
 
     <!-- EMAIL -->
 
@@ -1377,7 +1701,7 @@ footer {
 
     <!-- INSTAGRAM -->
 
-    <!-- Replace YOUR_INSTAGRAM_USERNAME with your real username -->
+    <!-- CHANGE USERNAME HERE -->
 
     <a
         href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME/"
@@ -1418,20 +1742,25 @@ footer {
 </div>
 
 
-<!-- =========================================================
+<!-- =====================================================
      NAVBAR
-========================================================= -->
+===================================================== -->
 
 <nav class="navbar">
 
-    <a href="#home" class="brand">
+    <a
+        href="#home"
+        class="brand">
 
         <img
             src="logo.PNG"
-            alt="Education Notes Logo">
+            alt="Education Notes">
 
         <div class="brand-name">
-            Education <span>Notes</span>
+
+            Education
+            <span>Notes</span>
+
         </div>
 
     </a>
@@ -1458,6 +1787,7 @@ footer {
         </li>
 
         <li>
+
             <a
                 href="#contact"
                 class="nav-contact"
@@ -1466,6 +1796,7 @@ footer {
                 Contact
 
             </a>
+
         </li>
 
     </ul>
@@ -1473,9 +1804,9 @@ footer {
 </nav>
 
 
-<!-- =========================================================
+<!-- =====================================================
      HERO
-========================================================= -->
+===================================================== -->
 
 <section
     class="hero"
@@ -1484,7 +1815,9 @@ footer {
     <div class="hero-content">
 
         <div class="eyebrow">
+
             Education • Resources • Growth
+
         </div>
 
 
@@ -1499,7 +1832,7 @@ footer {
 
         <p class="hero-description">
 
-            Welcome to Education Notes — a simple and
+            Welcome to Education Notes — a simple,
             accessible platform for students to discover
             useful study resources and make learning easier.
 
@@ -1532,29 +1865,36 @@ footer {
 </section>
 
 
-<!-- =========================================================
+<!-- =====================================================
      MAIN
-========================================================= -->
+===================================================== -->
 
 <main class="main">
 
 
-<!-- CLASSES -->
+<!-- =====================================================
+     CLASSES
+===================================================== -->
 
 <section
     class="section"
     id="classes">
+
 
     <div class="classes-heading">
 
         <div>
 
             <div class="section-label">
+
                 01 — Study Resources
+
             </div>
 
             <h2 class="section-title">
+
                 Choose your class.
+
             </h2>
 
         </div>
@@ -1562,7 +1902,7 @@ footer {
 
         <p class="section-description">
 
-            Select your class to explore the available
+            Select your class to explore available
             educational resources and notes.
 
         </p>
@@ -1680,18 +2020,20 @@ footer {
 
         </a>
 
+
     </div>
 
 </section>
 
 
-<!-- =========================================================
+<!-- =====================================================
      STATS
-========================================================= -->
+===================================================== -->
 
 <section class="section">
 
     <div class="stats">
+
 
         <div class="stat">
 
@@ -1731,24 +2073,29 @@ footer {
 
         </div>
 
+
     </div>
 
 </section>
 
 
-<!-- =========================================================
+<!-- =====================================================
      PHILOSOPHY
-========================================================= -->
+===================================================== -->
 
 <section class="section">
 
     <div class="philosophy">
 
+
         <div>
 
             <div class="section-label">
+
                 02 — Our Approach
+
             </div>
+
 
             <h2 class="section-title">
 
@@ -1756,6 +2103,7 @@ footer {
                 easier to access.
 
             </h2>
+
 
             <p class="section-description">
 
@@ -1775,24 +2123,32 @@ footer {
 
         </div>
 
+
     </div>
 
 </section>
 
 
-<!-- =========================================================
+<!-- =====================================================
      FEATURES
-========================================================= -->
+===================================================== -->
 
 <section class="section">
 
+
     <div class="section-label">
+
         03 — The Experience
+
     </div>
 
+
     <h2 class="section-title">
+
         Simple by design.
+
     </h2>
+
 
     <p class="section-description">
 
@@ -1871,17 +2227,20 @@ footer {
 </section>
 
 
-<!-- =========================================================
+<!-- =====================================================
      CTA
-========================================================= -->
+===================================================== -->
 
 <section
     class="cta"
     id="contact">
 
     <div class="section-label">
+
         Start Learning
+
     </div>
+
 
     <h2>
 
@@ -1890,12 +2249,14 @@ footer {
 
     </h2>
 
+
     <p>
 
         Explore your class and discover
         the available resources.
 
     </p>
+
 
     <a
         href="#classes"
@@ -1907,20 +2268,24 @@ footer {
 
 </section>
 
+
 </main>
 
 
-<!-- =========================================================
+<!-- =====================================================
      FOOTER
-========================================================= -->
+===================================================== -->
 
 <footer>
 
+
     <div class="footer-top">
+
 
         <div class="footer-brand">
 
-            Education <span>Notes</span>
+            Education
+            <span>Notes</span>
 
         </div>
 
@@ -2003,14 +2368,18 @@ footer {
     <div class="footer-bottom">
 
         <div>
-            © 2026 Education Notes. All rights reserved.
+
+            © 2026 Education Notes.
+            All rights reserved.
+
         </div>
 
+
         <div>
+
             Your Visits:
-            <span id="visits">
-                0
-            </span>
+            <span id="visits">0</span>
+
         </div>
 
     </div>
@@ -2018,16 +2387,18 @@ footer {
 </footer>
 
 
-<!-- =========================================================
+<!-- =====================================================
      WELCOME POPUP
-========================================================= -->
+===================================================== -->
 
 <div
     class="welcome-popup-backdrop"
     id="welcome-backdrop"
     aria-hidden="true">
 
+
     <div class="welcome-popup">
+
 
         <div
             class="welcome-close"
@@ -2066,10 +2437,12 @@ footer {
 
         <div class="welcome-founder">
 
+
             <img
                 src="WhatsApp Image 2025-09-28 at 14.48.40_9863dda3.jpg"
                 alt="Founder Sarthak"
                 class="founder-thumb">
+
 
             <div class="founder-text">
 
@@ -2078,22 +2451,93 @@ footer {
 
             </div>
 
+
         </div>
+
 
     </div>
 
 </div>
 
 
-<!-- =========================================================
+<!-- =====================================================
+     PASSWORD LOCK
+     
+     IMPORTANT:
+     HTML IS BEFORE SCRIPT
+===================================================== -->
+
+<div
+    id="site-lock-overlay"
+    role="dialog"
+    aria-modal="true">
+
+
+    <div id="site-lock-card">
+
+
+        <div class="lock-label">
+
+            PRIVATE ACCESS
+
+        </div>
+
+
+        <h2>
+
+            Website Access Restricted
+
+        </h2>
+
+
+        <p>
+
+            This website has been temporarily
+            stopped by the founder. Enter the
+            password to continue.
+
+        </p>
+
+
+        <input
+            id="lock-input"
+            type="password"
+            placeholder="Enter password"
+            autocomplete="off">
+
+
+        <br>
+
+
+        <button id="lock-btn">
+
+            Unlock
+
+        </button>
+
+
+        <div
+            id="lock-error"
+            aria-live="polite">
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
      JAVASCRIPT
-========================================================= -->
+===================================================== -->
 
 <script>
 
-/* =========================================================
+
+/* =====================================================
    CONTACT
-========================================================= */
+===================================================== */
 
 function showContactMessage() {
 
@@ -2104,9 +2548,9 @@ function showContactMessage() {
 }
 
 
-/* =========================================================
+/* =====================================================
    VISITOR COUNTER
-========================================================= */
+===================================================== */
 
 (function () {
 
@@ -2130,23 +2574,30 @@ function showContactMessage() {
         document.getElementById("visits");
 
     if (element) {
-        element.textContent = visits;
+
+        element.textContent =
+            visits;
+
     }
 
 })();
 
 
-/* =========================================================
-   CURSOR FOLLOWING LIGHT
-========================================================= */
+/* =====================================================
+   CURSOR LIGHT
+===================================================== */
 
 const cursorLight =
-    document.getElementById("cursorLight");
+    document.getElementById(
+        "cursorLight"
+    );
 
 
 document.addEventListener(
     "mousemove",
-    function(event) {
+    function (event) {
+
+        if (!cursorLight) return;
 
         cursorLight.style.left =
             event.clientX + "px";
@@ -2158,26 +2609,28 @@ document.addEventListener(
 );
 
 
-/* =========================================================
-   CLASS CARD LOCAL MOUSE GLOW
-========================================================= */
+/* =====================================================
+   CLASS CARD MOUSE LIGHT
+===================================================== */
 
 document
 .querySelectorAll(".class-card")
-.forEach(function(card) {
+.forEach(function (card) {
 
     card.addEventListener(
         "mousemove",
-        function(event) {
+        function (event) {
 
             const rect =
                 card.getBoundingClientRect();
 
             const x =
-                event.clientX - rect.left;
+                event.clientX -
+                rect.left;
 
             const y =
-                event.clientY - rect.top;
+                event.clientY -
+                rect.top;
 
             card.style.setProperty(
                 "--mx",
@@ -2195,9 +2648,9 @@ document
 });
 
 
-/* =========================================================
+/* =====================================================
    WELCOME POPUP
-========================================================= */
+===================================================== */
 
 (function () {
 
@@ -2219,10 +2672,15 @@ document
 
     window.addEventListener(
         "load",
-        function() {
+        function () {
 
             backdrop.classList.add(
                 "active"
+            );
+
+            backdrop.setAttribute(
+                "aria-hidden",
+                "false"
             );
 
         }
@@ -2257,7 +2715,7 @@ document
 
     document.addEventListener(
         "keydown",
-        function(event) {
+        function (event) {
 
             if (
                 event.key === "Escape"
@@ -2273,203 +2731,195 @@ document
 })();
 
 
-/* =========================================================
+/* =====================================================
    PASSWORD LOCK
-========================================================= */
+===================================================== */
 
-(function () {
-
-    const CORRECT =
-        "sarthak";
-
-    const overlay =
-        document.getElementById(
-            "site-lock-overlay"
-        );
-
-    const input =
-        document.getElementById(
-            "lock-input"
-        );
-
-    const button =
-        document.getElementById(
-            "lock-btn"
-        );
-
-    const error =
-        document.getElementById(
-            "lock-error"
-        );
-
-    const STORAGE_KEY =
-        "education_notes_unlocked_v1";
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
 
-    if (
-        sessionStorage.getItem(
-            STORAGE_KEY
-        ) === "true"
-    ) {
-
-        overlay.remove();
-
-        return;
-
-    }
+        const CORRECT =
+            "sarthak";
 
 
-    input.focus();
+        const overlay =
+            document.getElementById(
+                "site-lock-overlay"
+            );
 
 
-    function tryUnlock() {
+        const input =
+            document.getElementById(
+                "lock-input"
+            );
+
+
+        const button =
+            document.getElementById(
+                "lock-btn"
+            );
+
+
+        const error =
+            document.getElementById(
+                "lock-error"
+            );
+
+
+        const STORAGE_KEY =
+            "education_notes_unlocked_v1";
+
+
+        /* Already unlocked */
 
         if (
-            input.value === CORRECT
+            sessionStorage.getItem(
+                STORAGE_KEY
+            ) === "true"
         ) {
 
-            sessionStorage.setItem(
-                STORAGE_KEY,
-                "true"
-            );
+            overlay.remove();
 
-            overlay.style.opacity =
-                "0";
-
-            overlay.style.transition =
-                "opacity .3s ease";
-
-            setTimeout(
-                function() {
-
-                    overlay.remove();
-
-                },
-                300
-            );
+            return;
 
         }
 
-        else {
 
-            error.textContent =
-                "Incorrect password. Try again.";
+        /* Focus password field */
 
-            input.value = "";
-
-            input.focus();
+        input.focus();
 
 
-            overlay.animate(
+        /* Unlock function */
 
-                [
-                    {
-                        transform:
-                            "translateX(0)"
-                    },
+        function tryUnlock() {
 
-                    {
-                        transform:
-                            "translateX(-8px)"
-                    },
-
-                    {
-                        transform:
-                            "translateX(8px)"
-                    },
-
-                    {
-                        transform:
-                            "translateX(0)"
-                    }
-                ],
-
-                {
-                    duration: 300,
-                    iterations: 1
-                }
-
-            );
-
-        }
-
-    }
-
-
-    button.addEventListener(
-        "click",
-        tryUnlock
-    );
-
-
-    input.addEventListener(
-        "keydown",
-        function(event) {
 
             if (
-                event.key === "Enter"
+                input.value === CORRECT
             ) {
 
-                tryUnlock();
+
+                sessionStorage.setItem(
+                    STORAGE_KEY,
+                    "true"
+                );
+
+
+                error.textContent =
+                    "";
+
+
+                overlay.style.opacity =
+                    "0";
+
+
+                setTimeout(
+                    function () {
+
+                        overlay.remove();
+
+                    },
+                    300
+                );
+
 
             }
 
-        }
-    );
 
-})();
+            else {
+
+
+                error.textContent =
+                    "Incorrect password. Try again.";
+
+
+                input.value =
+                    "";
+
+
+                input.focus();
+
+
+                overlay.animate(
+
+                    [
+
+                        {
+                            transform:
+                                "translateX(0)"
+                        },
+
+                        {
+                            transform:
+                                "translateX(-8px)"
+                        },
+
+                        {
+                            transform:
+                                "translateX(8px)"
+                        },
+
+                        {
+                            transform:
+                                "translateX(-5px)"
+                        },
+
+                        {
+                            transform:
+                                "translateX(0)"
+                        }
+
+                    ],
+
+                    {
+
+                        duration: 350,
+
+                        iterations: 1
+
+                    }
+
+                );
+
+            }
+
+
+        }
+
+
+        /* Button */
+
+        button.addEventListener(
+            "click",
+            tryUnlock
+        );
+
+
+        /* Enter key */
+
+        input.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Enter"
+                ) {
+
+                    tryUnlock();
+
+                }
+
+            }
+        );
+
+
+    }
+);
 
 </script>
-
-
-<!-- =========================================================
-     PASSWORD LOCK HTML
-========================================================= -->
-
-<div
-    id="site-lock-overlay"
-    role="dialog"
-    aria-modal="true">
-
-    <div id="site-lock-card">
-
-        <div class="lock-label">
-            Private Access
-        </div>
-
-        <h2>
-            Website Access Restricted
-        </h2>
-
-        <p>
-
-            This website has been temporarily
-            stopped by the founder. Enter the
-            password to continue.
-
-        </p>
-
-
-        <input
-            id="lock-input"
-            type="password"
-            placeholder="Enter password"
-            autocomplete="off">
-
-
-        <br>
-
-
-        <button id="lock-btn">
-            Unlock
-        </button>
-
-
-        <div id="lock-error"></div>
-
-    </div>
-
-</div>
 
 
 </body>
