@@ -1,475 +1,1796 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Education Notes</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Education Notes | Learn Better</title>
+
     <style>
-        /* ---------- Original styles (kept intact) ---------- */
-        body  {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #001a00, #004d00);
-            color: white;
-            text-align: center;
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background:
+                radial-gradient(circle at 50% -10%, #075c2b 0%, #00250f 30%, #000f06 70%);
+            color: #ffffff;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            overflow-x: hidden;
         }
-        .top-info {
-            margin-top: 10px;
-            text-align: center;
-            font-size: 14px;
+
+        :root {
+            --green: #00e66a;
+            --green-light: #6aff9f;
+            --dark: #000f06;
+            --dark-green: #002510;
+            --muted: #9daf a5;
+            --border: rgba(0, 230, 106, 0.18);
+            --white-border: rgba(255,255,255,0.08);
         }
-        .top-info a {
-            color: cyan;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .top-info a:hover {
-            text-decoration: underline;
-        }
-        .top-info img {
-            height: 20px;
-            vertical-align: middle;
-            margin-left: 5px;
-        }
+
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
         .navbar {
-            background: linear-gradient(to right, #111, #333);
-            border-bottom: 3px solid #00ff00;
-            box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.5);
-            padding: 10px;
-            margin-top: 10px;
-        }
-        .navbar-brand {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            height: 78px;
+            padding: 0 6%;
+
             display: flex;
             align-items: center;
-            font-size: 1.5rem;
-            font-weight: bold;
+            justify-content: space-between;
+
+            background: rgba(0, 20, 9, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+
+            border-bottom: 1px solid rgba(0, 230, 106, 0.14);
         }
-        .navbar-brand img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        .content {
-            flex: 1;
-        }
-        .class-slot-wrapper {
-            margin: 15px auto;
-            width: 90%;
-            max-width: 400px;
-        }
-        .class-slot {
-            background: black;
-            color: white;
-            padding: 20px;
-            font-size: 20px;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: bold;
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
             text-decoration: none;
-            display: block;
-            width: 100%;
-            border: 2px solid #00f;
-            animation: neonGlow 2s infinite alternate ease-in-out;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .class-slot:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px #ffffff, 0 0 30px currentColor;
-            background: rgba(0, 0, 0, 0.8);
-        }
-        @keyframes neonGlow {
-            0% { box-shadow: 0px 0px 10px cyan; }
-            50% { box-shadow: 0px 0px 20px magenta; }
-            100% { box-shadow: 0px 0px 10px lime; }
-        }
-        footer {
-            background: black;
             color: white;
-            padding: 5px;
-            text-align: center;
+        }
+
+        .brand img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+        }
+
+        .brand-name {
+            font-size: 21px;
+            font-weight: 750;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-name span {
+            color: var(--green);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #c8d6cc;
+            text-decoration: none;
             font-size: 14px;
-            border-top: none;
-            box-shadow: none;
+            font-weight: 600;
+
+            transition: 0.25s ease;
         }
 
-        /* ---------- Attractive popup (no email asked) ---------- */
+        .nav-links a:hover {
+            color: var(--green);
+        }
+
+        .nav-contact {
+            padding: 10px 19px;
+            border: 1px solid rgba(0,230,106,0.35);
+            border-radius: 4px;
+        }
+
+        .nav-contact:hover {
+            background: rgba(0,230,106,0.08);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            position: relative;
+            min-height: calc(100vh - 78px);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+
+            width: 550px;
+            height: 550px;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            background: rgba(0, 230, 106, 0.07);
+            filter: blur(110px);
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 950px;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            display: inline-block;
+
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(46px, 8vw, 88px);
+            line-height: 0.98;
+            letter-spacing: -4px;
+            font-weight: 800;
+
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+        }
+
+        .hero-description {
+            max-width: 680px;
+            margin: auto;
+
+            color: #aebeb4;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            margin-top: 38px;
+
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            display: inline-block;
+            padding: 13px 25px;
+
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: 0.3s ease;
+        }
+
+        .primary-btn {
+            color: #001509;
+            background: var(--green);
+            border: 1px solid var(--green);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,230,106,0.2);
+        }
+
+        .secondary-btn {
+            color: white;
+            border: 1px solid rgba(255,255,255,0.16);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .secondary-btn:hover {
+            border-color: var(--green);
+            color: var(--green);
+        }
+
+
+        /* =========================================================
+           SCROLL INDICATOR
+        ========================================================= */
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            color: #708077;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .scroll-indicator::after {
+            content: "";
+            display: block;
+
+            width: 1px;
+            height: 35px;
+
+            margin: 9px auto 0;
+
+            background: var(--green);
+            opacity: 0.6;
+        }
+
+
+        /* =========================================================
+           MAIN
+        ========================================================= */
+
+        .main {
+            width: 88%;
+            max-width: 1180px;
+            margin: auto;
+        }
+
+        .section {
+            padding: 90px 0;
+            border-top: 1px solid rgba(255,255,255,0.055);
+        }
+
+        .section-label {
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: clamp(30px, 4vw, 46px);
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .section-description {
+            color: #9eafa5;
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 650px;
+        }
+
+
+        /* =========================================================
+           CLASSES
+        ========================================================= */
+
+        .classes-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 30px;
+
+            margin-bottom: 45px;
+        }
+
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .class-card {
+            position: relative;
+
+            min-height: 235px;
+            padding: 28px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            text-decoration: none;
+            color: white;
+
+            background:
+                linear-gradient(145deg,
+                rgba(0,80,35,0.35),
+                rgba(0,25,11,0.65));
+
+            border: 1px solid var(--border);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .class-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+
+            right: -35px;
+            bottom: -35px;
+
+            background: rgba(0,230,106,0.08);
+            border-radius: 50%;
+
+            transition: 0.3s ease;
+        }
+
+        .class-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(0,230,106,0.55);
+
+            background:
+                linear-gradient(145deg,
+                rgba(0,105,45,0.42),
+                rgba(0,28,12,0.78));
+        }
+
+        .class-card:hover::before {
+            transform: scale(1.7);
+        }
+
+        .class-number {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .class-name {
+            font-size: 30px;
+            font-weight: 750;
+        }
+
+        .class-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            color: #82948a;
+            font-size: 12px;
+        }
+
+        .arrow {
+            color: var(--green);
+            font-size: 21px;
+
+            transition: transform 0.25s ease;
+        }
+
+        .class-card:hover .arrow {
+            transform: translateX(5px);
+        }
+
+
+        /* =========================================================
+           STATS
+        ========================================================= */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stat {
+            padding: 32px;
+            text-align: center;
+
+            border-right: 1px solid var(--border);
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            color: var(--green);
+            font-size: 31px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .stat-text {
+            color: #899a90;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+
+        /* =========================================================
+           PHILOSOPHY
+        ========================================================= */
+
+        .philosophy {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .quote {
+            border-left: 2px solid var(--green);
+            padding-left: 28px;
+
+            font-size: clamp(25px, 3vw, 38px);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .quote span {
+            color: var(--green);
+        }
+
+
+        /* =========================================================
+           FEATURES
+        ========================================================= */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+
+            margin-top: 45px;
+        }
+
+        .feature {
+            padding: 30px;
+
+            border: 1px solid rgba(255,255,255,0.07);
+            background: rgba(0,35,15,0.35);
+
+            transition: 0.3s ease;
+        }
+
+        .feature:hover {
+            border-color: var(--border);
+            transform: translateY(-4px);
+        }
+
+        .feature-number {
+            color: var(--green);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+
+            margin-bottom: 35px;
+        }
+
+        .feature h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .feature p {
+            color: #899b91;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+
+        .cta {
+            text-align: center;
+            padding: 110px 20px;
+
+            border-top: 1px solid rgba(255,255,255,0.055);
+        }
+
+        .cta h2 {
+            font-size: clamp(32px, 5vw, 55px);
+            margin-bottom: 17px;
+        }
+
+        .cta p {
+            color: #8fa096;
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            background: #000b04;
+            border-top: 1px solid rgba(0,230,106,0.12);
+
+            padding: 45px 7%;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer-brand {
+            font-size: 20px;
+            font-weight: 750;
+        }
+
+        .footer-brand span {
+            color: var(--green);
+        }
+
+        .footer-email {
+            color: #83968b;
+            text-decoration: none;
+            font-size: 13px;
+
+            transition: 0.2s;
+        }
+
+        .footer-email:hover {
+            color: var(--green);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding-top: 25px;
+
+            color: #53655b;
+            font-size: 12px;
+        }
+
+        .counter {
+            color: #718278;
+        }
+
+        .counter span {
+            color: var(--green);
+            font-weight: bold;
+        }
+
+
+        /* =========================================================
+           WELCOME POPUP
+        ========================================================= */
+
         .welcome-popup-backdrop {
-          position: fixed;
-          inset: 0;
-          background: linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.65));
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 99990;
-          visibility: hidden;
-          opacity: 0;
-          transition: opacity .25s ease, visibility .25s ease;
-        }
-        .welcome-popup-backdrop.active {
-          visibility: visible;
-          opacity: 1;
-        }
-        .welcome-popup {
-          width: 340px;
-          max-width: 92%;
-          background: rgba(255,255,255,0.04);
-          backdrop-filter: blur(10px) saturate(120%);
-          border-radius: 16px;
-          padding: 22px;
-          text-align: center;
-          color: #fff;
-          box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 18px rgba(0,255,180,0.06);
-          border: 1px solid rgba(255,255,255,0.06);
-          position: relative;
-          animation: popupIn .6s cubic-bezier(.2,.9,.2,1);
-        }
-        @keyframes popupIn {
-          from { transform: translateY(18px) scale(.96); opacity: 0; }
-          to   { transform: translateY(0) scale(1); opacity: 1; }
-        }
-        .welcome-popup h1 {
-          font-size: 22px;
-          margin-bottom: 8px;
-          text-shadow: 0 0 10px rgba(255,255,255,0.06);
-        }
-        .welcome-popup p.lead {
-          margin-bottom: 14px;
-          font-size: 15px;
-          color: #dfffdc;
-          line-height: 1.35;
-        }
-        .welcome-continue {
-          display: inline-block;
-          padding: 10px 22px;
-          border-radius: 28px;
-          font-weight: 700;
-          cursor: pointer;
-          border: none;
-          background: linear-gradient(90deg,#00ffd0,#00bfff);
-          color: #002;
-          font-size: 15px;
-          box-shadow: 0 6px 18px rgba(0,187,255,0.12);
-          transition: transform .18s ease, box-shadow .18s ease;
-        }
-        .welcome-continue:hover {
-          transform: translateY(-3px) scale(1.03);
-          box-shadow: 0 14px 30px rgba(0,187,255,0.16);
-        }
-        .welcome-founder {
-          margin-top: 14px;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          justify-content: center;
-        }
-        .founder-thumb {
-          width: 56px;
-          height: 56px;
-          border-radius: 50%;
-          object-fit: cover;
-          border: 2px solid rgba(0,255,170,0.18);
-          box-shadow: 0 6px 18px rgba(0,255,170,0.08);
-        }
-        .founder-text {
-          font-weight: 700;
-          font-size: 14px;
-          color: #eafff2;
-          text-shadow: 0 0 6px rgba(0,0,0,0.4);
-        }
-        /* small close X (keeps elements same, but optional) */
-        .welcome-close {
-          position: absolute;
-          right: 10px;
-          top: 8px;
-          font-size: 20px;
-          color: rgba(255,255,255,0.7);
-          cursor: pointer;
+            position: fixed;
+            inset: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(0,8,3,0.86);
+            backdrop-filter: blur(8px);
+
+            z-index: 99990;
+
+            visibility: hidden;
+            opacity: 0;
+
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease;
         }
 
-        /* ---------- Password lock overlay (IMUCET) ---------- */
+        .welcome-popup-backdrop.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .welcome-popup {
+            position: relative;
+
+            width: 400px;
+            max-width: 92%;
+
+            padding: 38px 30px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(145deg,
+                #05351a,
+                #00170a);
+
+            border: 1px solid rgba(0,230,106,0.25);
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.65),
+                0 0 50px rgba(0,230,106,0.08);
+
+            animation: popupIn 0.45s ease;
+        }
+
+        @keyframes popupIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px) scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .welcome-popup h2 {
+            font-size: 27px;
+            margin-bottom: 13px;
+        }
+
+        .welcome-popup h2 span {
+            color: var(--green);
+        }
+
+        .welcome-popup .lead {
+            color: #9fb2a6;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .welcome-continue {
+            border: none;
+
+            padding: 12px 30px;
+
+            background: var(--green);
+            color: #00170a;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: 0.25s;
+        }
+
+        .welcome-continue:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,230,106,0.2);
+        }
+
+        .welcome-founder {
+            margin-top: 25px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .founder-thumb {
+            width: 45px;
+            height: 45px;
+
+            border-radius: 50%;
+            object-fit: cover;
+
+            border: 2px solid rgba(0,230,106,0.35);
+        }
+
+        .founder-text {
+            font-size: 13px;
+            color: #d5e3da;
+        }
+
+        .founder-text strong {
+            color: var(--green);
+        }
+
+        .welcome-close {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+
+            color: #718078;
+            font-size: 22px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .welcome-close:hover {
+            color: white;
+        }
+
+
+        /* =========================================================
+           PASSWORD LOCK
+        ========================================================= */
+
         #site-lock-overlay {
-          position: fixed;
-          inset: 0;
-          background: linear-gradient(180deg, rgba(0,0,0,0.95), rgba(0,0,0,0.96));
-          z-index: 99999;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #ffffff;
-          font-family: Arial, sans-serif;
+            position: fixed;
+            inset: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                radial-gradient(circle at center,
+                #063c1b,
+                #001309 45%,
+                #000603);
+
+            z-index: 99999;
+
+            color: white;
         }
+
         #site-lock-card {
-          width: 92%;
-          max-width: 540px;
-          background: linear-gradient(180deg,#0b2b0b,#071508);
-          border-radius: 12px;
-          padding: 22px;
-          text-align: center;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-          border: 2px solid rgba(0,255,128,0.15);
+            width: 92%;
+            max-width: 470px;
+
+            padding: 40px 30px;
+
+            text-align: center;
+
+            background: rgba(0,30,13,0.82);
+
+            border: 1px solid rgba(0,230,106,0.2);
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.7);
         }
-        #site-lock-card h2 { margin: 0 0 8px; font-size: 1.4rem; color: #fffb; }
-        #site-lock-card p { margin: 0 0 16px; font-size: 0.98rem; color: #dfffdc; }
+
+        #site-lock-card .lock-label {
+            color: var(--green);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        #site-lock-card h2 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        #site-lock-card p {
+            color: #91a49a;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
         #lock-input {
-          width: 80%;
-          max-width: 320px;
-          padding: 10px 12px;
-          margin: 8px 0 12px;
-          border-radius: 8px;
-          border: 1px solid rgba(255,255,255,0.12);
-          outline: none;
-          background: rgba(255,255,255,0.03);
-          color: #fff;
-          font-size: 16px;
-          text-align: center;
+            width: 100%;
+            max-width: 330px;
+
+            padding: 13px 15px;
+            margin: 25px 0 12px;
+
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            outline: none;
+
+            color: white;
+            text-align: center;
+            font-size: 15px;
+
+            transition: 0.25s;
         }
+
+        #lock-input:focus {
+            border-color: var(--green);
+        }
+
         #lock-btn {
-          padding: 10px 18px;
-          border-radius: 8px;
-          font-weight: 700;
-          cursor: pointer;
-          border: none;
-          background: linear-gradient(90deg,#00ffd0,#00bfff);
-          color: #000;
-          font-size: 15px;
+            padding: 12px 27px;
+
+            background: var(--green);
+            color: #001509;
+
+            border: none;
+
+            font-weight: 800;
+            cursor: pointer;
+
+            transition: 0.25s;
         }
-        #lock-error { color: #ffb3b3; min-height: 18px; margin-top: 8px; font-size: 0.95rem; }
+
+        #lock-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,230,106,0.2);
+        }
+
+        #lock-error {
+            color: #ff8f8f;
+            min-height: 20px;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .classes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .philosophy {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            .navbar {
+                height: 68px;
+                padding: 0 18px;
+            }
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .nav-links li:nth-child(1) {
+                display: none;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .nav-contact {
+                padding: 8px 12px;
+            }
+
+            .brand img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .brand-name {
+                font-size: 18px;
+            }
+
+            .hero {
+                min-height: calc(100vh - 68px);
+                padding: 60px 18px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .main {
+                width: 90%;
+            }
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .classes-heading {
+                display: block;
+            }
+
+            .classes-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .class-card {
+                min-height: 190px;
+                padding: 20px;
+            }
+
+            .class-name {
+                font-size: 24px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+            .footer-top,
+            .footer-bottom {
+                flex-direction: column;
+                gap: 18px;
+                text-align: center;
+            }
+        }
+
+
+        @media (max-width: 400px) {
+
+            .classes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+        }
     </style>
 </head>
+
+
 <body>
 
- <!-- ================= OLD POPUP FORM (removed email asking) =================
-      We preserve original markup locations; replaced with attractive no-email popup
- --> 
 
-<!-- Attractive welcome popup (no email asked) -->
-<div class="welcome-popup-backdrop" id="welcome-backdrop" aria-hidden="true">
-  <div class="welcome-popup" role="dialog" aria-labelledby="welcome-head">
-    <div class="welcome-close" id="welcome-close" title="Close">&times;</div>
-    <h1 id="welcome-head">🎉 Welcome!</h1>
-    <p class="lead">This website is temporarily paused by the founder for all people.<br>
-       To continue, press <strong>Continue</strong>.</p>
+    <!-- =========================================================
+         WELCOME POPUP
+    ========================================================= -->
 
-    <button class="welcome-continue" id="welcome-continue">Continue</button>
+    <div class="welcome-popup-backdrop"
+         id="welcome-backdrop"
+         aria-hidden="true">
 
-    <div class="welcome-founder" aria-hidden="false">
-      <img src="WhatsApp Image 2025-09-28 at 14.48.40_9863dda3.jpg" alt="Founder Sarthak" class="founder-thumb">
-      <div class="founder-text">👨‍💻 Founder: <strong>Sarthak</strong></div>
-    </div>
-  </div>
-</div>
+        <div class="welcome-popup">
 
-<!-- ================= ORIGINAL PAGE CONTENT (untouched) ================= -->
-  
- <!-- Popup Form (original container kept but not used for email) -->
-<div class="popup-container" id="popup-container" style="display:none;">
-    <div class="popup">
-        <h2>Enter Your Details</h2>
-        <form action="https://formsubmit.co/singhsarthak825@gmail.com" method="POST">
-            <input type="email" name="email" required>
-            <input type="hidden" name="_next" value="https://sarthak4443.github.io/-education-notes/">
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-</div>
-
-    <!-- Top Info -->
-    <div class="top-info">
-        <a href="mailto:singhsarthak825@gmail.com">📧 singhsarthak825@gmail.com</a> |
-        <a href="https://www.instagram.com/sar.//,./;?__pwa=1#" target="_blank">
-            <img src="Instagram_icon.png" alt="Instagram">
-        </a>
-    </div>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="logo.PNG" alt="Logo">
-                Education Notes
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact" onclick="showContactMessage()">Contact</a></li>
-                </ul>
+            <div class="welcome-close"
+                 id="welcome-close">
+                ×
             </div>
+
+            <h2>
+                Welcome to <span>Education Notes</span>
+            </h2>
+
+            <p class="lead">
+                This website is currently paused by the founder.
+                Press continue to enter the website.
+            </p>
+
+            <button class="welcome-continue"
+                    id="welcome-continue">
+                Continue
+            </button>
+
+            <div class="welcome-founder">
+
+                <img
+                    src="WhatsApp Image 2025-09-28 at 14.48.40_9863dda3.jpg"
+                    alt="Founder Sarthak"
+                    class="founder-thumb"
+                >
+
+                <div class="founder-text">
+                    Founder: <strong>Sarthak Singh</strong>
+                </div>
+
+            </div>
+
         </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         NAVBAR
+    ========================================================= -->
+
+    <nav class="navbar">
+
+        <a href="#home" class="brand">
+
+            <img src="logo.PNG" alt="Education Notes Logo">
+
+            <div class="brand-name">
+                Education <span>Notes</span>
+            </div>
+
+        </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#classes">
+                    Classes
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact"
+                   class="nav-contact"
+                   onclick="showContactMessage()">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
     </nav>
 
-    <!-- Hero Section -->
-    <div class="content">
-        <section id="home" class="container mt-5">
-            <h2>Welcome to Education Notes</h2>
-            <p>Find notes for all subjects and classes except commerce.</p>
-            <div class="row mt-4">
-                <div class="class-slot-wrapper">
-                    <a href="class9.html" class="class-slot">Class 9</a>
-                </div>
-                <div class="class-slot-wrapper">
-                    <a href="class10.html" class="class-slot">Class 10</a>
-                </div>
-                <div class="class-slot-wrapper">
-                    <a href="class11.html" class="class-slot">Class 11</a>
-                </div>
-                <div class="class-slot-wrapper">
-                    <a href="class12.html" class="class-slot">Class 12</a>
-                </div>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Education • Resources • Growth
             </div>
+
+            <h1>
+                Learn better.<br>
+                <span>Go further.</span>
+            </h1>
+
+            <p class="hero-description">
+                Welcome to Education Notes — a simple and accessible
+                platform for students to find useful study resources
+                and make learning easier.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#classes"
+                   class="primary-btn">
+                    Explore Classes
+                </a>
+
+                <a href="about.html"
+                   class="secondary-btn">
+                    About Education Notes
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="scroll-indicator">
+            Scroll
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+    ========================================================= -->
+
+    <main class="main">
+
+
+        <!-- CLASSES -->
+
+        <section class="section"
+                 id="classes">
+
+            <div class="classes-heading">
+
+                <div>
+
+                    <div class="section-label">
+                        01 — Study Resources
+                    </div>
+
+                    <h2 class="section-title">
+                        Choose your class.
+                    </h2>
+
+                </div>
+
+                <p class="section-description">
+                    Select your class to explore the available
+                    educational resources and notes.
+                </p>
+
+            </div>
+
+
+            <div class="classes-grid">
+
+
+                <a href="class9.html"
+                   class="class-card">
+
+                    <div class="class-number">
+                        CLASS / 09
+                    </div>
+
+                    <div class="class-name">
+                        Class 9
+                    </div>
+
+                    <div class="class-bottom">
+                        <span>Study Resources</span>
+                        <span class="arrow">→</span>
+                    </div>
+
+                </a>
+
+
+                <a href="class10.html"
+                   class="class-card">
+
+                    <div class="class-number">
+                        CLASS / 10
+                    </div>
+
+                    <div class="class-name">
+                        Class 10
+                    </div>
+
+                    <div class="class-bottom">
+                        <span>Study Resources</span>
+                        <span class="arrow">→</span>
+                    </div>
+
+                </a>
+
+
+                <a href="class11.html"
+                   class="class-card">
+
+                    <div class="class-number">
+                        CLASS / 11
+                    </div>
+
+                    <div class="class-name">
+                        Class 11
+                    </div>
+
+                    <div class="class-bottom">
+                        <span>Study Resources</span>
+                        <span class="arrow">→</span>
+                    </div>
+
+                </a>
+
+
+                <a href="class12.html"
+                   class="class-card">
+
+                    <div class="class-number">
+                        CLASS / 12
+                    </div>
+
+                    <div class="class-name">
+                        Class 12
+                    </div>
+
+                    <div class="class-bottom">
+                        <span>Study Resources</span>
+                        <span class="arrow">→</span>
+                    </div>
+
+                </a>
+
+            </div>
+
         </section>
-    </div>
-
-  <!-- Footer -->
-<footer>
-    <p>&copy; 2025 Education Notes. All rights reserved.</p>
-    <p>
-        <b>Your Visits (this browser):</b> <span id="visits">0</span>
-        &nbsp;|&nbsp;
-        <!-- HitWebCounter Code START -->
-        <a href="https://www.hitwebcounter.com/" target="_blank">
-            <img src="https://hitwebcounter.com/counter/counter.php?page=21439740&style=0001&nbdigits=5&type=page&initCount=0" title="Counters" alt="Counters" border="0" />
-        </a>
-        <!-- HitWebCounter Code END -->
-    </p>
-</footer>
 
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Original scripts (kept) -->
+        <!-- STATS -->
+
+        <section class="section">
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <div class="stat-number">
+                        9–12
+                    </div>
+
+                    <div class="stat-text">
+                        Classes Covered
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-number">
+                        Free
+                    </div>
+
+                    <div class="stat-text">
+                        Access to Resources
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-number">
+                        24/7
+                    </div>
+
+                    <div class="stat-text">
+                        Online Availability
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PHILOSOPHY -->
+
+        <section class="section">
+
+            <div class="philosophy">
+
+                <div>
+
+                    <div class="section-label">
+                        02 — Our Approach
+                    </div>
+
+                    <h2 class="section-title">
+                        Education should be
+                        easier to access.
+                    </h2>
+
+                    <p class="section-description">
+                        Education Notes focuses on bringing useful
+                        learning material together in a clean,
+                        straightforward and student-friendly environment.
+                    </p>
+
+                </div>
+
+
+                <div class="quote">
+
+                    Good learning starts when
+                    <span>knowledge becomes simple.</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FEATURES -->
+
+        <section class="section">
+
+            <div class="section-label">
+                03 — The Experience
+            </div>
+
+            <h2 class="section-title">
+                Simple by design.
+            </h2>
+
+            <p class="section-description">
+                No unnecessary complexity. Just a focused platform
+                designed around learning.
+            </p>
+
+
+            <div class="features">
+
+
+                <div class="feature">
+
+                    <div class="feature-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Organised
+                    </h3>
+
+                    <p>
+                        Study resources are arranged according
+                        to classes so students can find what they
+                        need more easily.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Accessible
+                    </h3>
+
+                    <p>
+                        The platform is designed to remain simple,
+                        lightweight and accessible across devices.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Student Focused
+                    </h3>
+
+                    <p>
+                        Every part of the experience is built with
+                        the student's learning journey in mind.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CTA -->
+
+        <section class="cta"
+                 id="contact">
+
+            <div class="section-label">
+                Start Learning
+            </div>
+
+            <h2>
+                Your learning journey<br>
+                starts here.
+            </h2>
+
+            <p>
+                Explore your class and discover the available resources.
+            </p>
+
+            <a href="#classes"
+               class="primary-btn">
+                Explore Resources
+            </a>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                Education <span>Notes</span>
+            </div>
+
+            <a href="mailto:singhsarthak825@gmail.com"
+               class="footer-email">
+                singhsarthak825@gmail.com
+            </a>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div>
+                © 2026 Education Notes. All rights reserved.
+            </div>
+
+            <div class="counter">
+                Your Visits:
+                <span id="visits">0</span>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
     <script>
-        function showContactMessage() // Per-browser visit counter (no API)
-(function () {
-  var key = 'en_visits';
-  var current = parseInt(localStorage.getItem(key) || '0', 10);
-  current += 1; // count every page load
-  localStorage.setItem(key, String(current));
-  var el = document.getElementById('visits');
-  if (el) el.textContent = current;
-})(); {
+
+        /* CONTACT */
+
+        function showContactMessage() {
             alert("Contact feature coming soon!");
         }
 
-        // Visitor Counter (CountAPI)
-        fetch('https://api.countapi.xyz/hit/sarthak-education-notes/visits')
-          .then(response => response.json())
-          .then(data => {
-            document.getElementById('visits').innerText = data.value;
-          });
+
+        /* =========================================================
+           VISITOR COUNTER
+        ========================================================= */
+
+        (function () {
+
+            const key = "education_notes_visits";
+
+            let visits =
+                parseInt(localStorage.getItem(key) || "0", 10);
+
+            visits++;
+
+            localStorage.setItem(
+                key,
+                String(visits)
+            );
+
+            const element =
+                document.getElementById("visits");
+
+            if (element) {
+                element.textContent = visits;
+            }
+
+        })();
+
+
+        /* =========================================================
+           WELCOME POPUP
+        ========================================================= */
+
+        (function () {
+
+            const backdrop =
+                document.getElementById("welcome-backdrop");
+
+            const close =
+                document.getElementById("welcome-close");
+
+            const continueBtn =
+                document.getElementById("welcome-continue");
+
+
+            window.addEventListener("load", function () {
+
+                backdrop.classList.add("active");
+
+                backdrop.setAttribute(
+                    "aria-hidden",
+                    "false"
+                );
+
+            });
+
+
+            function closePopup() {
+
+                backdrop.classList.remove("active");
+
+                backdrop.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+            }
+
+
+            continueBtn.addEventListener(
+                "click",
+                closePopup
+            );
+
+
+            close.addEventListener(
+                "click",
+                closePopup
+            );
+
+
+            document.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (event.key === "Escape") {
+                        closePopup();
+                    }
+
+                }
+            );
+
+        })();
+
     </script>
 
-<!-- ================== PASSWORD LOCK OVERLAY (IMUCET) ================== -->
-<div id="site-lock-overlay" role="dialog" aria-labelledby="lock-title" aria-modal="true">
-  <div id="site-lock-card">
-    <h2 id="lock-title">This website has been stopped by the founder for all people</h2>
-    <p>To proceed, enter the password below. (Case-sensitive)</p>
-    <input id="lock-input" type="password" placeholder="Enter password" autocomplete="off" />
-    <div style="margin-top:10px;"><button id="lock-btn">Unlock</button></div>
-    <div id="lock-error" aria-live="polite"></div>
-    <p style="margin-top:12px; font-size:0.82rem; color:#cfeed3;">If you are the founder, enter the correct password.</p>
-  </div>
-</div>
 
-<script>
-(function() {
-  const CORRECT = 'sarthak';
-  const overlay = document.getElementById('site-lock-overlay');
-  const input = document.getElementById('lock-input');
-  const btn = document.getElementById('lock-btn');
-  const err = document.getElementById('lock-error');
-  const STORAGE_KEY = 'education_notes_unlocked_v1';
 
-  // If already unlocked this tab session, remove overlay immediately
-  if (sessionStorage.getItem(STORAGE_KEY) === 'true') {
-    overlay.remove();
-  } else {
-    // trap pointer events to overlay only
-    document.documentElement.style.pointerEvents = 'none';
-    overlay.style.pointerEvents = 'auto';
-    input.focus();
-  }
+    <!-- =========================================================
+         PASSWORD LOCK
+    ========================================================= -->
 
-  function tryUnlock() {
-    if (input.value === CORRECT) {
-      sessionStorage.setItem(STORAGE_KEY,'true');
-      // re-enable interaction with page
-      document.documentElement.style.pointerEvents = '';
-      overlay.style.opacity = '0';
-      overlay.style.transition = 'opacity 0.3s ease';
-      setTimeout(()=>overlay.remove(),300);
-    } else {
-      err.textContent = 'Incorrect password. Try again.';
-      input.value='';
-      input.focus();
-      // small shake
-      overlay.animate([
-        { transform: 'translateX(0px)' },
-        { transform: 'translateX(-8px)' },
-        { transform: 'translateX(8px)' },
-        { transform: 'translateX(0px)' }
-      ], { duration: 300, iterations: 1 });
-    }
-  }
+    <div id="site-lock-overlay"
+         role="dialog"
+         aria-labelledby="lock-title"
+         aria-modal="true">
 
-  btn.addEventListener('click', tryUnlock);
-  input.addEventListener('keypress', e=>{ if(e.key==='Enter'){ tryUnlock(); }});
-  // prevent interaction outside overlay while shown
-  document.addEventListener('click', function(e){
-    if (!overlay.contains(e.target) && sessionStorage.getItem(STORAGE_KEY) !== 'true') {
-      e.stopPropagation(); e.preventDefault();
-    }
-  }, true);
-})();
-</script>
+        <div id="site-lock-card">
 
-<!-- ================== Welcome popup behavior ================== -->
-<script>
-  (function(){
-    const backdrop = document.getElementById('welcome-backdrop');
-    const closeX = document.getElementById('welcome-close');
-    const continueBtn = document.getElementById('welcome-continue');
+            <div class="lock-label">
+                Private Access
+            </div>
 
-    // Show popup on page load
-    window.addEventListener('load', function(){
-      // If password overlay present and not unlocked, we still show welcome behind it.
-      backdrop.classList.add('active');
-      backdrop.setAttribute('aria-hidden','false');
-    });
+            <h2 id="lock-title">
+                Website Access Restricted
+            </h2>
 
-    // Continue hides only the welcome popup (does not affect password overlay)
-    continueBtn.addEventListener('click', function(){
-      backdrop.classList.remove('active');
-      backdrop.setAttribute('aria-hidden','true');
-    });
+            <p>
+                This website has been temporarily stopped by
+                the founder. Enter the password to continue.
+            </p>
 
-    // Close X behavior (optional close)
-    closeX.addEventListener('click', function(){
-      backdrop.classList.remove('active');
-      backdrop.setAttribute('aria-hidden','true');
-    });
+            <input
+                id="lock-input"
+                type="password"
+                placeholder="Enter password"
+                autocomplete="off"
+            >
 
-    // allow Esc to close welcome popup (but not the password overlay)
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape') {
-        if (backdrop.classList.contains('active')) {
-          backdrop.classList.remove('active');
-          backdrop.setAttribute('aria-hidden','true');
-        }
-      }
-    });
-  })();
-</script>
+            <br>
+
+            <button id="lock-btn">
+                Unlock
+            </button>
+
+            <div id="lock-error"
+                 aria-live="polite">
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        (function () {
+
+            const CORRECT = "sarthak";
+
+            const overlay =
+                document.getElementById("site-lock-overlay");
+
+            const input =
+                document.getElementById("lock-input");
+
+            const button =
+                document.getElementById("lock-btn");
+
+            const error =
+                document.getElementById("lock-error");
+
+            const STORAGE_KEY =
+                "education_notes_unlocked_v1";
+
+
+            /* Already unlocked */
+
+            if (
+                sessionStorage.getItem(STORAGE_KEY)
+                === "true"
+            ) {
+
+                overlay.remove();
+
+                return;
+
+            }
+
+
+            input.focus();
+
+
+            /* Unlock function */
+
+            function tryUnlock() {
+
+                if (input.value === CORRECT) {
+
+                    sessionStorage.setItem(
+                        STORAGE_KEY,
+                        "true"
+                    );
+
+                    overlay.style.opacity = "0";
+
+                    overlay.style.transition =
+                        "opacity 0.3s ease";
+
+                    setTimeout(
+                        function () {
+                            overlay.remove();
+                        },
+                        300
+                    );
+
+                }
+
+                else {
+
+                    error.textContent =
+                        "Incorrect password. Try again.";
+
+                    input.value = "";
+
+                    input.focus();
+
+
+                    overlay.animate(
+
+                        [
+                            {
+                                transform: "translateX(0)"
+                            },
+                            {
+                                transform: "translateX(-8px)"
+                            },
+                            {
+                                transform: "translateX(8px)"
+                            },
+                            {
+                                transform: "translateX(0)"
+                            }
+                        ],
+
+                        {
+                            duration: 300,
+                            iterations: 1
+                        }
+
+                    );
+
+                }
+
+            }
+
+
+            button.addEventListener(
+                "click",
+                tryUnlock
+            );
+
+
+            input.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (event.key === "Enter") {
+                        tryUnlock();
+                    }
+
+                }
+            );
+
+        })();
+
+    </script>
 
 </body>
 </html>
-
-
-
-
+```
