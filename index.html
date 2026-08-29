@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,25 +11,25 @@
 
 <style>
 
-/* =====================================================
+/* =========================
    ROOT
-===================================================== */
+========================= */
 
 :root {
     --green: #00e66a;
-    --green-light: #4dff9a;
-    --dark: #000b04;
-    --dark-2: #00170a;
-    --card: rgba(0, 38, 17, 0.55);
-    --text: #f4fff8;
+    --green-soft: #7dffb5;
+    --bg: #020b06;
+    --bg2: #03170b;
+    --card: rgba(4, 38, 19, 0.55);
+    --text: #f3fff7;
     --muted: #8fa197;
-    --border: rgba(0, 230, 106, 0.15);
+    --border: rgba(0, 230, 106, 0.14);
 }
 
 
-/* =====================================================
+/* =========================
    RESET
-===================================================== */
+========================= */
 
 * {
     margin: 0;
@@ -42,324 +43,234 @@ html {
 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-
     background:
         radial-gradient(
-            circle at 50% -20%,
-            #075d2d 0%,
-            #002510 30%,
-            #000c04 70%
+            circle at 50% -10%,
+            #075d2d 0,
+            #022610 28%,
+            #020b06 65%
         );
-
     color: var(--text);
-
     min-height: 100vh;
-
-    overflow-x: hidden;
 }
 
 
-/* =====================================================
-   CURSOR FOLLOWING GREEN LIGHT
-===================================================== */
+/* =========================
+   CURSOR LIGHT
+========================= */
 
 .cursor-light {
     position: fixed;
-
-    width: 380px;
-    height: 380px;
-
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
-
     pointer-events: none;
+    z-index: 9999;
 
     background:
         radial-gradient(
             circle,
-            rgba(0, 230, 106, 0.13) 0%,
-            rgba(0, 230, 106, 0.06) 25%,
+            rgba(0, 230, 106, 0.13),
+            rgba(0, 230, 106, 0.04) 35%,
             transparent 70%
         );
 
     transform: translate(-50%, -50%);
 
-    z-index: 9990;
-
-    opacity: 0.8;
-
     transition:
-        left 0.08s linear,
-        top 0.08s linear;
+        left .08s linear,
+        top .08s linear;
 }
 
 @media (pointer: coarse) {
-
     .cursor-light {
         display: none;
     }
 }
 
 
-/* =====================================================
+/* =========================
    TOP BAR
-===================================================== */
+========================= */
 
 .top-bar {
-
     height: 42px;
 
     display: flex;
-
-    align-items: center;
-
     justify-content: flex-end;
+    align-items: center;
 
     padding: 0 6%;
 
-    gap: 12px;
+    gap: 8px;
 
-    background:
-        rgba(0, 10, 4, 0.72);
+    background: rgba(0, 10, 4, .7);
 
     border-bottom:
-        1px solid rgba(255,255,255,0.04);
+        1px solid rgba(255,255,255,.04);
 
     backdrop-filter: blur(14px);
 }
 
 
-/* =====================================================
+/* =========================
    SOCIAL ICONS
-===================================================== */
+========================= */
 
-.top-social {
-
+.social {
     width: 32px;
     height: 32px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
-    color: #9baa9f;
+    color: #84958b;
 
     text-decoration: none;
 
     border-radius: 50%;
 
-    transition:
-        color .3s ease,
-        transform .3s ease,
-        box-shadow .3s ease;
+    transition: .3s ease;
 }
 
-.top-social svg {
-
+.social svg {
     width: 17px;
     height: 17px;
-
 }
 
-.top-social:hover {
-
+.social:hover {
     color: var(--green);
 
     transform: translateY(-2px);
 
     box-shadow:
-        0 0 22px rgba(0,230,106,.18);
-
+        0 0 22px rgba(0,230,106,.2);
 }
 
 
-/* =====================================================
+/* =========================
    NAVBAR
-===================================================== */
+========================= */
 
 .navbar {
-
-    height: 76px;
+    height: 74px;
 
     position: sticky;
-
     top: 0;
 
     z-index: 1000;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     padding: 0 6%;
 
     background:
-        rgba(0, 20, 9, 0.78);
+        rgba(1, 20, 9, .78);
 
     backdrop-filter: blur(18px);
 
     border-bottom:
-        1px solid rgba(0,230,106,.12);
-
+        1px solid var(--border);
 }
 
 
 /* BRAND */
 
 .brand {
-
     display: flex;
-
     align-items: center;
-
-    gap: 12px;
-
-    text-decoration: none;
+    gap: 11px;
 
     color: white;
 
+    text-decoration: none;
 }
 
 .brand img {
-
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
 
     object-fit: contain;
-
 }
 
 .brand-name {
-
-    font-size: 21px;
-
+    font-size: 20px;
     font-weight: 750;
-
 }
 
 .brand-name span {
-
     color: var(--green);
-
 }
 
 
 /* NAV LINKS */
 
 .nav-links {
-
     display: flex;
-
     align-items: center;
 
-    gap: 28px;
+    gap: 27px;
 
     list-style: none;
-
 }
 
 .nav-links a {
-
-    color: #b5c2ba;
+    color: #aebdb4;
 
     text-decoration: none;
 
     font-size: 13px;
-
     font-weight: 650;
 
     transition: .25s ease;
-
 }
 
 .nav-links a:hover {
-
     color: var(--green);
-
 }
 
-.nav-contact {
-
-    padding: 9px 17px;
+.contact {
+    padding: 8px 16px;
 
     border:
-        1px solid rgba(0,230,106,.3);
-
+        1px solid rgba(0,230,106,.25);
 }
 
-.nav-contact:hover {
-
+.contact:hover {
     background:
         rgba(0,230,106,.08);
-
 }
 
 
-/* =====================================================
+/* =========================
    HERO
-===================================================== */
+========================= */
 
 .hero {
-
     min-height:
-        calc(100vh - 118px);
+        calc(100vh - 116px);
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
 
-    padding: 80px 20px;
+    padding: 70px 20px;
 
     position: relative;
-
-}
-
-.hero::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 650px;
-    height: 650px;
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,230,106,.08),
-            transparent 68%
-        );
-
-    filter: blur(25px);
-
-    pointer-events: none;
-
 }
 
 .hero-content {
-
+    max-width: 900px;
     position: relative;
-
     z-index: 2;
-
-    max-width: 950px;
-
 }
 
 .eyebrow {
-
     color: var(--green);
 
     font-size: 10px;
@@ -370,14 +281,12 @@ body {
 
     text-transform: uppercase;
 
-    margin-bottom: 25px;
-
+    margin-bottom: 24px;
 }
 
 .hero h1 {
-
     font-size:
-        clamp(48px, 8vw, 88px);
+        clamp(48px, 8vw, 86px);
 
     line-height: .98;
 
@@ -385,135 +294,104 @@ body {
 
     font-weight: 800;
 
-    margin-bottom: 28px;
-
+    margin-bottom: 25px;
 }
 
 .hero h1 span {
-
     color: var(--green);
 
     text-shadow:
         0 0 35px rgba(0,230,106,.15);
-
 }
 
-.hero-description {
-
-    max-width: 650px;
+.hero p {
+    max-width: 590px;
 
     margin: auto;
 
-    color: #a3b1a9;
+    color: var(--muted);
 
-    font-size: 16px;
+    font-size: 15px;
 
     line-height: 1.8;
-
 }
 
 .hero-buttons {
+    margin-top: 32px;
 
     display: flex;
-
     justify-content: center;
 
-    gap: 13px;
-
-    margin-top: 36px;
+    gap: 12px;
 
     flex-wrap: wrap;
-
 }
 
-.primary-btn,
-.secondary-btn {
-
+.btn {
     display: inline-block;
 
-    padding: 13px 24px;
+    padding: 12px 23px;
 
     text-decoration: none;
 
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 750;
 
     transition: .3s ease;
-
 }
 
-.primary-btn {
-
-    background:
-        var(--green);
-
-    color:
-        #001308;
-
+.primary {
+    background: var(--green);
+    color: #001308;
 }
 
-.primary-btn:hover {
-
-    transform:
-        translateY(-3px);
+.primary:hover {
+    transform: translateY(-3px);
 
     box-shadow:
-        0 12px 35px rgba(0,230,106,.22);
-
+        0 12px 35px rgba(0,230,106,.2);
 }
 
-.secondary-btn {
-
+.secondary {
     color: white;
+
+    border:
+        1px solid rgba(255,255,255,.12);
 
     background:
         rgba(255,255,255,.025);
-
-    border:
-        1px solid rgba(255,255,255,.13);
-
 }
 
-.secondary-btn:hover {
-
-    color:
-        var(--green);
+.secondary:hover {
+    color: var(--green);
 
     border-color:
-        rgba(0,230,106,.45);
+        rgba(0,230,106,.4);
 
-    transform:
-        translateY(-3px);
-
+    transform: translateY(-3px);
 }
 
 
-/* =====================================================
+/* =========================
    MAIN
-===================================================== */
+========================= */
 
 .main {
-
     width: 88%;
-
-    max-width: 1180px;
+    max-width: 1150px;
 
     margin: auto;
-
 }
 
 .section {
-
-    padding: 90px 0;
+    padding: 85px 0;
 
     border-top:
         1px solid rgba(255,255,255,.05);
-
 }
 
-.section-label {
-
+.label {
     color: var(--green);
 
     font-size: 10px;
@@ -524,40 +402,34 @@ body {
 
     text-transform: uppercase;
 
-    margin-bottom: 14px;
-
+    margin-bottom: 13px;
 }
 
-.section-title {
-
+.title {
     font-size:
-        clamp(30px, 4vw, 46px);
+        clamp(30px, 4vw, 45px);
 
     letter-spacing: -1.5px;
 
-    margin-bottom: 16px;
-
+    margin-bottom: 14px;
 }
 
-.section-description {
-
+.description {
     color: var(--muted);
+
+    font-size: 14px;
 
     line-height: 1.8;
 
-    font-size: 15px;
-
-    max-width: 650px;
-
+    max-width: 600px;
 }
 
 
-/* =====================================================
+/* =========================
    CLASS SECTION
-===================================================== */
+========================= */
 
-.classes-heading {
-
+.classes-header {
     display: flex;
 
     justify-content: space-between;
@@ -566,26 +438,25 @@ body {
 
     gap: 30px;
 
-    margin-bottom: 45px;
-
+    margin-bottom: 40px;
 }
 
 .classes-grid {
-
     display: grid;
 
     grid-template-columns:
         repeat(4, 1fr);
 
     gap: 14px;
-
 }
 
+
+/* CLASS CARD */
+
 .class-card {
+    min-height: 220px;
 
-    min-height: 235px;
-
-    padding: 27px;
+    padding: 25px;
 
     display: flex;
 
@@ -604,28 +475,29 @@ body {
     background:
         linear-gradient(
             145deg,
-            rgba(0,75,33,.34),
-            rgba(0,20,9,.7)
+            rgba(0,75,33,.32),
+            rgba(0,18,8,.72)
         );
 
     border:
-        1px solid rgba(0,230,106,.14);
+        1px solid var(--border);
 
     transition:
         transform .35s ease,
         border-color .35s ease,
         box-shadow .35s ease;
-
 }
 
-.class-card::before {
 
+/* mouse glow inside cards */
+
+.class-card::before {
     content: "";
 
     position: absolute;
 
-    width: 190px;
-    height: 190px;
+    width: 180px;
+    height: 180px;
 
     left: var(--mx, 50%);
     top: var(--my, 50%);
@@ -636,243 +508,146 @@ body {
     background:
         radial-gradient(
             circle,
-            rgba(0,230,106,.15),
-            transparent 68%
+            rgba(0,230,106,.14),
+            transparent 70%
         );
 
     opacity: 0;
 
-    pointer-events: none;
-
     transition: opacity .25s;
 
+    pointer-events: none;
 }
 
 .class-card:hover::before {
-
     opacity: 1;
-
 }
 
 .class-card:hover {
-
     transform:
         translateY(-7px);
 
     border-color:
-        rgba(0,230,106,.5);
+        rgba(0,230,106,.45);
 
     box-shadow:
         0 20px 50px rgba(0,0,0,.3),
         0 0 35px rgba(0,230,106,.06);
-
 }
 
 .class-number {
-
-    color:
-        var(--green);
+    color: var(--green);
 
     font-size: 10px;
 
     font-weight: 800;
 
     letter-spacing: 2px;
-
 }
 
 .class-name {
-
-    font-size: 30px;
+    font-size: 29px;
 
     font-weight: 750;
-
 }
 
 .class-bottom {
-
     display: flex;
 
     justify-content: space-between;
 
     align-items: center;
 
-    color: #7f9187;
+    color: #718279;
 
     font-size: 11px;
-
 }
 
 .arrow {
+    color: var(--green);
 
-    color:
-        var(--green);
-
-    font-size: 21px;
+    font-size: 20px;
 
     transition: .25s;
-
 }
 
 .class-card:hover .arrow {
-
     transform:
         translateX(6px);
-
 }
 
 
-/* =====================================================
-   STATS
-===================================================== */
+/* =========================
+   INFO SECTION
+========================= */
 
-.stats {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    border-top:
-        1px solid var(--border);
-
-    border-bottom:
-        1px solid var(--border);
-
-}
-
-.stat {
-
-    text-align: center;
-
-    padding: 30px;
-
-    border-right:
-        1px solid var(--border);
-
-}
-
-.stat:last-child {
-
-    border-right: none;
-
-}
-
-.stat-number {
-
-    color:
-        var(--green);
-
-    font-size: 30px;
-
-    font-weight: 800;
-
-    margin-bottom: 5px;
-
-}
-
-.stat-text {
-
-    color: #7f9187;
-
-    font-size: 10px;
-
-    letter-spacing: 1.5px;
-
-    text-transform: uppercase;
-
-}
-
-
-/* =====================================================
-   PHILOSOPHY
-===================================================== */
-
-.philosophy {
-
+.info {
     display: grid;
 
     grid-template-columns:
         1fr 1fr;
 
-    gap: 90px;
+    gap: 80px;
 
     align-items: center;
-
 }
 
 .quote {
-
     border-left:
         2px solid var(--green);
 
-    padding-left: 28px;
+    padding-left: 27px;
 
     font-size:
-        clamp(25px, 3vw, 38px);
+        clamp(25px, 3vw, 37px);
 
     font-weight: 700;
 
     line-height: 1.4;
-
 }
 
 .quote span {
-
-    color:
-        var(--green);
-
+    color: var(--green);
 }
 
 
-/* =====================================================
+/* =========================
    FEATURES
-===================================================== */
+========================= */
 
 .features {
-
     display: grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 16px;
+    gap: 15px;
 
-    margin-top: 45px;
-
+    margin-top: 40px;
 }
 
 .feature {
-
-    padding: 30px;
+    padding: 28px;
 
     background:
-        rgba(0,35,15,.32);
+        rgba(0,35,15,.3);
 
     border:
         1px solid rgba(255,255,255,.06);
 
     transition: .3s ease;
-
 }
 
 .feature:hover {
-
     transform:
         translateY(-5px);
 
     border-color:
         rgba(0,230,106,.25);
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.18);
-
 }
 
 .feature-number {
-
-    color:
-        var(--green);
+    color: var(--green);
 
     font-size: 10px;
 
@@ -880,121 +655,99 @@ body {
 
     font-weight: bold;
 
-    margin-bottom: 35px;
-
+    margin-bottom: 30px;
 }
 
 .feature h3 {
+    font-size: 19px;
 
-    font-size: 20px;
-
-    margin-bottom: 12px;
-
+    margin-bottom: 10px;
 }
 
 .feature p {
-
-    color: #83948b;
+    color: #819188;
 
     font-size: 13px;
 
     line-height: 1.7;
-
 }
 
 
-/* =====================================================
+/* =========================
    CTA
-===================================================== */
+========================= */
 
 .cta {
-
     text-align: center;
 
-    padding: 110px 20px;
+    padding:
+        100px 20px;
 
     border-top:
         1px solid rgba(255,255,255,.05);
-
 }
 
 .cta h2 {
-
     font-size:
-        clamp(32px,5vw,55px);
+        clamp(32px, 5vw, 52px);
 
     line-height: 1.1;
 
-    margin-bottom: 17px;
-
+    margin-bottom: 15px;
 }
 
 .cta p {
+    color: var(--muted);
 
-    color:
-        #8c9d93;
-
-    margin-bottom: 30px;
-
+    margin-bottom: 28px;
 }
 
 
-/* =====================================================
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 
 footer {
-
     background:
         #000903;
 
     border-top:
-        1px solid rgba(0,230,106,.12);
+        1px solid var(--border);
 
-    padding: 42px 7%;
-
+    padding:
+        35px 7%;
 }
 
 .footer-top {
-
     display: flex;
 
     justify-content: space-between;
 
     align-items: center;
 
-    padding-bottom: 25px;
+    padding-bottom: 22px;
 
     border-bottom:
         1px solid rgba(255,255,255,.05);
-
 }
 
 .footer-brand {
-
-    font-size: 19px;
+    font-size: 18px;
 
     font-weight: 750;
-
 }
 
 .footer-brand span {
-
-    color:
-        var(--green);
-
+    color: var(--green);
 }
 
 .footer-socials {
-
     display: flex;
 
-    gap: 10px;
-
+    gap: 9px;
 }
 
 .footer-social {
-
     width: 34px;
     height: 34px;
 
@@ -1003,8 +756,7 @@ footer {
     align-items: center;
     justify-content: center;
 
-    color:
-        #7f9187;
+    color: #718178;
 
     border:
         1px solid rgba(255,255,255,.08);
@@ -1012,651 +764,207 @@ footer {
     border-radius: 50%;
 
     transition: .3s;
+}
 
+.footer-social svg {
+    width: 16px;
+    height: 16px;
 }
 
 .footer-social:hover {
-
-    color:
-        var(--green);
+    color: var(--green);
 
     border-color:
         rgba(0,230,106,.4);
 
     transform:
         translateY(-3px);
-
-    box-shadow:
-        0 5px 20px rgba(0,230,106,.12);
-
-}
-
-.footer-social svg {
-
-    width: 16px;
-
 }
 
 .footer-bottom {
+    padding-top: 20px;
 
-    display: flex;
+    text-align: center;
 
-    justify-content: space-between;
-
-    padding-top: 22px;
-
-    color:
-        #53645b;
+    color: #506057;
 
     font-size: 11px;
-
-}
-
-.footer-bottom span {
-
-    color:
-        var(--green);
-
 }
 
 
-/* =====================================================
-   WELCOME POPUP
-===================================================== */
-
-.welcome-popup-backdrop {
-
-    position: fixed;
-
-    inset: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        rgba(0,8,3,.87);
-
-    backdrop-filter:
-        blur(10px);
-
-    z-index: 99990;
-
-    visibility: hidden;
-
-    opacity: 0;
-
-    transition: .3s;
-
-}
-
-.welcome-popup-backdrop.active {
-
-    visibility: visible;
-
-    opacity: 1;
-
-}
-
-.welcome-popup {
-
-    width: 400px;
-
-    max-width: 92%;
-
-    padding: 38px 30px;
-
-    text-align: center;
-
-    position: relative;
-
-    background:
-        linear-gradient(
-            145deg,
-            #05351a,
-            #00170a
-        );
-
-    border:
-        1px solid rgba(0,230,106,.25);
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.7),
-        0 0 50px rgba(0,230,106,.08);
-
-    animation:
-        popupIn .45s ease;
-
-}
-
-@keyframes popupIn {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(25px)
-            scale(.96);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-
-    }
-
-}
-
-.welcome-popup h2 {
-
-    font-size: 27px;
-
-    margin-bottom: 13px;
-
-}
-
-.welcome-popup h2 span {
-
-    color:
-        var(--green);
-
-}
-
-.welcome-popup .lead {
-
-    color:
-        #9cafa5;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-
-    margin-bottom: 25px;
-
-}
-
-.welcome-continue {
-
-    padding: 12px 30px;
-
-    border: none;
-
-    background:
-        var(--green);
-
-    color:
-        #001308;
-
-    font-weight: 800;
-
-    cursor: pointer;
-
-    transition: .25s;
-
-}
-
-.welcome-continue:hover {
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 10px 30px rgba(0,230,106,.2);
-
-}
-
-.welcome-founder {
-
-    margin-top: 25px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 10px;
-
-}
-
-.founder-thumb {
-
-    width: 45px;
-    height: 45px;
-
-    border-radius: 50%;
-
-    object-fit: cover;
-
-    border:
-        2px solid rgba(0,230,106,.35);
-
-}
-
-.founder-text {
-
-    font-size: 13px;
-
-    color:
-        #d5e3da;
-
-}
-
-.founder-text strong {
-
-    color:
-        var(--green);
-
-}
-
-.welcome-close {
-
-    position: absolute;
-
-    top: 12px;
-
-    right: 15px;
-
-    color:
-        #718078;
-
-    font-size: 22px;
-
-    cursor: pointer;
-
-}
-
-.welcome-close:hover {
-
-    color: white;
-
-}
-
-
-/* =====================================================
-   PASSWORD LOCK
-===================================================== */
-
-#site-lock-overlay {
-
-    position: fixed;
-
-    inset: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #063c1b,
-            #001309 45%,
-            #000603
-        );
-
-    z-index: 99999;
-
-    transition:
-        opacity .3s ease;
-
-}
-
-#site-lock-card {
-
-    width: 92%;
-
-    max-width: 470px;
-
-    padding: 40px 30px;
-
-    text-align: center;
-
-    background:
-        rgba(0,30,13,.84);
-
-    border:
-        1px solid rgba(0,230,106,.2);
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.7);
-
-}
-
-.lock-label {
-
-    color:
-        var(--green);
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 15px;
-
-}
-
-#site-lock-card h2 {
-
-    font-size: 25px;
-
-    margin-bottom: 12px;
-
-}
-
-#site-lock-card p {
-
-    color:
-        #91a49a;
-
-    font-size: 14px;
-
-    line-height: 1.6;
-
-}
-
-#lock-input {
-
-    width: 100%;
-
-    max-width: 330px;
-
-    padding: 13px 15px;
-
-    margin: 25px 0 12px;
-
-    background:
-        rgba(255,255,255,.04);
-
-    border:
-        1px solid rgba(255,255,255,.12);
-
-    outline: none;
-
-    color: white;
-
-    text-align: center;
-
-    font-size: 15px;
-
-}
-
-#lock-input:focus {
-
-    border-color:
-        var(--green);
-
-    box-shadow:
-        0 0 20px rgba(0,230,106,.08);
-
-}
-
-#lock-btn {
-
-    padding: 12px 27px;
-
-    background:
-        var(--green);
-
-    color:
-        #001509;
-
-    border: none;
-
-    font-weight: 800;
-
-    cursor: pointer;
-
-    transition: .25s;
-
-}
-
-#lock-btn:hover {
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 8px 25px rgba(0,230,106,.2);
-
-}
-
-#lock-error {
-
-    color:
-        #ff8f8f;
-
-    min-height: 20px;
-
-    margin-top: 10px;
-
-    font-size: 13px;
-
-}
-
-
-/* =====================================================
+/* =========================
    MOBILE
-===================================================== */
+========================= */
 
-@media(max-width:900px) {
+@media (max-width: 900px) {
 
     .classes-grid {
-
         grid-template-columns:
-            repeat(2,1fr);
-
+            repeat(2, 1fr);
     }
 
-    .philosophy {
-
-        grid-template-columns:
-            1fr;
+    .info {
+        grid-template-columns: 1fr;
 
         gap: 45px;
-
     }
 
     .features {
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
     }
-
 }
 
 
-@media(max-width:650px) {
+@media (max-width: 600px) {
 
     .top-bar {
-
-        padding-right: 18px;
-
+        padding: 0 16px;
     }
 
     .navbar {
+        height: 65px;
 
-        height: 68px;
+        padding: 0 17px;
+    }
 
-        padding:
-            0 18px;
+    .brand img {
+        width: 34px;
+        height: 34px;
+    }
 
+    .brand-name {
+        font-size: 17px;
     }
 
     .nav-links {
-
-        gap: 13px;
-
+        gap: 8px;
     }
 
     .nav-links li:nth-child(1),
     .nav-links li:nth-child(3) {
-
         display: none;
-
     }
 
-    .brand img {
-
-        width: 35px;
-        height: 35px;
-
+    .nav-links a {
+        font-size: 12px;
     }
 
-    .brand-name {
-
-        font-size: 18px;
-
+    .contact {
+        padding: 7px 12px;
     }
 
     .hero {
-
         min-height:
-            calc(100vh - 110px);
+            calc(100vh - 107px);
 
         padding:
-            60px 18px;
-
+            55px 18px;
     }
 
     .hero h1 {
+        font-size: 48px;
 
         letter-spacing:
-            -2px;
-
+            -2.5px;
     }
 
-    .hero-description {
-
-        font-size: 15px;
-
+    .hero p {
+        font-size: 14px;
     }
 
     .main {
-
         width: 90%;
-
     }
 
     .section {
-
         padding:
             65px 0;
-
     }
 
-    .classes-heading {
-
+    .classes-header {
         display: block;
+    }
 
+    .classes-header .description {
+        margin-top: 12px;
     }
 
     .classes-grid {
-
         grid-template-columns:
             1fr 1fr;
 
+        gap: 10px;
     }
 
     .class-card {
+        min-height: 175px;
 
-        min-height:
-            190px;
-
-        padding:
-            20px;
-
+        padding: 19px;
     }
 
     .class-name {
-
-        font-size:
-            24px;
-
+        font-size: 23px;
     }
 
-    .stats {
-
-        grid-template-columns:
-            1fr;
-
+    .class-bottom {
+        font-size: 10px;
     }
 
-    .stat {
-
-        border-right:
-            none;
-
-        border-bottom:
-            1px solid var(--border);
-
+    .features {
+        gap: 10px;
     }
 
-    .stat:last-child {
-
-        border-bottom:
-            none;
-
+    .feature {
+        padding: 23px;
     }
 
-    .footer-top,
-    .footer-bottom {
+    .footer-top {
+        flex-direction: column;
 
-        flex-direction:
-            column;
+        gap: 18px;
 
-        gap:
-            18px;
+        text-align: center;
+    }
+}
 
-        text-align:
-            center;
 
+@media (max-width: 380px) {
+
+    .classes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 43px;
     }
 
 }
 
 
-@media(max-width:400px) {
+/* =========================
+   REDUCE MOTION
+========================= */
 
-    .classes-grid {
+@media (prefers-reduced-motion: reduce) {
 
-        grid-template-columns:
-            1fr;
-
-    }
-
-    .hero h1 {
-
-        font-size:
-            43px;
-
+    * {
+        scroll-behavior: auto !important;
+        transition: none !important;
     }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
-     CURSOR LIGHT
-===================================================== -->
+<!-- =========================
+     CURSOR GLOW
+========================= -->
 
 <div
     class="cursor-light"
@@ -1664,9 +972,9 @@ footer {
 </div>
 
 
-<!-- =====================================================
-     TOP BAR
-===================================================== -->
+<!-- =========================
+     TOP SOCIAL BAR
+========================= -->
 
 <div class="top-bar">
 
@@ -1675,8 +983,8 @@ footer {
 
     <a
         href="mailto:singhsarthak825@gmail.com"
-        class="top-social"
-        title="Email">
+        class="social"
+        aria-label="Email">
 
         <svg
             viewBox="0 0 24 24"
@@ -1701,14 +1009,14 @@ footer {
 
     <!-- INSTAGRAM -->
 
-    <!-- CHANGE USERNAME HERE -->
+    <!-- CHANGE USERNAME -->
 
     <a
         href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME/"
         target="_blank"
         rel="noopener"
-        class="top-social"
-        title="Instagram">
+        class="social"
+        aria-label="Instagram">
 
         <svg
             viewBox="0 0 24 24"
@@ -1742,11 +1050,12 @@ footer {
 </div>
 
 
-<!-- =====================================================
+<!-- =========================
      NAVBAR
-===================================================== -->
+========================= -->
 
 <nav class="navbar">
+
 
     <a
         href="#home"
@@ -1787,16 +1096,13 @@ footer {
         </li>
 
         <li>
-
             <a
-                href="#contact"
-                class="nav-contact"
-                onclick="showContactMessage()">
+                href="mailto:singhsarthak825@gmail.com"
+                class="contact">
 
                 Contact
 
             </a>
-
         </li>
 
     </ul>
@@ -1804,46 +1110,45 @@ footer {
 </nav>
 
 
-<!-- =====================================================
+<!-- =========================
      HERO
-===================================================== -->
+========================= -->
 
 <section
     class="hero"
     id="home">
 
+
     <div class="hero-content">
 
+
         <div class="eyebrow">
-
-            Education • Resources • Growth
-
+            Education Notes
         </div>
 
 
         <h1>
 
-            Learn better.<br>
-
-            <span>Go further.</span>
+            Learn.
+            <span>Grow.</span>
 
         </h1>
 
 
-        <p class="hero-description">
+        <p>
 
-            Welcome to Education Notes — a simple,
-            accessible platform for students to discover
-            useful study resources and make learning easier.
+            Simple and accessible study resources
+            for students.
 
         </p>
 
 
         <div class="hero-buttons">
 
+
             <a
                 href="#classes"
-                class="primary-btn">
+                class="btn primary">
 
                 Explore Classes
 
@@ -1852,60 +1157,60 @@ footer {
 
             <a
                 href="about.html"
-                class="secondary-btn">
+                class="btn secondary">
 
-                About Education Notes
+                About
 
             </a>
 
+
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      MAIN
-===================================================== -->
+========================= -->
 
 <main class="main">
 
 
-<!-- =====================================================
+<!-- =========================
      CLASSES
-===================================================== -->
+========================= -->
 
 <section
     class="section"
     id="classes">
 
 
-    <div class="classes-heading">
+    <div class="classes-header">
+
 
         <div>
 
-            <div class="section-label">
-
-                01 — Study Resources
-
+            <div class="label">
+                Classes
             </div>
 
-            <h2 class="section-title">
-
+            <h2 class="title">
                 Choose your class.
-
             </h2>
 
         </div>
 
 
-        <p class="section-description">
+        <p class="description">
 
-            Select your class to explore available
-            educational resources and notes.
+            Select your class to access
+            available study resources.
 
         </p>
+
 
     </div>
 
@@ -1928,7 +1233,7 @@ footer {
             <div class="class-bottom">
 
                 <span>
-                    Study Resources
+                    Resources
                 </span>
 
                 <span class="arrow">
@@ -1955,7 +1260,7 @@ footer {
             <div class="class-bottom">
 
                 <span>
-                    Study Resources
+                    Resources
                 </span>
 
                 <span class="arrow">
@@ -1982,7 +1287,7 @@ footer {
             <div class="class-bottom">
 
                 <span>
-                    Study Resources
+                    Resources
                 </span>
 
                 <span class="arrow">
@@ -2009,7 +1314,7 @@ footer {
             <div class="class-bottom">
 
                 <span>
-                    Study Resources
+                    Resources
                 </span>
 
                 <span class="arrow">
@@ -2026,100 +1331,47 @@ footer {
 </section>
 
 
-<!-- =====================================================
-     STATS
-===================================================== -->
+<!-- =========================
+     INFO
+========================= -->
 
 <section class="section">
 
-    <div class="stats">
 
-
-        <div class="stat">
-
-            <div class="stat-number">
-                9–12
-            </div>
-
-            <div class="stat-text">
-                Classes Covered
-            </div>
-
-        </div>
-
-
-        <div class="stat">
-
-            <div class="stat-number">
-                Free
-            </div>
-
-            <div class="stat-text">
-                Access to Resources
-            </div>
-
-        </div>
-
-
-        <div class="stat">
-
-            <div class="stat-number">
-                24/7
-            </div>
-
-            <div class="stat-text">
-                Online Availability
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PHILOSOPHY
-===================================================== -->
-
-<section class="section">
-
-    <div class="philosophy">
+    <div class="info">
 
 
         <div>
 
-            <div class="section-label">
 
-                02 — Our Approach
-
+            <div class="label">
+                About
             </div>
 
 
-            <h2 class="section-title">
+            <h2 class="title">
 
-                Education should be
-                easier to access.
+                Made for
+                students.
 
             </h2>
 
 
-            <p class="section-description">
+            <p class="description">
 
-                Education Notes focuses on bringing useful
-                learning material together in a clean,
-                straightforward and student-friendly environment.
+                Education Notes brings study material
+                together in one simple place.
 
             </p>
+
 
         </div>
 
 
         <div class="quote">
 
-            Good learning starts when
-            <span>knowledge becomes simple.</span>
+            Keep learning.
+            <span>Keep moving forward.</span>
 
         </div>
 
@@ -2129,33 +1381,21 @@ footer {
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      FEATURES
-===================================================== -->
+========================= -->
 
 <section class="section">
 
 
-    <div class="section-label">
-
-        03 — The Experience
-
+    <div class="label">
+        Features
     </div>
 
 
-    <h2 class="section-title">
-
-        Simple by design.
-
+    <h2 class="title">
+        Everything simple.
     </h2>
-
-
-    <p class="section-description">
-
-        No unnecessary complexity.
-        Just a focused platform designed around learning.
-
-    </p>
 
 
     <div class="features">
@@ -2168,15 +1408,11 @@ footer {
             </div>
 
             <h3>
-                Organised
+                Simple
             </h3>
 
             <p>
-
-                Study resources are arranged according
-                to classes so students can find what they
-                need more easily.
-
+                Clean and easy to navigate.
             </p>
 
         </div>
@@ -2193,10 +1429,7 @@ footer {
             </h3>
 
             <p>
-
-                The platform is designed to remain simple,
-                lightweight and accessible across devices.
-
+                Designed to work across devices.
             </p>
 
         </div>
@@ -2213,10 +1446,7 @@ footer {
             </h3>
 
             <p>
-
-                Every part of the experience is built
-                with the student's learning journey in mind.
-
+                Built around learning.
             </p>
 
         </div>
@@ -2227,44 +1457,35 @@ footer {
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      CTA
-===================================================== -->
+========================= -->
 
-<section
-    class="cta"
-    id="contact">
-
-    <div class="section-label">
-
-        Start Learning
-
-    </div>
+<section class="cta">
 
 
     <h2>
 
-        Your learning journey<br>
-        starts here.
+        Start learning.
 
     </h2>
 
 
     <p>
 
-        Explore your class and discover
-        the available resources.
+        Choose your class and explore.
 
     </p>
 
 
     <a
         href="#classes"
-        class="primary-btn">
+        class="btn primary">
 
-        Explore Resources
+        Explore Classes
 
     </a>
+
 
 </section>
 
@@ -2272,9 +1493,9 @@ footer {
 </main>
 
 
-<!-- =====================================================
+<!-- =========================
      FOOTER
-===================================================== -->
+========================= -->
 
 <footer>
 
@@ -2298,7 +1519,7 @@ footer {
             <a
                 href="mailto:singhsarthak825@gmail.com"
                 class="footer-social"
-                title="Email">
+                aria-label="Email">
 
                 <svg
                     viewBox="0 0 24 24"
@@ -2328,7 +1549,7 @@ footer {
                 target="_blank"
                 rel="noopener"
                 class="footer-social"
-                title="Instagram">
+                aria-label="Instagram">
 
                 <svg
                     viewBox="0 0 24 24"
@@ -2367,227 +1588,24 @@ footer {
 
     <div class="footer-bottom">
 
-        <div>
-
-            © 2026 Education Notes.
-            All rights reserved.
-
-        </div>
-
-
-        <div>
-
-            Your Visits:
-            <span id="visits">0</span>
-
-        </div>
+        © 2026 Education Notes
 
     </div>
+
 
 </footer>
 
 
-<!-- =====================================================
-     WELCOME POPUP
-===================================================== -->
-
-<div
-    class="welcome-popup-backdrop"
-    id="welcome-backdrop"
-    aria-hidden="true">
-
-
-    <div class="welcome-popup">
-
-
-        <div
-            class="welcome-close"
-            id="welcome-close">
-
-            ×
-
-        </div>
-
-
-        <h2>
-
-            Welcome to
-            <span>Education Notes</span>
-
-        </h2>
-
-
-        <p class="lead">
-
-            This website is currently paused by
-            the founder. Press continue to enter
-            the website.
-
-        </p>
-
-
-        <button
-            class="welcome-continue"
-            id="welcome-continue">
-
-            Continue
-
-        </button>
-
-
-        <div class="welcome-founder">
-
-
-            <img
-                src="WhatsApp Image 2025-09-28 at 14.48.40_9863dda3.jpg"
-                alt="Founder Sarthak"
-                class="founder-thumb">
-
-
-            <div class="founder-text">
-
-                Founder:
-                <strong>Sarthak Singh</strong>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     PASSWORD LOCK
-     
-     IMPORTANT:
-     HTML IS BEFORE SCRIPT
-===================================================== -->
-
-<div
-    id="site-lock-overlay"
-    role="dialog"
-    aria-modal="true">
-
-
-    <div id="site-lock-card">
-
-
-        <div class="lock-label">
-
-            PRIVATE ACCESS
-
-        </div>
-
-
-        <h2>
-
-            Website Access Restricted
-
-        </h2>
-
-
-        <p>
-
-            This website has been temporarily
-            stopped by the founder. Enter the
-            password to continue.
-
-        </p>
-
-
-        <input
-            id="lock-input"
-            type="password"
-            placeholder="Enter password"
-            autocomplete="off">
-
-
-        <br>
-
-
-        <button id="lock-btn">
-
-            Unlock
-
-        </button>
-
-
-        <div
-            id="lock-error"
-            aria-live="polite">
-
-        </div>
-
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
+<!-- =========================
      JAVASCRIPT
-===================================================== -->
+========================= -->
 
 <script>
 
 
-/* =====================================================
-   CONTACT
-===================================================== */
+/* Cursor glow */
 
-function showContactMessage() {
-
-    alert(
-        "Contact feature coming soon!"
-    );
-
-}
-
-
-/* =====================================================
-   VISITOR COUNTER
-===================================================== */
-
-(function () {
-
-    const key =
-        "education_notes_visits";
-
-    let visits =
-        parseInt(
-            localStorage.getItem(key) || "0",
-            10
-        );
-
-    visits++;
-
-    localStorage.setItem(
-        key,
-        String(visits)
-    );
-
-    const element =
-        document.getElementById("visits");
-
-    if (element) {
-
-        element.textContent =
-            visits;
-
-    }
-
-})();
-
-
-/* =====================================================
-   CURSOR LIGHT
-===================================================== */
-
-const cursorLight =
+const cursor =
     document.getElementById(
         "cursorLight"
     );
@@ -2597,29 +1615,25 @@ document.addEventListener(
     "mousemove",
     function (event) {
 
-        if (!cursorLight) return;
-
-        cursorLight.style.left =
+        cursor.style.left =
             event.clientX + "px";
 
-        cursorLight.style.top =
+        cursor.style.top =
             event.clientY + "px";
 
     }
 );
 
 
-/* =====================================================
-   CLASS CARD MOUSE LIGHT
-===================================================== */
+/* Card mouse glow */
 
 document
 .querySelectorAll(".class-card")
-.forEach(function (card) {
+.forEach(function(card) {
 
     card.addEventListener(
         "mousemove",
-        function (event) {
+        function(event) {
 
             const rect =
                 card.getBoundingClientRect();
@@ -2647,277 +1661,6 @@ document
 
 });
 
-
-/* =====================================================
-   WELCOME POPUP
-===================================================== */
-
-(function () {
-
-    const backdrop =
-        document.getElementById(
-            "welcome-backdrop"
-        );
-
-    const close =
-        document.getElementById(
-            "welcome-close"
-        );
-
-    const continueBtn =
-        document.getElementById(
-            "welcome-continue"
-        );
-
-
-    window.addEventListener(
-        "load",
-        function () {
-
-            backdrop.classList.add(
-                "active"
-            );
-
-            backdrop.setAttribute(
-                "aria-hidden",
-                "false"
-            );
-
-        }
-    );
-
-
-    function closePopup() {
-
-        backdrop.classList.remove(
-            "active"
-        );
-
-        backdrop.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-
-    }
-
-
-    continueBtn.addEventListener(
-        "click",
-        closePopup
-    );
-
-
-    close.addEventListener(
-        "click",
-        closePopup
-    );
-
-
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (
-                event.key === "Escape"
-            ) {
-
-                closePopup();
-
-            }
-
-        }
-    );
-
-})();
-
-
-/* =====================================================
-   PASSWORD LOCK
-===================================================== */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-
-        const CORRECT =
-            "sarthak";
-
-
-        const overlay =
-            document.getElementById(
-                "site-lock-overlay"
-            );
-
-
-        const input =
-            document.getElementById(
-                "lock-input"
-            );
-
-
-        const button =
-            document.getElementById(
-                "lock-btn"
-            );
-
-
-        const error =
-            document.getElementById(
-                "lock-error"
-            );
-
-
-        const STORAGE_KEY =
-            "education_notes_unlocked_v1";
-
-
-        /* Already unlocked */
-
-        if (
-            sessionStorage.getItem(
-                STORAGE_KEY
-            ) === "true"
-        ) {
-
-            overlay.remove();
-
-            return;
-
-        }
-
-
-        /* Focus password field */
-
-        input.focus();
-
-
-        /* Unlock function */
-
-        function tryUnlock() {
-
-
-            if (
-                input.value === CORRECT
-            ) {
-
-
-                sessionStorage.setItem(
-                    STORAGE_KEY,
-                    "true"
-                );
-
-
-                error.textContent =
-                    "";
-
-
-                overlay.style.opacity =
-                    "0";
-
-
-                setTimeout(
-                    function () {
-
-                        overlay.remove();
-
-                    },
-                    300
-                );
-
-
-            }
-
-
-            else {
-
-
-                error.textContent =
-                    "Incorrect password. Try again.";
-
-
-                input.value =
-                    "";
-
-
-                input.focus();
-
-
-                overlay.animate(
-
-                    [
-
-                        {
-                            transform:
-                                "translateX(0)"
-                        },
-
-                        {
-                            transform:
-                                "translateX(-8px)"
-                        },
-
-                        {
-                            transform:
-                                "translateX(8px)"
-                        },
-
-                        {
-                            transform:
-                                "translateX(-5px)"
-                        },
-
-                        {
-                            transform:
-                                "translateX(0)"
-                        }
-
-                    ],
-
-                    {
-
-                        duration: 350,
-
-                        iterations: 1
-
-                    }
-
-                );
-
-            }
-
-
-        }
-
-
-        /* Button */
-
-        button.addEventListener(
-            "click",
-            tryUnlock
-        );
-
-
-        /* Enter key */
-
-        input.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (
-                    event.key === "Enter"
-                ) {
-
-                    tryUnlock();
-
-                }
-
-            }
-        );
-
-
-    }
-);
 
 </script>
 
